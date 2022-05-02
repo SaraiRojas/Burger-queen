@@ -31,11 +31,8 @@ const LogIn = () => {
     console.log('entre');
     const expEmail = /^\w+([.+-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$/;
     const expPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
-    
-    console.log(expEmail.test(email));
-    console.log(expPassword.test('D123@devs'));
-    if (expEmail.test(email) && expPassword.test(password)) {
 
+    if (expEmail.test(email) && expPassword.test(password)) {
       console.log('estoy aqui');
       await signInWithEmailAndPassword(email, password);
       navigate('/staff');
@@ -44,7 +41,7 @@ const LogIn = () => {
       alertError.innerText = 'Error correo o contraseña invalida';
     }
   }
-  
+
   return (
     <section className={styles.login}>
       <img className={styles.imgLogin} src="https://svgshare.com/i/gjb.svg" alt="imgLogin" />
