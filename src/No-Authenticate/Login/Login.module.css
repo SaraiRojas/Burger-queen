@@ -1,0 +1,95 @@
+.btnLogin {
+  background-color: black;
+  color: white;
+  border-radius: 0.8em;
+  width: 19em;
+  height: 2.5em;
+  margin-top: 2em;
+  border: none;
+}
+
+.login {
+  background-color: #f3b240;
+  display: flex;
+  height: 100vh;
+}
+
+.imgLogin {
+  display: none;
+}
+
+.sectionLogin {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+}
+
+.slogan {
+  padding: 0 2em;
+}
+
+.formLogin {
+  align-items: center;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: .2em .2em .2em .2em #956c25;
+  border-radius: 2em;
+  flex-direction: column;
+  height: 20em;
+  justify-content: center;
+  margin-top: 2em;
+  width: 20em;
+}
+
+.inputEmail, .inputPass {
+  border-radius: 0.8em;
+  border: 0.1em solid gray;
+  height: 2em;
+  margin-bottom: 1em;
+  padding-left: 0.5em;
+  width: 18em;
+}
+
+.alertError {
+  color: red;
+}
+
+@media (min-width: 768px) {
+  .imgLogin {
+    display: flex;
+  }
+
+  .slogan {
+    padding: 0 5em;
+  }
+  
+}
+
+@media (min-width: 1280px) {
+
+  .imgLog {
+    width: 30%;
+    margin-bottom: 1em;
+  }
+  .sectionLogin {
+    font-size: 1.3em;
+  }
+
+  .slogan {
+    font-size: 1.0em;
+    padding: 0 18em;
+  }
+  .inputEmail, .inputPass {
+    font-size: 0.7em;
+    height: 2.5em;
+    width: 22em;
+  }
+  .btnLogin {
+    font-size: 0.70em;
+    height: 2.8em;
+    width: 23em;
+  } 
+}
