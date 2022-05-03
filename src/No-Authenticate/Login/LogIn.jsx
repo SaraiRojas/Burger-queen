@@ -26,7 +26,7 @@ const LogIn = () => {
   if (loading) {
     return <p>Loading...</p>;
   }
-  
+
   const handleLogIn = async () => {
     console.log('entre');
     const expEmail = /^\w+([.+-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$/;
@@ -34,7 +34,7 @@ const LogIn = () => {
 
     if (expEmail.test(email) && expPassword.test(password)) {
       console.log('estoy aqui');
-      await signInWithEmailAndPassword(email, password);
+      await signInWithEmailAndPassword(email, password)
       navigate('/staff');
     } else {
       const alertError = document.createElement('p');
