@@ -1,18 +1,10 @@
 /* eslint-disable react/prop-types */
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { auth } from "../Firebase/firebase.config";
-import { signOut } from "firebase/auth";
-import Sidebar from "../Sidebar";
-import styles from './Staff.module.css'
+import React from 'react';
+import Sidebar from './Components/Sidebar';
+import styles from './Staff.module.css';
+import Header from './Components/Header';
 
-const Staff = ({ rol }) => {
-  const navigate = useNavigate();
-
-  const handleLogOut = async () => {
-    await signOut(auth);
-    navigate('/');
-  }
+const Staff = ({ rol, authenticate }) => {
   console.log(rol);
 
   return (
@@ -20,11 +12,9 @@ const Staff = ({ rol }) => {
       <section>
         <Sidebar />
       </section>
-      <header className={styles.header}>
-        <button className={styles.btnLogOut} onClick={handleLogOut}>Log Out</button>
-      </header>
+      <Header authenticate={authenticate} />
     </section>
   );
-}
+};
 
 export default Staff;
