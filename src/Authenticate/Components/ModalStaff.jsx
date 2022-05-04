@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -6,6 +8,8 @@ import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
 import AddIcon from '@mui/icons-material/Add';
 import MenuItem from '@mui/material/MenuItem';
+import { setDoc, doc } from 'firebase/firestore';
+import { auth, db } from '../../Firebase/firebase.config';
 
 const roles = [
   {
@@ -51,14 +55,77 @@ const styleT = {
 };
 
 const ModalStaff = () => {
-  const [currency, setCurrency] = useState('');
+  const [data, setData] = useState({
+    rol: '',
+    nombre: '',
+    apellido: '',
+  });
   const [open, setOpen] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confPass, setConfPass] = useState('');
+
+  // const [rol, setRol] = useState('');
+
+  // const handleRoles = (e) => {
+  //   setRol(e.target.value);
+  // };
+
+  const [
+    createUserWithEmailAndPassword,
+    loading,
+    error,
+  ] = useCreateUserWithEmailAndPassword(auth);
+
+  if (error) {
+    return (
+      <div>
+        <p>
+          Error:
+          {error.message}
+        </p>
+      </div>
+    );
+  }
+  if (loading) {
+    return <p>Loading...</p>;
+  }
   // const [textError, setTextError] = useState('');
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const handleChange = (event) => {
-    setCurrency(event.target.value);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData((preState) => ({
+      ...preState,
+      [name]: value,
+    }));
+    // setCurrency(event.target.value);
+  };
+
+  const saveData = async (localData, id) => {
+    await setDoc(doc(db, 'profile', id), localData);
+  };
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    const expEmail = /^\w+([.+-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$/;
+    const expPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
+    const alertEmailR = document.getElementById('alertEmailR');
+    if (expEmail.test(email) && expPassword.test(password) && expPassword.test(confPass)) {
+      if (password === confPass) {
+        const user = await createUserWithEmailAndPassword(email, password);
+        console.log(user.uid);
+        const { uid } = user;
+        await saveData(data, uid);
+        handleClose();
+        console.log(user);
+      } else {
+        alertEmailR.innerHTML = '<span className="red"> Contraseñas Invalida </span>';
+      }
+    } else {
+      alertEmailR.innerHTML = '<span className="red"> Error correo o contraseña invalida</span>';
+    }
   };
 
   return (
@@ -80,9 +147,11 @@ const ModalStaff = () => {
             </Typography>
             <TextField
               id="date"
+              name="date"
               label="Fecha de inicio"
               type="date"
               sx={{ width: 220 }}
+              onChange={handleChange}
               InputLabelProps={{
                 shrink: true,
               }}
@@ -90,8 +159,9 @@ const ModalStaff = () => {
             <TextField
               id="standard-select-currency"
               select
+              name="rol"
               label="Roles"
-              value={currency}
+              value={data.rol}
               onChange={handleChange}
               variant="standard"
             >
@@ -104,23 +174,28 @@ const ModalStaff = () => {
             <TextField
               required
               id="standard-required"
+              name="nombre"
               label="Nombre"
               variant="standard"
-              // onChange={handleChange}
+              onChange={handleChange}
               // helperText={textError}
             />
             <TextField
               required
               id="standard-required"
+              name="apellido"
               label="Apellido"
               variant="standard"
+              onChange={handleChange}
             />
             <TextField
               id="standard-email-input"
               label="Email"
+              name="email"
               type="email"
               autoComplete="current-email"
               variant="standard"
+              onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
               id="standard-password-input"
@@ -128,6 +203,7 @@ const ModalStaff = () => {
               type="password"
               autoComplete="current-password"
               variant="standard"
+              onChange={(e) => setPassword(e.target.value)}
             />
             <TextField
               id="standard-password-input"
@@ -136,8 +212,13 @@ const ModalStaff = () => {
               autoComplete="current-password"
               variant="standard"
               sx={styleT}
+              onChange={(e) => setConfPass(e.target.value)}
             />
-            <Button type="submit">Guardar</Button>
+            <Button onClick={handleClick} type="submit">Guardar</Button>
+            <span
+              id="alertEmailR"
+              className={style.red}
+            />
           </Box>
         </form>
       </Modal>
