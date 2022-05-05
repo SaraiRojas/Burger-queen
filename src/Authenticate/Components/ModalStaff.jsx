@@ -9,6 +9,7 @@ import TextField from '@mui/material/TextField';
 import AddIcon from '@mui/icons-material/Add';
 import MenuItem from '@mui/material/MenuItem';
 import { setDoc, doc } from 'firebase/firestore';
+import { updateCurrentUser } from 'firebase/auth';
 import { auth, db } from '../../Firebase/firebase.config';
 
 const roles = [
@@ -55,11 +56,7 @@ const styleT = {
 };
 
 const ModalStaff = () => {
-  const [data, setData] = useState({
-    rol: '',
-    nombre: '',
-    apellido: '',
-  });
+  const [data, setData] = useState({}); // No importa que no tenga info, mientras que sea un objecto
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -112,14 +109,22 @@ const ModalStaff = () => {
     const expEmail = /^\w+([.+-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$/;
     const expPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
     const alertEmailR = document.getElementById('alertEmailR');
+
     if (expEmail.test(email) && expPassword.test(password) && expPassword.test(confPass)) {
       if (password === confPass) {
-        const user = await createUserWithEmailAndPassword(email, password);
-        console.log(user.uid);
-        const { uid } = user;
-        await saveData(data, uid);
+        const originalUser = auth.currentUser; // keeps info of original user to be used later
+        console.log('org', originalUser);
+
+        await createUserWithEmailAndPassword(email, password); // creates new user
+        const newUser = auth.currentUser;
+        console.log('new', newUser);
+        const { uid } = newUser; // gets new user uid
+
+        await updateCurrentUser(auth, originalUser); // returns user to original loged in user
+
+        await saveData(data, uid); // saves info of created user
+
         handleClose();
-        console.log(user);
       } else {
         alertEmailR.innerHTML = '<span className="red"> Contraseñas Invalida </span>';
       }

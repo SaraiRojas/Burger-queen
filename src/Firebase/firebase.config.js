@@ -8,7 +8,7 @@ const firebaseConfig = {
   projectId: 'burgerqueen-1d9a5',
   storageBucket: 'burgerqueen-1d9a5.appspot.com',
   messagingSenderId: '774027320411',
-  appId: '1:774027320411:web:09a3892165c36a7eac337e'
+  appId: '1:774027320411:web:09a3892165c36a7eac337e',
 };
 
 // Initialize Firebase
