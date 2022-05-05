@@ -33,7 +33,7 @@ const LogIn = () => {
 
     if (expEmail.test(email) && expPassword.test(password)) {
       await signInWithEmailAndPassword(email, password);
-      navigate('/staff');
+      navigate('/admin');
     } else {
       const alertError = document.createElement('p');
       alertError.innerText = 'Error correo o contraseña invalida';
