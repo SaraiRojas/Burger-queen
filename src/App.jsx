@@ -16,7 +16,6 @@ const App = () => {
 
   const getRol = async (uid) => {
     const ref = doc(db, `profile/${uid}`);
-    console.log(rol);
     const docSnap = await getDoc(ref);
     return docSnap.data().rol;
   };

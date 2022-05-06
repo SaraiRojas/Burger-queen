@@ -2,13 +2,15 @@
 import React from 'react';
 import Profile from './Profile';
 import style from './Header.module.css';
-import ModalStaff from './ModalStaff';
 
-const Header = ({ authenticate }) => (
-  <header className={style.header}>
-    <ModalStaff />
-    <Profile authenticate={authenticate} />
-  </header>
-);
+const Header = ({ authenticate }) => {
+  console.log('En header');
+
+  return (
+    <header className={style.header}>
+      <Profile authenticate={authenticate} />
+    </header>
+  );
+};
 
 export default Header;
