@@ -2,3 +2,20 @@
   display: flex;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+@media (min-width: 1280px) {
+  .main {
+    width: 80%;
+  } 
+}
+
+@media (min-width: 1900px) {
+  .main {
+    width: 86%;
+  } 
+}

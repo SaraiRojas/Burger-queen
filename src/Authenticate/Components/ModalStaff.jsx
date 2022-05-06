@@ -12,6 +12,7 @@ import { setDoc, doc } from 'firebase/firestore';
 import { updateCurrentUser } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { auth, db } from '../../Firebase/firebase.config';
+import styles from './ModalStaff.module.css';
 
 const roles = [
   {
@@ -30,7 +31,7 @@ const roles = [
 
 const btnStyle = {
   bgcolor: 'black',
-  color: 'white',
+  color: '#F3B240',
   fontWeight: 600,
   marginTop: '1em',
   marginRight: '50em',
@@ -65,12 +66,6 @@ const ModalStaff = () => {
 
   const navigate = useNavigate();
 
-  // const [rol, setRol] = useState('');
-
-  // const handleRoles = (e) => {
-  //   setRol(e.target.value);
-  // };
-
   const [
     createUserWithEmailAndPassword,
     loading,
@@ -101,12 +96,22 @@ const ModalStaff = () => {
       ...preState,
       [name]: value,
     }));
-    // setCurrency(event.target.value);
   };
 
-  const saveData = async (localData, id) => {
+  const saveDataFirebase = async (localData, id) => {
     await setDoc(doc(db, 'profile', id), localData);
   };
+
+  // const saveDataApi = (localData) => {
+  //   const requestOption = {
+  //     method: 'POST',
+  //     body: JSON.stringify(localData),
+  //   };
+
+  //   fetch('http://localhost:3001/empleados', requestOption)
+  //     .then((response) => response.json());
+  //     // .catch((err) => console.log(err));
+  // };
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -117,17 +122,14 @@ const ModalStaff = () => {
     if (expEmail.test(email) && expPassword.test(password) && expPassword.test(confPass)) {
       if (password === confPass) {
         const originalUser = auth.currentUser; // keeps info of original user to be used later
-        console.log('org', originalUser);
 
         await createUserWithEmailAndPassword(email, password); // creates new user
         const newUser = auth.currentUser;
-        console.log('new', newUser);
         const { uid } = newUser; // gets new user uid
 
         await updateCurrentUser(auth, originalUser); // returns user to original loged in user
 
-        await saveData(data, uid); // saves info of created user
-
+        await saveDataFirebase(data, uid); // saves info of created user
         handleClose();
         navigate('/staff');
       } else {
@@ -139,7 +141,7 @@ const ModalStaff = () => {
   };
 
   return (
-    <div>
+    <section className={styles.modalStaff}>
       <Button sx={btnStyle} onClick={handleOpen}>
         <AddIcon />
         Empleado
@@ -232,7 +234,7 @@ const ModalStaff = () => {
           </Box>
         </form>
       </Modal>
-    </div>
+    </section>
   );
 };
 

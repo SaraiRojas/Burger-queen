@@ -5,8 +5,7 @@ import Header from '../Components/Header';
 import styles from './Waiter.module.css';
 
 const Waiter = ({ authenticate, rol }) => {
-  console.log('hola');
-  return (
+  (
     <section className={styles.waiter}>
       <section>
         <Sidebar rol={rol} />
