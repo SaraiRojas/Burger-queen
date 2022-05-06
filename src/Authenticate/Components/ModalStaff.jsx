@@ -102,16 +102,17 @@ const ModalStaff = () => {
     await setDoc(doc(db, 'profile', id), localData);
   };
 
-  // const saveDataApi = (localData) => {
-  //   const requestOption = {
-  //     method: 'POST',
-  //     body: JSON.stringify(localData),
-  //   };
+  const saveDataApi = (localData) => {
+    const requestOption = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(localData),
+    };
 
-  //   fetch('http://localhost:3001/empleados', requestOption)
-  //     .then((response) => response.json());
-  //     // .catch((err) => console.log(err));
-  // };
+    fetch('http://localhost:3001/empleados', requestOption)
+      .then((response) => response.json())
+      .catch((err) => console.log(err));
+  };
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -130,8 +131,10 @@ const ModalStaff = () => {
         await updateCurrentUser(auth, originalUser); // returns user to original loged in user
 
         await saveDataFirebase(data, uid); // saves info of created user
+        saveDataApi(data);
+
         handleClose();
-        navigate('/staff');
+        navigate('/admin');
       } else {
         alertEmailR.innerHTML = '<span className="red"> Contraseñas Invalida </span>';
       }
@@ -171,7 +174,7 @@ const ModalStaff = () => {
             <TextField
               id="standard-select-currency"
               select
-              name="rol"
+              name="role"
               label="Roles"
               value={data.rol}
               onChange={handleChange}
@@ -186,7 +189,7 @@ const ModalStaff = () => {
             <TextField
               required
               id="standard-required"
-              name="nombre"
+              name="name"
               label="Nombre"
               variant="standard"
               onChange={handleChange}
@@ -195,7 +198,7 @@ const ModalStaff = () => {
             <TextField
               required
               id="standard-required"
-              name="apellido"
+              name="lastname"
               label="Apellido"
               variant="standard"
               onChange={handleChange}
@@ -207,7 +210,10 @@ const ModalStaff = () => {
               type="email"
               autoComplete="current-email"
               variant="standard"
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                handleChange(e);
+              }}
             />
             <TextField
               id="standard-password-input"
