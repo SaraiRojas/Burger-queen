@@ -2,43 +2,67 @@
   "empleados": [
     {
       "id": 1,
-      "rol": "admin",
-      "nombre": "Maggie",
-      "apellido": "Sarmiento",
-      "correo": "gsmaggie001@gmail.com",
-      "fecha": "24/01/2022"
+      "role": "Admin",
+      "name": "Maggie",
+      "lastname": "Sarmiento",
+      "email": "gsmaggie001@gmail.com",
+      "date": "24/01/2022"
     },
     {
       "id": 2,
-      "rol": "mesero",
-      "nombre": "Carlos",
-      "apellido": "Delgado",
-      "correo": "carlos@gmail.com",
-      "fecha": "24/02/2022"
+      "role": "Mesero",
+      "name": "Carlos",
+      "lastname": "Delgado",
+      "email": "carlos@gmail.com",
+      "date": "24/02/2022"
     },
     {
       "id": 3,
-      "rol": "mesero",
-      "nombre": "Diego",
-      "apellido": "Luna",
-      "correo": "diego@gmail.com",
-      "fecha": "5/03/2022"
+      "role": "Mesero",
+      "name": "Diego",
+      "lastname": "Luna",
+      "email": "diego@gmail.com",
+      "date": "5/03/2022"
     },
     {
       "id": 4,
-      "rol": "jefe de cocina",
-      "nombre": "Ricardo",
-      "apellido": "Mendoza",
-      "correo": "ricardo@gmail.com",
-      "fecha": "5/03/2022"
+      "role": "Jefe de cocina",
+      "name": "Ricardo",
+      "lastname": "Mendoza",
+      "email": "ricardo@gmail.com",
+      "date": "5/03/2022"
     },
     {
-      "rol": "Jefe de Cocina",
-      "nombre": "Enrique",
-      "apellido": "Lopez",
-      "correo": "enrique@gmail.com",
-      "fecha": "5/03/2022",
+      "role": "Jefe de Cocina",
+      "name": "Enrique",
+      "lastname": "Lopez",
+      "email": "enrique@gmail.com",
+      "date": "5/03/2022",
       "id": 5
+    },
+    {
+      "date": "2022-05-04",
+      "role": "Mesero",
+      "name": "Daniel",
+      "lastname": "Rodriguez",
+      "email": "daniel@gmail.com",
+      "id": 6
+    },
+    {
+      "date": "2022-05-06",
+      "role": "Jefe de cocina",
+      "name": "Paola",
+      "lastname": "Guzman",
+      "email": "paola@gmail.com",
+      "id": 7
+    },
+    {
+      "date": "2022-05-06",
+      "role": "Jefe de cocina",
+      "name": "Salome",
+      "lastname": "Poot",
+      "email": "salome@gmail.com",
+      "id": 8
     }
   ],
   "adminmenu": [
@@ -46,25 +70,25 @@
       "id": 1,
       "producto": "Cafe con leche",
       "precio": 7.8,
-      "apellido": "Sarmiento"
+      "lastname": "Sarmiento"
     },
     {
       "id": 1,
       "producto": "Cafe",
       "precio": 7,
-      "apellido": "Sarmiento"
+      "lastname": "Sarmiento"
     },
     {
       "id": 1,
       "producto": "Jugo de Naranja",
       "precio": 7.8,
-      "apellido": "Sarmiento"
+      "lastname": "Sarmiento"
     },
     {
       "id": 1,
       "producto": "Sandwich",
       "precio": 11,
-      "apellido": "Sarmiento"
+      "lastname": "Sarmiento"
     }
   ]
 }
