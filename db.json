@@ -93,6 +93,14 @@
       "lastname": "h",
       "email": "joa@correo.com",
       "id": 12
+    },
+    {
+      "date": "2022-05-11",
+      "role": "Mesero",
+      "name": "Rebeca",
+      "lastname": "Mendoza",
+      "email": "reb@correo.com",
+      "id": 13
     }
   ],
   "adminmenu": [

@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 import Sidebar from '../Components/Sidebar';
 import styles from './Admin.module.css';
 import Header from '../Components/Header';
 import Staff from './Staff';
+import StaffBtn from '../Components/StaffBtn';
 
 const Admin = ({ rol, authenticate }) => {
-  console.log('En admi');
+  const [open, setOpen] = useState(false); // 1.
+  const handleOpen = () => setOpen(true); // 3.
 
   return (
     <section className={styles.admin}>
@@ -15,7 +17,9 @@ const Admin = ({ rol, authenticate }) => {
       </section>
       <main className={styles.main}>
         <Header authenticate={authenticate} />
-        <Staff />
+        <StaffBtn onClick={handleOpen} />
+        <Staff open={open} setOpen={setOpen} />
+        {/* // 2. */}
       </main>
     </section>
   );

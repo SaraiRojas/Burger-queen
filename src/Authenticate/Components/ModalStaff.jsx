@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
-import AddIcon from '@mui/icons-material/Add';
+// import AddIcon from '@mui/icons-material/Add';
 import MenuItem from '@mui/material/MenuItem';
 import { setDoc, doc } from 'firebase/firestore';
 import { updateCurrentUser } from 'firebase/auth';
@@ -29,13 +29,13 @@ const roles = [
   },
 ];
 
-const btnStyle = {
-  bgcolor: 'black',
-  color: '#F3B240',
-  fontWeight: 600,
-  marginTop: '1em',
-  marginRight: '50em',
-};
+// const btnStyle = {
+//   bgcolor: 'black',
+//   color: '#F3B240',
+//   fontWeight: 600,
+//   marginTop: '1em',
+//   marginRight: '50em',
+// };
 
 const style = {
   display: 'flex',
@@ -57,9 +57,9 @@ const styleT = {
   marginBottom: 1,
 };
 
-const ModalStaff = () => {
+const ModalStaff = ({ open, setOpen }) => {
   const [data, setData] = useState({}); // No importa que no tenga info, mientras que sea un objecto
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confPass, setConfPass] = useState('');
@@ -87,7 +87,7 @@ const ModalStaff = () => {
     return console.log('Loading...');
   }
   // const [textError, setTextError] = useState('');
-  const handleOpen = () => setOpen(true);
+  // const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   const handleChange = (e) => {
@@ -145,10 +145,10 @@ const ModalStaff = () => {
 
   return (
     <section className={styles.modalStaff}>
-      <Button sx={btnStyle} onClick={handleOpen}>
+      {/* <Button sx={btnStyle} onClick={handleOpen}>
         <AddIcon />
         Empleado
-      </Button>
+      </Button> */}
       <Modal
         open={open}
         onClose={handleClose}

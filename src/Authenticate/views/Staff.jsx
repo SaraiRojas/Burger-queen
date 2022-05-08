@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 // import { makeStyles } from '@material-ui/core/styles';
 import Table from '@mui/material/Table';
@@ -14,7 +15,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import ModalStaff from '../Components/ModalStaff';
 import styles from './Staff.module.css';
 
-const Staff = () => {
+const Staff = ({ open, setOpen }) => {
   const [dataStaff, setDataStaff] = useState([]);
   const [modalEdit, setModalEdit] = useState(false);
   const [modalDelete, setModalDelete] = useState(false);
@@ -68,7 +69,7 @@ const Staff = () => {
 
   return (
     <section className={styles.staff}>
-      <ModalStaff />
+      <ModalStaff open={open} setOpen={setOpen} />
       <main className={styles.main}>
         <TableContainer>
           <Table>
