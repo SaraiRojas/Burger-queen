@@ -63,6 +63,36 @@
       "lastname": "Poot",
       "email": "salome@gmail.com",
       "id": 8
+    },
+    {
+      "date": "2022-05-18",
+      "role": "Mesero",
+      "name": "Jesus",
+      "lastname": "Arzate",
+      "email": "gsus@correo.com",
+      "id": 9
+    },
+    {
+      "date": "2022-05-03",
+      "role": "Jefe de cocina",
+      "name": "Mar",
+      "lastname": "Lopez",
+      "email": "marl@correo.com",
+      "id": 10
+    },
+    {
+      "role": "Admin",
+      "name": "Felipe",
+      "lastname": "Gonzaes",
+      "email": "gon@correo.com",
+      "id": 11
+    },
+    {
+      "role": "Jefe de cocina",
+      "name": "Joaquin",
+      "lastname": "h",
+      "email": "joa@correo.com",
+      "id": 12
     }
   ],
   "adminmenu": [

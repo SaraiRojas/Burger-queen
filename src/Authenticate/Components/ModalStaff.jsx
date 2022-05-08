@@ -10,7 +10,7 @@ import AddIcon from '@mui/icons-material/Add';
 import MenuItem from '@mui/material/MenuItem';
 import { setDoc, doc } from 'firebase/firestore';
 import { updateCurrentUser } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { auth, db } from '../../Firebase/firebase.config';
 import styles from './ModalStaff.module.css';
 
@@ -64,7 +64,7 @@ const ModalStaff = () => {
   const [password, setPassword] = useState('');
   const [confPass, setConfPass] = useState('');
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [
     createUserWithEmailAndPassword,
@@ -134,7 +134,7 @@ const ModalStaff = () => {
         saveDataApi(data);
 
         handleClose();
-        navigate('/admin');
+        // navigate('/admin');
       } else {
         alertEmailR.innerHTML = '<span className="red"> Contraseñas Invalida </span>';
       }
