@@ -63,6 +63,30 @@
       "lastname": "Poot",
       "email": "salome@gmail.com",
       "id": 8
+    },
+    {
+      "role": "Admin",
+      "name": "Skarlet",
+      "lastname": "Araque",
+      "email": "skarlet15m@gmail.com",
+      "date": "2022-05-09",
+      "id": 9
+    },
+    {
+      "date": "2022-05-09",
+      "role": "Admin",
+      "name": "Sara",
+      "lastname": "Rojas",
+      "email": "sara@gmail.com",
+      "id": 10
+    },
+    {
+      "date": "2022-05-09",
+      "role": "Mesero",
+      "name": "Juan",
+      "lastname": "Valdez",
+      "email": "juan@gmail.com",
+      "id": 11
     }
   ],
   "adminmenu": [

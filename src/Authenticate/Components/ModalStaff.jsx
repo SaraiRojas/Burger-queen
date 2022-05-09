@@ -98,6 +98,7 @@ const ModalStaff = () => {
     }));
   };
 
+  console.log(data);
   const saveDataFirebase = async (localData, id) => {
     await setDoc(doc(db, 'profile', id), localData);
   };
@@ -176,7 +177,7 @@ const ModalStaff = () => {
               select
               name="role"
               label="Roles"
-              value={data.rol}
+              value={data.role}
               onChange={handleChange}
               variant="standard"
             >
