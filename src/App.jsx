@@ -4,20 +4,18 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { getDoc, doc } from 'firebase/firestore';
 import NotFound from './No-Authenticate/NotFound';
 import LogIn from './No-Authenticate/Login/LogIn';
-import Admin from './Authenticate/views/Admin';
 import { auth, db } from './Firebase/firebase.config';
-import Waiter from './Authenticate/views/Waiter';
 import './App.css';
-import Chef from './Authenticate/views/Chef';
+import PrivateRoute from './PrivateRoute';
 
 const App = () => {
   const [authenticate, setAuthenticate] = useState(null);
-  const [rol, setRol] = useState(null);
+  const [role, setRol] = useState(null);
 
   const getRol = async (uid) => {
     const ref = doc(db, `profile/${uid}`);
     const docSnap = await getDoc(ref);
-    return docSnap.data().rol;
+    return docSnap.data().role;
   };
 
   const updateRol = (user) => {
@@ -44,12 +42,7 @@ const App = () => {
       {
       authenticate
         ? (
-          <Routes>
-            <Route path="/" element={<LogIn />} />
-            <Route path="/admin" element={<Admin rol={rol} authenticate={authenticate} />} />
-            <Route path="/waiter" element={<Waiter rol={rol} authenticate={authenticate} />} />
-            <Route path="/chef" element={<Chef rol={rol} authenticate={authenticate} />} />
-          </Routes>
+          <PrivateRoute role={role} authenticate={authenticate} />
         )
         : (
           <Routes>

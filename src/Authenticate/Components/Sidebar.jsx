@@ -1,20 +1,25 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable arrow-body-style */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Sidebar.module.css';
 
-const Sidebar = ({ rol }) => {
-  if (rol === 'Admin') {
+const Sidebar = ({ role }) => {
+  if (role === 'Admin') {
     return (
       <section className={styles.sidebar}>
         <img className={styles.logoSidebar} src="https://svgshare.com/i/gmq.svg" alt="logo" />
-        <button type="button" className={`${styles.btn} ${styles.btnStaff}`}>Empleados</button>
-        <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Menus</button>
+        <Link to="staff">
+          <button type="button" className={`${styles.btn} ${styles.btnStaff}`}>Empleados</button>
+        </Link>
+        <Link to="menu-desayuno">
+          <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Menus</button>
+        </Link>
       </section>
     );
   }
 
-  if (rol === 'Mesero') {
+  if (role === 'Mesero') {
     return (
       <section className={styles.sidebar}>
         <img className={styles.logoSidebar} src="https://svgshare.com/i/gmq.svg" alt="logo" />
@@ -25,7 +30,7 @@ const Sidebar = ({ rol }) => {
     );
   }
 
-  if (rol === 'Jefe de cocina') {
+  if (role === 'Jefe de cocina') {
     return (
       <section className={styles.sidebar}>
         <img className={styles.logoSidebar} src="https://svgshare.com/i/gmq.svg" alt="logo" />
