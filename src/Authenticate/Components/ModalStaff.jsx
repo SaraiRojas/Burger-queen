@@ -6,11 +6,9 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
-import AddIcon from '@mui/icons-material/Add';
 import MenuItem from '@mui/material/MenuItem';
 import { setDoc, doc } from 'firebase/firestore';
 import { updateCurrentUser } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
 import { auth, db } from '../../Firebase/firebase.config';
 import styles from './ModalStaff.module.css';
 
@@ -28,14 +26,6 @@ const roles = [
     label: 'Jefe de cocina',
   },
 ];
-
-const btnStyle = {
-  bgcolor: 'black',
-  color: '#F3B240',
-  fontWeight: 600,
-  marginTop: '1em',
-  marginRight: '50em',
-};
 
 const style = {
   display: 'flex',
@@ -57,14 +47,12 @@ const styleT = {
   marginBottom: 1,
 };
 
-const ModalStaff = () => {
-  const [data, setData] = useState({}); // No importa que no tenga info, mientras que sea un objecto
-  const [open, setOpen] = useState(false);
+const ModalStaff = ({ open, setOpen }) => {
+  // It does not matter that it has no info, as long as it is an object
+  const [data, setData] = useState({});
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confPass, setConfPass] = useState('');
-
-  const navigate = useNavigate();
 
   const [
     createUserWithEmailAndPassword,
@@ -86,8 +74,7 @@ const ModalStaff = () => {
   if (loading) {
     return console.log('Loading...');
   }
-  // const [textError, setTextError] = useState('');
-  const handleOpen = () => setOpen(true);
+
   const handleClose = () => setOpen(false);
 
   const handleChange = (e) => {
@@ -135,7 +122,6 @@ const ModalStaff = () => {
         saveDataApi(data);
 
         handleClose();
-        navigate('/admin');
       } else {
         alertEmailR.innerHTML = '<span className="red"> Contraseñas Invalida </span>';
       }
@@ -146,10 +132,6 @@ const ModalStaff = () => {
 
   return (
     <section className={styles.modalStaff}>
-      <Button sx={btnStyle} onClick={handleOpen}>
-        <AddIcon />
-        Empleado
-      </Button>
       <Modal
         open={open}
         onClose={handleClose}

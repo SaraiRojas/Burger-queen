@@ -46,7 +46,7 @@ const App = () => {
         )
         : (
           <Routes>
-            <Route path="/" element={<LogIn />} />
+            <Route path="/" element={<LogIn role={role} />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         )

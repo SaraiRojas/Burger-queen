@@ -9,68 +9,12 @@
       "date": "24/01/2022"
     },
     {
-      "id": 2,
-      "role": "Mesero",
-      "name": "Carlos",
-      "lastname": "Delgado",
-      "email": "carlos@gmail.com",
-      "date": "24/02/2022"
-    },
-    {
-      "id": 3,
-      "role": "Mesero",
-      "name": "Diego",
-      "lastname": "Luna",
-      "email": "diego@gmail.com",
-      "date": "5/03/2022"
-    },
-    {
-      "id": 4,
-      "role": "Jefe de cocina",
-      "name": "Ricardo",
-      "lastname": "Mendoza",
-      "email": "ricardo@gmail.com",
-      "date": "5/03/2022"
-    },
-    {
-      "role": "Jefe de Cocina",
-      "name": "Enrique",
-      "lastname": "Lopez",
-      "email": "enrique@gmail.com",
-      "date": "5/03/2022",
-      "id": 5
-    },
-    {
-      "date": "2022-05-04",
-      "role": "Mesero",
-      "name": "Daniel",
-      "lastname": "Rodriguez",
-      "email": "daniel@gmail.com",
-      "id": 6
-    },
-    {
-      "date": "2022-05-06",
-      "role": "Jefe de cocina",
-      "name": "Paola",
-      "lastname": "Guzman",
-      "email": "paola@gmail.com",
-      "id": 7
-    },
-    {
-      "date": "2022-05-06",
-      "role": "Jefe de cocina",
-      "name": "Salome",
-      "lastname": "Poot",
-      "email": "salome@gmail.com",
-      "id": 8
-    },
-    {
       "role": "Admin",
       "name": "Skarlet",
       "lastname": "Araque",
       "email": "skarlet15m@gmail.com",
       "date": "2022-05-09",
-      "id": 9
+      "id": 2
     },
     {
       "date": "2022-05-09",
@@ -78,7 +22,7 @@
       "name": "Sara",
       "lastname": "Rojas",
       "email": "sara@gmail.com",
-      "id": 10
+      "id": 3
     },
     {
       "date": "2022-05-09",
@@ -86,7 +30,31 @@
       "name": "Juan",
       "lastname": "Valdez",
       "email": "juan@gmail.com",
-      "id": 11
+      "id": 4
+    },
+    {
+      "role": "Jefe de cocina",
+      "lastname": "España",
+      "email": "lalo@gmail.com",
+      "date": "2022-05-09",
+      "name": "Lalo",
+      "id": 5
+    },
+    {
+      "date": "2022-05-09",
+      "role": "Jefe de cocina",
+      "name": "Kike",
+      "lastname": "Chan",
+      "email": "kike@gmail.com",
+      "id": 6
+    },
+    {
+      "date": "2022-05-09",
+      "role": "Mesero",
+      "name": "Pepe",
+      "lastname": "Toro",
+      "email": "pepe@gmail.com",
+      "id": 7
     }
   ],
   "adminmenu": [
