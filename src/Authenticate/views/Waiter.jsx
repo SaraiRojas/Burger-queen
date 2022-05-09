@@ -8,7 +8,7 @@ const Waiter = ({ authenticate, role }) => {
   (
     <section className={styles.waiter}>
       <section>
-        <Sidebar rol={role} />
+        <Sidebar role={role} />
       </section>
       <Header authenticate={authenticate} />
     </section>

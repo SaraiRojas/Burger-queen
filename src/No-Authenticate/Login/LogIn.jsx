@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -34,6 +35,13 @@ const LogIn = () => {
     if (expEmail.test(email) && expPassword.test(password)) {
       await signInWithEmailAndPassword(email, password);
       navigate('/admin');
+      // if (role === 'Admin') {
+      //   navigate('/admin');
+      // } else if (role === 'Mesero') {
+      //   navigate('/waiter');
+      // } else if (role === 'Jefe de cocina') {
+      //   navigate('/chef');
+      // }
     } else {
       const alertError = document.createElement('p');
       alertError.innerText = 'Error correo o contraseña invalida';

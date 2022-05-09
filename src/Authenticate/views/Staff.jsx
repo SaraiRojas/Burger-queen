@@ -12,13 +12,14 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import ModalStaff from '../Components/ModalStaff';
+import StaffBtn from '../Components/StaffBtn';
 import styles from './Staff.module.css';
 
 const Staff = () => {
   const [dataStaff, setDataStaff] = useState([]);
   const [modalEdit, setModalEdit] = useState(false);
   const [modalDelete, setModalDelete] = useState(false);
-
+  const [open, setOpen] = useState(false);
   const openCLoseModalEdit = () => {
     setModalEdit(!modalEdit);
   };
@@ -26,6 +27,8 @@ const Staff = () => {
   const openCLoseModalDelete = () => {
     setModalDelete(!modalDelete);
   };
+
+  const handleOpen = () => setOpen(true);
 
   useEffect(() => {
     fetch('http://localhost:3001/empleados')
@@ -68,7 +71,10 @@ const Staff = () => {
 
   return (
     <section className={styles.staff}>
-      <ModalStaff />
+      <div className={styles.staffBtnContainer}>
+        <StaffBtn handleClick={handleOpen} />
+      </div>
+      <ModalStaff open={open} setOpen={setOpen} />
       <main className={styles.main}>
         <TableContainer>
           <Table>
