@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { getDoc, doc } from 'firebase/firestore';
 import NotFound from './No-Authenticate/NotFound';
 import LogIn from './No-Authenticate/Login/LogIn';
@@ -9,7 +9,7 @@ import './App.css';
 import PrivateRoute from './PrivateRoute';
 
 const App = () => {
-  const [authenticate, setAuthenticate] = useState(null);
+  const [authenticate, setAuthenticate] = useState('skip');
   const [role, setRol] = useState(null);
 
   const getRol = async (uid) => {
@@ -29,6 +29,7 @@ const App = () => {
   };
 
   onAuthStateChanged(auth, (user) => {
+    console.log('onc');
     if (user) {
       setAuthenticate(user);
       updateRol(user);
@@ -39,15 +40,29 @@ const App = () => {
 
   return (
     <Router>
+      { console.log(authenticate) }
+      { console.log(role) }
       {
-      authenticate
+      // eslint-disable-next-line no-nested-ternary
+      authenticate !== 'skip'
         ? (
-          <PrivateRoute role={role} authenticate={authenticate} />
+          authenticate
+          // eslint-disable-next-line indent
+          ? (
+            <PrivateRoute role={role} authenticate={authenticate} />
+          // eslint-disable-next-line indent
+          )
+          // eslint-disable-next-line indent
+          : (
+            <Routes>
+              <Route path="/" element={<LogIn role={role} />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            )
         )
         : (
           <Routes>
             <Route path="/" element={<LogIn role={role} />} />
-            <Route path="*" element={<NotFound />} />
           </Routes>
         )
       }

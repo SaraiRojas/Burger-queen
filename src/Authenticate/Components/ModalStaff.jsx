@@ -85,7 +85,6 @@ const ModalStaff = ({ open, setOpen }) => {
     }));
   };
 
-  console.log(data);
   const saveDataFirebase = async (localData, id) => {
     await setDoc(doc(db, 'profile', id), localData);
   };

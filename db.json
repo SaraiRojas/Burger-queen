@@ -39,6 +39,30 @@
       "date": "2022-05-09",
       "name": "Lalo",
       "id": 5
+    },
+    {
+      "date": "2022-05-10",
+      "role": "Mesero",
+      "name": "Kike",
+      "lastname": "Soberanis",
+      "email": "kike@gmail.com",
+      "id": 6
+    },
+    {
+      "date": "2022-05-10",
+      "role": "Admin",
+      "name": "Mago",
+      "lastname": "García",
+      "email": "Mago@gmail.com",
+      "id": 7
+    },
+    {
+      "role": "Mesero",
+      "date": "2022-05-10",
+      "name": "Jaime",
+      "lastname": "Sanchez",
+      "email": "jaime@gmail.com",
+      "id": 8
     }
   ],
   "adminmenu": [

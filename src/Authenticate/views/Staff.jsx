@@ -129,13 +129,13 @@ const Staff = () => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Id</TableCell>
-                <TableCell>Nombre</TableCell>
-                <TableCell>Apellido</TableCell>
-                <TableCell>Rol</TableCell>
-                <TableCell>Correo</TableCell>
-                <TableCell>Fecha de inicio</TableCell>
-                <TableCell>Acciones</TableCell>
+                <TableCell><b>ID</b></TableCell>
+                <TableCell><b>Nombre</b></TableCell>
+                <TableCell><b>Apellido</b></TableCell>
+                <TableCell><b>Rol</b></TableCell>
+                <TableCell><b>Correo</b></TableCell>
+                <TableCell><b>Fecha de Inicio</b></TableCell>
+                <TableCell><b>Acciones</b></TableCell>
               </TableRow>
             </TableHead>
 
