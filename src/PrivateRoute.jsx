@@ -10,9 +10,7 @@ import Waiter from './Authenticate/views/Waiter';
 import Chef from './Authenticate/views/Chef';
 
 const PrivateRoute = ({ role, authenticate }) => {
-  console.log(role);
   if (role === 'Admin') {
-    console.log('estoy en admin');
     return (
       <Routes>
         <Route path="/" element={<LogIn />} />
@@ -26,7 +24,6 @@ const PrivateRoute = ({ role, authenticate }) => {
   }
 
   if (role === 'Mesero') {
-    console.log('estoy en mesero');
     return (
       <Routes>
         <Route path="/" element={<LogIn />} />
@@ -36,7 +33,6 @@ const PrivateRoute = ({ role, authenticate }) => {
   }
 
   if (role === 'Jefe de cocina') {
-    console.log('estoy en jefe de cocina');
     return (
       <Routes>
         <Route path="/" element={<LogIn />} />

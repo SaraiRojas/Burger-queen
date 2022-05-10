@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -5,7 +6,12 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import styles from './Login.module.css';
 import { auth } from '../../Firebase/firebase.config';
 
-const LogIn = () => {
+const LogIn = ({ authenticate }) => {
+  console.log('auth', authenticate);
+  let role;
+  if (authenticate !== null) {
+    role = authenticate[0];
+  }
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -34,14 +40,13 @@ const LogIn = () => {
 
     if (expEmail.test(email) && expPassword.test(password)) {
       await signInWithEmailAndPassword(email, password);
-      navigate('/admin');
-      // if (role === 'Admin') {
-      //   navigate('/admin');
-      // } else if (role === 'Mesero') {
-      //   navigate('/waiter');
-      // } else if (role === 'Jefe de cocina') {
-      //   navigate('/chef');
-      // }
+      if (role === 'Admin') {
+        navigate('/admin');
+      } else if (role === 'Mesero') {
+        navigate('/waiter');
+      } else if (role === 'Jefe de cocina') {
+        navigate('/chef');
+      }
     } else {
       const alertError = document.createElement('p');
       alertError.innerText = 'Error correo o contraseña invalida';

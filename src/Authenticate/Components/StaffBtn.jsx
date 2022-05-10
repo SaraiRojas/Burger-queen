@@ -12,14 +12,11 @@ const btnStyle = {
   width: '10em',
 };
 
-const StaffBtn = ({ handleClick }) => {
-  console.log('btnStaff');
-  return (
-    <Button sx={btnStyle} onClick={handleClick}>
-      <AddIcon />
-      Empleado
-    </Button>
-  );
-};
+const StaffBtn = ({ handleClick }) => (
+  <Button sx={btnStyle} onClick={handleClick}>
+    <AddIcon />
+    Empleado
+  </Button>
+);
 
 export default StaffBtn;

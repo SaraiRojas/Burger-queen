@@ -25,7 +25,7 @@ const Profile = ({ authenticate }) => {
   const open = Boolean(anchorEl);
 
   const navigate = useNavigate();
-
+  console.log(authenticate);
   const handleClose = () => {
     setAnchorEl(null);
   };

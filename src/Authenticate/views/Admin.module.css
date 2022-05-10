@@ -7,6 +7,9 @@
   flex-direction: column;
   width: 75%;
 }
+.adminOutlet {
+  margin-left: 1em;
+}
 
 @media (min-width: 1280px) {
   .main {

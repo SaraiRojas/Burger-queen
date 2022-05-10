@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React, { useEffect, useState } from 'react';
 // import { makeStyles } from '@material-ui/core/styles';
 import Table from '@mui/material/Table';
@@ -11,9 +12,43 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import MenuItem from '@mui/material/MenuItem';
+import Box from '@mui/material/Box';
 import ModalStaff from '../Components/ModalStaff';
 import StaffBtn from '../Components/StaffBtn';
 import styles from './Staff.module.css';
+// import { flexbox } from '@mui/system';
+
+const modal = {
+  display: 'flex',
+  flexDirection: 'column',
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '1px solid #000',
+  borderRadius: 1,
+  boxShadow: 24,
+  p: 4,
+  textAlign: 'center',
+};
+
+const roles = [
+  {
+    value: 'Admin',
+    label: 'Admin',
+  },
+  {
+    value: 'Mesero',
+    label: 'Mesero',
+  },
+  {
+    value: 'Jefe de cocina',
+    label: 'Jefe de cocina',
+  },
+];
 
 const Staff = () => {
   const [dataStaff, setDataStaff] = useState([]);
@@ -21,7 +56,7 @@ const Staff = () => {
   const [modalDelete, setModalDelete] = useState(false);
   const [open, setOpen] = useState(false);
   const [userEdit, setUserEdit] = useState(null);
-  const [dataEdited, setDataEdited] = useState(null);
+  // const [dataEdited, setDataEdited] = useState(null);
 
   const openCLoseModalEdit = () => {
     // setUserEdit('En staff');
@@ -29,30 +64,44 @@ const Staff = () => {
     setModalEdit(!modalEdit);
   };
 
-  const handleChange = (e) => {
+  /*   const handleChange = (e) => {
     const { name, value } = e.target;
     setDataEdited((preState) => ({
       ...preState,
       [name]: value,
     }));
-  };
+  }; */
 
   const openCLoseModalDelete = () => {
     setModalDelete(!modalDelete);
   };
 
-  const getStaff = (empleado) => {
+  const getStaff = (empleado, action) => {
     setUserEdit(empleado);
-    openCLoseModalEdit();
+    (action === 'Edit') ? openCLoseModalEdit() : openCLoseModalDelete();
   };
 
   const handleOpen = () => setOpen(true);
 
-  const editDataApi = (localDataEdit, id) => {
+  const editDataApi = (e, id) => {
+    console.log('entre a editDataApi');
+    console.log(e);
+    const data = e.target.form;
+
+    const employeeData = {
+      date: data[0].value,
+      role: data[2].value,
+      name: data[4].value,
+      lastname: data[6].value,
+      email: data[8].value,
+    };
+
+    console.log(employeeData);
+
     const requestOption = {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(localDataEdit),
+      body: JSON.stringify(employeeData),
     };
 
     fetch(`http://localhost:3001/empleados/${id}`, requestOption)
@@ -61,44 +110,25 @@ const Staff = () => {
     openCLoseModalEdit();
   };
 
+  const deleteDataApi = (id) => {
+    const requestOption = {
+      method: 'DELETE',
+    };
+
+    fetch(`http://localhost:3001/empleados/${id}`, requestOption)
+      .then((response) => response.json())
+      .then(() => {
+        setDataStaff(dataStaff.filter((staff) => staff.id !== userEdit.id));
+      })
+      .catch((err) => console.log(err));
+    openCLoseModalDelete();
+  };
+
   useEffect(() => {
     fetch('http://localhost:3001/empleados')
       .then((response) => response.json())
       .then((data) => setDataStaff(data));
   }, []);
-
-  const bodyEdit = (
-    <div>
-      <h3>Editar</h3>
-      <TextField name="date" label="Fecha de Inicio" type="date" defaultValue={userEdit && userEdit.date} onChange={handleChange} />
-      <br />
-      <TextField name="role" label="Rol" defaultValue={userEdit && userEdit.role} onChange={handleChange} />
-      <br />
-      <TextField name="name" label="Nombre" defaultValue={userEdit && userEdit.name} onChange={handleChange} />
-      <br />
-      <TextField name="lastname" label="Apellido" defaultValue={userEdit && userEdit.lastname} onChange={handleChange} />
-      <br />
-      <TextField name="email" label="Email" defaultValue={userEdit && userEdit.email} onChange={handleChange} />
-      <br />
-      <div align="right">
-        <Button color="primary" onClick={() => editDataApi(dataEdited, userEdit.id)}>Guardar</Button>
-        <Button onClick={() => openCLoseModalEdit()}>Cancelar</Button>
-      </div>
-    </div>
-  );
-
-  const bodyDelete = (
-    <div>
-      <p>
-        Estás seguro que deseas eliminar la consola
-      </p>
-      <div align="right">
-        <Button color="secondary">Sí</Button>
-        <Button onClick={() => openCLoseModalDelete()}>No</Button>
-      </div>
-
-    </div>
-  );
 
   return (
     <section className={styles.staff}>
@@ -111,13 +141,13 @@ const Staff = () => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Id</TableCell>
-                <TableCell>Nombre</TableCell>
-                <TableCell>Apellido</TableCell>
-                <TableCell>Rol</TableCell>
-                <TableCell>Correo</TableCell>
-                <TableCell>Fecha de inicio</TableCell>
-                <TableCell>Acciones</TableCell>
+                <TableCell><b>ID</b></TableCell>
+                <TableCell><b>Nombre</b></TableCell>
+                <TableCell><b>Apellido</b></TableCell>
+                <TableCell><b>Rol</b></TableCell>
+                <TableCell><b>Correo</b></TableCell>
+                <TableCell><b>Fecha de Inicio</b></TableCell>
+                <TableCell><b>Acciones</b></TableCell>
               </TableRow>
             </TableHead>
 
@@ -131,9 +161,9 @@ const Staff = () => {
                   <TableCell>{empleado.email}</TableCell>
                   <TableCell>{empleado.date}</TableCell>
                   <TableCell>
-                    <EditIcon onClick={() => getStaff(empleado)} />
+                    <EditIcon onClick={() => getStaff(empleado, 'Edit')} />
                     &nbsp;&nbsp;&nbsp;
-                    <DeleteIcon onClick={openCLoseModalDelete} />
+                    <DeleteIcon onClick={() => getStaff(empleado, 'Delete')} />
                   </TableCell>
                 </TableRow>
               ))}
@@ -145,14 +175,91 @@ const Staff = () => {
           open={modalEdit}
           onClose={openCLoseModalEdit}
         >
-          {bodyEdit}
+          <form>
+            <Box sx={modal}>
+              <h3>Editar</h3>
+              <TextField
+                id="date"
+                name="date"
+                label="Fecha de inicio"
+                type="date"
+                sx={{ width: 220 }}
+                defaultValue={userEdit && userEdit.date}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
+              <br />
+              <TextField
+                id="standard-select-currency"
+                select
+                name="role"
+                label="Roles"
+                defaultValue={userEdit && userEdit.role}
+                variant="standard"
+              >
+                {roles.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+              <br />
+              <TextField
+                required
+                id="standard-required"
+                name="name"
+                label="Nombre"
+                variant="standard"
+                defaultValue={userEdit && userEdit.name}
+              />
+              <br />
+              <TextField
+                required
+                id="standard-required"
+                name="lastname"
+                label="Apellido"
+                variant="standard"
+                defaultValue={userEdit && userEdit.lastname}
+              />
+              <br />
+              <TextField
+                id="standard-email-input"
+                label="Email"
+                name="email"
+                type="email"
+                autoComplete="current-email"
+                variant="standard"
+                defaultValue={userEdit && userEdit.email}
+              />
+              <br />
+              <br />
+              <div align="right">
+                <Button type="submit" color="primary" onClick={(e) => editDataApi(e, userEdit.id)}>Guardar</Button>
+                <Button onClick={() => openCLoseModalEdit()}>Cancelar</Button>
+              </div>
+            </Box>
+          </form>
         </Modal>
 
         <Modal
           open={modalDelete}
           onClose={openCLoseModalDelete}
         >
-          {bodyDelete}
+          <Box sx={modal}>
+            <div>
+              <p>
+                Estás seguro que deseas eliminar a
+                <br />
+                <span>{userEdit && userEdit.name}</span>
+                ?
+              </p>
+              <div align="right">
+                <Button color="secondary" onClick={() => deleteDataApi(userEdit.id)}>Sí</Button>
+                <Button onClick={() => openCLoseModalDelete()}>No</Button>
+              </div>
+            </div>
+          </Box>
         </Modal>
       </main>
     </section>

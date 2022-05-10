@@ -41,19 +41,19 @@
       "id": 5
     },
     {
-      "date": "2022-05-09",
-      "role": "Jefe de cocina",
+      "date": "2022-05-10",
+      "role": "Mesero",
       "name": "Kike",
-      "lastname": "Chan",
+      "lastname": "Soberanis",
       "email": "kike@gmail.com",
       "id": 6
     },
     {
-      "date": "2022-05-09",
-      "role": "Mesero",
-      "name": "Pepe",
-      "lastname": "Toro",
-      "email": "pepe@gmail.com",
+      "date": "2022-05-10",
+      "role": "Admin",
+      "name": "Mago",
+      "lastname": "García",
+      "email": "Mago@gmail.com",
       "id": 7
     }
   ],
