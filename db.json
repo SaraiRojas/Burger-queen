@@ -101,6 +101,14 @@
       "lastname": "Mendoza",
       "email": "reb@correo.com",
       "id": 13
+    },
+    {
+      "date": "2022-05-11",
+      "role": "Mesero",
+      "name": "Sam",
+      "lastname": "Rodriguez",
+      "email": "sam@correo.com",
+      "id": 14
     }
   ],
   "adminmenu": [
