@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -10,6 +11,7 @@ import PrivateRoute from './PrivateRoute';
 
 const App = () => {
   const [authenticate, setAuthenticate] = useState('skip');
+  const [role, setRol] = useState(null);
 
   const getRol = async (uid) => {
     const ref = doc(db, `profile/${uid}`);
@@ -20,7 +22,7 @@ const App = () => {
   const updateRol = (user) => {
     getRol(user.uid)
       .then((useRol) => {
-        setAuthenticate([useRol, user]);
+        setRol(useRol);
       })
       .catch((error) => {
         console.log(error);
@@ -30,6 +32,7 @@ const App = () => {
   onAuthStateChanged(auth, (user) => {
     console.log('onc');
     if (user) {
+      setAuthenticate(user);
       updateRol(user);
     } else {
       setAuthenticate(null);
@@ -39,29 +42,26 @@ const App = () => {
   return (
     <Router>
       { console.log(authenticate) }
+      { console.log(role) }
       {
-      // eslint-disable-next-line no-nested-ternary
-      authenticate !== 'skip'
-        ? (
-          authenticate
-          // eslint-disable-next-line indent
+        authenticate !== 'skip'
           ? (
-            <PrivateRoute role={authenticate[0]} authenticate={authenticate[1]} />
-          // eslint-disable-next-line indent
+            authenticate
+              ? (
+                <PrivateRoute role={role} authenticate={authenticate} />
+              )
+              : (
+                <Routes>
+                  <Route path="/" element={<LogIn role={role} />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              )
           )
-          // eslint-disable-next-line indent
           : (
             <Routes>
-              <Route path="/" element={<LogIn authenticate={authenticate} />} />
-              <Route path="*" element={<NotFound />} />
+              <Route path="/" element={<LogIn role={role} />} />
             </Routes>
-            )
-        )
-        : (
-          <Routes>
-            <Route path="/" element={<LogIn authenticate={authenticate} />} />
-          </Routes>
-        )
+          )
       }
     </Router>
   );

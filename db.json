@@ -1,12 +1,12 @@
 {
   "empleados": [
     {
-      "id": 1,
+      "date": "2022-05-06",
       "role": "Admin",
       "name": "Maggie",
       "lastname": "Sarmiento",
       "email": "gsmaggie001@gmail.com",
-      "date": "24/01/2022"
+      "id": 1
     },
     {
       "role": "Admin",
@@ -52,7 +52,7 @@
       "date": "2022-05-10",
       "role": "Admin",
       "name": "Mago",
-      "lastname": "García",
+      "lastname": "Sarmiento",
       "email": "Mago@gmail.com",
       "id": 7
     }

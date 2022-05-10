@@ -6,12 +6,12 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import styles from './Login.module.css';
 import { auth } from '../../Firebase/firebase.config';
 
-const LogIn = ({ authenticate }) => {
-  console.log('auth', authenticate);
-  let role;
-  if (authenticate !== null) {
-    role = authenticate[0];
-  }
+const LogIn = () => {
+  // console.log('auth', authenticate);
+  // let role;
+  // if (authenticate !== null) {
+  //   role = authenticate[0];
+  // }
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -40,13 +40,14 @@ const LogIn = ({ authenticate }) => {
 
     if (expEmail.test(email) && expPassword.test(password)) {
       await signInWithEmailAndPassword(email, password);
-      if (role === 'Admin') {
-        navigate('/admin');
-      } else if (role === 'Mesero') {
-        navigate('/waiter');
-      } else if (role === 'Jefe de cocina') {
-        navigate('/chef');
-      }
+      navigate('/admin');
+      // if (role === 'Admin') {
+      //   navigate('/admin');
+      // } else if (role === 'Mesero') {
+      //   navigate('/waiter');
+      // } else if (role === 'Jefe de cocina') {
+      //   navigate('/chef');
+      // }
     } else {
       const alertError = document.createElement('p');
       alertError.innerText = 'Error correo o contraseña invalida';

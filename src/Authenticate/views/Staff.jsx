@@ -85,15 +85,17 @@ const Staff = () => {
 
   const editDataApi = (e, id) => {
     console.log('entre a editDataApi');
-    console.log(e);
+    console.log(e.target);
+    console.log(id);
     const data = e.target.form;
+    console.log(data);
 
     const employeeData = {
       date: data[0].value,
       role: data[2].value,
-      name: data[4].value,
-      lastname: data[6].value,
-      email: data[8].value,
+      name: data[3].value,
+      lastname: data[4].value,
+      email: data[5].value,
     };
 
     console.log(employeeData);
@@ -123,6 +125,76 @@ const Staff = () => {
       .catch((err) => console.log(err));
     openCLoseModalDelete();
   };
+
+  const bodyEdit = (
+    <form>
+      <h3>Editar</h3>
+      <TextField
+        id="date"
+        name="date"
+        label="Fecha de inicio"
+        type="date"
+        sx={{ width: 300 }}
+        defaultValue={userEdit && userEdit.date}
+        InputLabelProps={{
+          shrink: true,
+        }}
+      />
+      <br />
+      <TextField
+        id="standard-select-currency"
+        select
+        name="role"
+        label="Roles"
+        defaultValue={userEdit && userEdit.role}
+        variant="standard"
+        sx={{ width: 300 }}
+      >
+        {roles.map((option) => (
+          <MenuItem key={option.value} value={option.value}>
+            {option.label}
+          </MenuItem>
+        ))}
+      </TextField>
+      <br />
+      <TextField
+        required
+        id="standard-required"
+        name="name"
+        label="Nombre"
+        variant="standard"
+        defaultValue={userEdit && userEdit.name}
+        sx={{ width: 300 }}
+      />
+      <br />
+      <TextField
+        required
+        id="standard-required"
+        name="lastname"
+        label="Apellido"
+        variant="standard"
+        defaultValue={userEdit && userEdit.lastname}
+        sx={{ width: 300 }}
+      />
+      <br />
+      <TextField
+        id="standard-email-input"
+        label="Email"
+        name="email"
+        type="email"
+        autoComplete="current-email"
+        variant="standard"
+        defaultValue={userEdit && userEdit.email}
+        sx={{ width: 300 }}
+      />
+      <br />
+      <br />
+      <div align="right">
+        <Button type="submit" color="primary" onClick={(e) => editDataApi(e, userEdit.id)}>Guardar</Button>
+        <Button type="button" onClick={() => openCLoseModalEdit()}>Cancelar</Button>
+      </div>
+    </form>
+  );
 
   useEffect(() => {
     fetch('http://localhost:3001/empleados')
@@ -175,71 +247,9 @@ const Staff = () => {
           open={modalEdit}
           onClose={openCLoseModalEdit}
         >
-          <form>
-            <Box sx={modal}>
-              <h3>Editar</h3>
-              <TextField
-                id="date"
-                name="date"
-                label="Fecha de inicio"
-                type="date"
-                sx={{ width: 220 }}
-                defaultValue={userEdit && userEdit.date}
-                InputLabelProps={{
-                  shrink: true,
-                }}
-              />
-              <br />
-              <TextField
-                id="standard-select-currency"
-                select
-                name="role"
-                label="Roles"
-                defaultValue={userEdit && userEdit.role}
-                variant="standard"
-              >
-                {roles.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
-              <br />
-              <TextField
-                required
-                id="standard-required"
-                name="name"
-                label="Nombre"
-                variant="standard"
-                defaultValue={userEdit && userEdit.name}
-              />
-              <br />
-              <TextField
-                required
-                id="standard-required"
-                name="lastname"
-                label="Apellido"
-                variant="standard"
-                defaultValue={userEdit && userEdit.lastname}
-              />
-              <br />
-              <TextField
-                id="standard-email-input"
-                label="Email"
-                name="email"
-                type="email"
-                autoComplete="current-email"
-                variant="standard"
-                defaultValue={userEdit && userEdit.email}
-              />
-              <br />
-              <br />
-              <div align="right">
-                <Button type="submit" color="primary" onClick={(e) => editDataApi(e, userEdit.id)}>Guardar</Button>
-                <Button onClick={() => openCLoseModalEdit()}>Cancelar</Button>
-              </div>
-            </Box>
-          </form>
+          <Box sx={modal}>
+            {bodyEdit}
+          </Box>
         </Modal>
 
         <Modal
