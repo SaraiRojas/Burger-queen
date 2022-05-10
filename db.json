@@ -39,22 +39,6 @@
       "date": "2022-05-09",
       "name": "Lalo",
       "id": 5
-    },
-    {
-      "date": "2022-05-09",
-      "role": "Jefe de cocina",
-      "name": "Kike",
-      "lastname": "Chan",
-      "email": "kike@gmail.com",
-      "id": 6
-    },
-    {
-      "date": "2022-05-09",
-      "role": "Mesero",
-      "name": "Pepe",
-      "lastname": "Toro",
-      "email": "pepe@gmail.com",
-      "id": 7
     }
   ],
   "adminmenu": [

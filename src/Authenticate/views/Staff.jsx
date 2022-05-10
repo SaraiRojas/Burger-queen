@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React, { useEffect, useState } from 'react';
 // import { makeStyles } from '@material-ui/core/styles';
 import Table from '@mui/material/Table';
@@ -41,9 +42,9 @@ const Staff = () => {
     setModalDelete(!modalDelete);
   };
 
-  const getStaff = (empleado) => {
+  const getStaff = (empleado, action) => {
     setUserEdit(empleado);
-    openCLoseModalEdit();
+    (action === 'Edit') ? openCLoseModalEdit() : openCLoseModalDelete();
   };
 
   const handleOpen = () => setOpen(true);
@@ -59,6 +60,20 @@ const Staff = () => {
       .then((response) => response.json())
       .catch((err) => console.log(err));
     openCLoseModalEdit();
+  };
+
+  const deleteDataApi = (id) => {
+    const requestOption = {
+      method: 'DELETE',
+    };
+
+    fetch(`http://localhost:3001/empleados/${id}`, requestOption)
+      .then((response) => response.json())
+      .then(() => {
+        setDataStaff(dataStaff.filter((staff) => staff.id !== userEdit.id));
+      })
+      .catch((err) => console.log(err));
+    openCLoseModalDelete();
   };
 
   useEffect(() => {
@@ -90,10 +105,13 @@ const Staff = () => {
   const bodyDelete = (
     <div>
       <p>
-        Estás seguro que deseas eliminar la consola
+        Estás seguro que deseas eliminar a
+        <br />
+        <span>{userEdit && userEdit.name}</span>
+        ?
       </p>
       <div align="right">
-        <Button color="secondary">Sí</Button>
+        <Button color="secondary" onClick={() => deleteDataApi(userEdit.id)}>Sí</Button>
         <Button onClick={() => openCLoseModalDelete()}>No</Button>
       </div>
 
@@ -131,9 +149,9 @@ const Staff = () => {
                   <TableCell>{empleado.email}</TableCell>
                   <TableCell>{empleado.date}</TableCell>
                   <TableCell>
-                    <EditIcon onClick={() => getStaff(empleado)} />
+                    <EditIcon onClick={() => getStaff(empleado, 'Edit')} />
                     &nbsp;&nbsp;&nbsp;
-                    <DeleteIcon onClick={openCLoseModalDelete} />
+                    <DeleteIcon onClick={() => getStaff(empleado, 'Delete')} />
                   </TableCell>
                 </TableRow>
               ))}
