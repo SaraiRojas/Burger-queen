@@ -10,7 +10,6 @@ import PrivateRoute from './PrivateRoute';
 
 const App = () => {
   const [authenticate, setAuthenticate] = useState('skip');
-  const [role, setRol] = useState(null);
 
   const getRol = async (uid) => {
     const ref = doc(db, `profile/${uid}`);
@@ -21,7 +20,7 @@ const App = () => {
   const updateRol = (user) => {
     getRol(user.uid)
       .then((useRol) => {
-        setRol(useRol);
+        setAuthenticate([useRol, user]);
       })
       .catch((error) => {
         console.log(error);
@@ -31,7 +30,6 @@ const App = () => {
   onAuthStateChanged(auth, (user) => {
     console.log('onc');
     if (user) {
-      setAuthenticate(user);
       updateRol(user);
     } else {
       setAuthenticate(null);
@@ -41,7 +39,6 @@ const App = () => {
   return (
     <Router>
       { console.log(authenticate) }
-      { console.log(role) }
       {
       // eslint-disable-next-line no-nested-ternary
       authenticate !== 'skip'
@@ -49,20 +46,20 @@ const App = () => {
           authenticate
           // eslint-disable-next-line indent
           ? (
-            <PrivateRoute role={role} authenticate={authenticate} />
+            <PrivateRoute role={authenticate[0]} authenticate={authenticate[1]} />
           // eslint-disable-next-line indent
           )
           // eslint-disable-next-line indent
           : (
             <Routes>
-              <Route path="/" element={<LogIn role={role} />} />
+              <Route path="/" element={<LogIn authenticate={authenticate} />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             )
         )
         : (
           <Routes>
-            <Route path="/" element={<LogIn role={role} />} />
+            <Route path="/" element={<LogIn authenticate={authenticate} />} />
           </Routes>
         )
       }

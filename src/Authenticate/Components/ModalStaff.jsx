@@ -8,7 +8,7 @@ import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import { setDoc, doc } from 'firebase/firestore';
-import { updateCurrentUser } from 'firebase/auth';
+import { updateCurrentUser, updateProfile } from 'firebase/auth';
 import { auth, db } from '../../Firebase/firebase.config';
 import styles from './ModalStaff.module.css';
 
@@ -119,6 +119,10 @@ const ModalStaff = ({ open, setOpen }) => {
 
         await saveDataFirebase(data, uid); // saves info of created user
         saveDataApi(data);
+
+        await updateProfile(auth.currentUser, {
+          displayName: data.name,
+        });
 
         handleClose();
       } else {

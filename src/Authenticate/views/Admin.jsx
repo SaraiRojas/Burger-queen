@@ -12,7 +12,7 @@ const Admin = ({ role, authenticate }) => (
     </section>
     <main className={styles.main}>
       <Header authenticate={authenticate} />
-      <div>
+      <div className={styles.adminOutlet}>
         <Outlet />
       </div>
     </main>

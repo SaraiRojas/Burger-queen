@@ -56,7 +56,7 @@ const Staff = () => {
   const [modalDelete, setModalDelete] = useState(false);
   const [open, setOpen] = useState(false);
   const [userEdit, setUserEdit] = useState(null);
-  const [dataEdited, setDataEdited] = useState(null);
+  // const [dataEdited, setDataEdited] = useState(null);
 
   const openCLoseModalEdit = () => {
     // setUserEdit('En staff');
@@ -64,13 +64,13 @@ const Staff = () => {
     setModalEdit(!modalEdit);
   };
 
-  const handleChange = (e) => {
+  /*   const handleChange = (e) => {
     const { name, value } = e.target;
     setDataEdited((preState) => ({
       ...preState,
       [name]: value,
     }));
-  };
+  }; */
 
   const openCLoseModalDelete = () => {
     setModalDelete(!modalDelete);
@@ -83,11 +83,25 @@ const Staff = () => {
 
   const handleOpen = () => setOpen(true);
 
-  const editDataApi = (localDataEdit, id) => {
+  const editDataApi = (e, id) => {
+    console.log('entre a editDataApi');
+    console.log(e);
+    const data = e.target.form;
+
+    const employeeData = {
+      date: data[0].value,
+      role: data[2].value,
+      name: data[4].value,
+      lastname: data[6].value,
+      email: data[8].value,
+    };
+
+    console.log(employeeData);
+
     const requestOption = {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(localDataEdit),
+      body: JSON.stringify(employeeData),
     };
 
     fetch(`http://localhost:3001/empleados/${id}`, requestOption)
@@ -115,22 +129,6 @@ const Staff = () => {
       .then((response) => response.json())
       .then((data) => setDataStaff(data));
   }, []);
-
-  const bodyDelete = (
-    <div>
-      <p>
-        Estás seguro que deseas eliminar a
-        <br />
-        <span>{userEdit && userEdit.name}</span>
-        ?
-      </p>
-      <div align="right">
-        <Button color="secondary" onClick={() => deleteDataApi(userEdit.id)}>Sí</Button>
-        <Button onClick={() => openCLoseModalDelete()}>No</Button>
-      </div>
-
-    </div>
-  );
 
   return (
     <section className={styles.staff}>
@@ -187,7 +185,6 @@ const Staff = () => {
                 type="date"
                 sx={{ width: 220 }}
                 defaultValue={userEdit && userEdit.date}
-                onChange={handleChange}
                 InputLabelProps={{
                   shrink: true,
                 }}
@@ -199,7 +196,6 @@ const Staff = () => {
                 name="role"
                 label="Roles"
                 defaultValue={userEdit && userEdit.role}
-                onChange={handleChange}
                 variant="standard"
               >
                 {roles.map((option) => (
@@ -216,7 +212,6 @@ const Staff = () => {
                 label="Nombre"
                 variant="standard"
                 defaultValue={userEdit && userEdit.name}
-                onChange={handleChange}
               />
               <br />
               <TextField
@@ -226,7 +221,6 @@ const Staff = () => {
                 label="Apellido"
                 variant="standard"
                 defaultValue={userEdit && userEdit.lastname}
-                onChange={handleChange}
               />
               <br />
               <TextField
@@ -237,12 +231,11 @@ const Staff = () => {
                 autoComplete="current-email"
                 variant="standard"
                 defaultValue={userEdit && userEdit.email}
-                onChange={handleChange}
               />
               <br />
               <br />
               <div align="right">
-                <Button color="primary" onClick={() => editDataApi(dataEdited, userEdit.id)}>Guardar</Button>
+                <Button type="submit" color="primary" onClick={(e) => editDataApi(e, userEdit.id)}>Guardar</Button>
                 <Button onClick={() => openCLoseModalEdit()}>Cancelar</Button>
               </div>
             </Box>
@@ -253,7 +246,20 @@ const Staff = () => {
           open={modalDelete}
           onClose={openCLoseModalDelete}
         >
-          {bodyDelete}
+          <Box sx={modal}>
+            <div>
+              <p>
+                Estás seguro que deseas eliminar a
+                <br />
+                <span>{userEdit && userEdit.name}</span>
+                ?
+              </p>
+              <div align="right">
+                <Button color="secondary" onClick={() => deleteDataApi(userEdit.id)}>Sí</Button>
+                <Button onClick={() => openCLoseModalDelete()}>No</Button>
+              </div>
+            </div>
+          </Box>
         </Modal>
       </main>
     </section>

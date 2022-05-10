@@ -55,14 +55,6 @@
       "lastname": "García",
       "email": "Mago@gmail.com",
       "id": 7
-    },
-    {
-      "role": "Mesero",
-      "date": "2022-05-10",
-      "name": "Jaime",
-      "lastname": "Sanchez",
-      "email": "jaime@gmail.com",
-      "id": 8
     }
   ],
   "adminmenu": [
