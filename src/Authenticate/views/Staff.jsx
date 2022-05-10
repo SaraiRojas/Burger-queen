@@ -12,9 +12,43 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import MenuItem from '@mui/material/MenuItem';
+import Box from '@mui/material/Box';
 import ModalStaff from '../Components/ModalStaff';
 import StaffBtn from '../Components/StaffBtn';
 import styles from './Staff.module.css';
+// import { flexbox } from '@mui/system';
+
+const modal = {
+  display: 'flex',
+  flexDirection: 'column',
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '1px solid #000',
+  borderRadius: 1,
+  boxShadow: 24,
+  p: 4,
+  textAlign: 'center',
+};
+
+const roles = [
+  {
+    value: 'Admin',
+    label: 'Admin',
+  },
+  {
+    value: 'Mesero',
+    label: 'Mesero',
+  },
+  {
+    value: 'Jefe de cocina',
+    label: 'Jefe de cocina',
+  },
+];
 
 const Staff = () => {
   const [dataStaff, setDataStaff] = useState([]);
@@ -82,26 +116,6 @@ const Staff = () => {
       .then((data) => setDataStaff(data));
   }, []);
 
-  const bodyEdit = (
-    <div>
-      <h3>Editar</h3>
-      <TextField name="date" label="Fecha de Inicio" type="date" defaultValue={userEdit && userEdit.date} onChange={handleChange} />
-      <br />
-      <TextField name="role" label="Rol" defaultValue={userEdit && userEdit.role} onChange={handleChange} />
-      <br />
-      <TextField name="name" label="Nombre" defaultValue={userEdit && userEdit.name} onChange={handleChange} />
-      <br />
-      <TextField name="lastname" label="Apellido" defaultValue={userEdit && userEdit.lastname} onChange={handleChange} />
-      <br />
-      <TextField name="email" label="Email" defaultValue={userEdit && userEdit.email} onChange={handleChange} />
-      <br />
-      <div align="right">
-        <Button color="primary" onClick={() => editDataApi(dataEdited, userEdit.id)}>Guardar</Button>
-        <Button onClick={() => openCLoseModalEdit()}>Cancelar</Button>
-      </div>
-    </div>
-  );
-
   const bodyDelete = (
     <div>
       <p>
@@ -163,7 +177,76 @@ const Staff = () => {
           open={modalEdit}
           onClose={openCLoseModalEdit}
         >
-          {bodyEdit}
+          <form>
+            <Box sx={modal}>
+              <h3>Editar</h3>
+              <TextField
+                id="date"
+                name="date"
+                label="Fecha de inicio"
+                type="date"
+                sx={{ width: 220 }}
+                defaultValue={userEdit && userEdit.date}
+                onChange={handleChange}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
+              <br />
+              <TextField
+                id="standard-select-currency"
+                select
+                name="role"
+                label="Roles"
+                defaultValue={userEdit && userEdit.role}
+                onChange={handleChange}
+                variant="standard"
+              >
+                {roles.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+              <br />
+              <TextField
+                required
+                id="standard-required"
+                name="name"
+                label="Nombre"
+                variant="standard"
+                defaultValue={userEdit && userEdit.name}
+                onChange={handleChange}
+              />
+              <br />
+              <TextField
+                required
+                id="standard-required"
+                name="lastname"
+                label="Apellido"
+                variant="standard"
+                defaultValue={userEdit && userEdit.lastname}
+                onChange={handleChange}
+              />
+              <br />
+              <TextField
+                id="standard-email-input"
+                label="Email"
+                name="email"
+                type="email"
+                autoComplete="current-email"
+                variant="standard"
+                defaultValue={userEdit && userEdit.email}
+                onChange={handleChange}
+              />
+              <br />
+              <br />
+              <div align="right">
+                <Button color="primary" onClick={() => editDataApi(dataEdited, userEdit.id)}>Guardar</Button>
+                <Button onClick={() => openCLoseModalEdit()}>Cancelar</Button>
+              </div>
+            </Box>
+          </form>
         </Modal>
 
         <Modal
