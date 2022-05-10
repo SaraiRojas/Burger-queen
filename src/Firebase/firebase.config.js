@@ -3,12 +3,12 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyBeAxZdrdC5Ckyudbb7qjX-AW4U8DSgEWQ',
-  authDomain: 'burgerqueen-1d9a5.firebaseapp.com',
-  projectId: 'burgerqueen-1d9a5',
-  storageBucket: 'burgerqueen-1d9a5.appspot.com',
-  messagingSenderId: '774027320411',
-  appId: '1:774027320411:web:09a3892165c36a7eac337e',
+  apiKey: 'AIzaSyAuNsYEp5MGfJ7lAX2qAG-ZzkiDtOPilCk',
+  authDomain: 'bqra-166dc.firebaseapp.com',
+  projectId: 'bqra-166dc',
+  storageBucket: 'bqra-166dc.appspot.com',
+  messagingSenderId: '711622033791',
+  appId: '1:711622033791:web:5fa0f67748ffa3a0acda4a',
 };
 
 // Initialize Firebase
