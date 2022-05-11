@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 import React from 'react';
 import Box from '@mui/material/Box';
-import styles from './CardMenu.module.css';
+import styles from './CardMenuLunch.module.css';
 
 const theme = createTheme({
   components: {
@@ -36,7 +36,7 @@ const theme = createTheme({
   },
 });
 
-const CardMenu = ({ product }) => {
+const CardMenuLunch = ({ product }) => {
   console.log('hola');
   return (
     <Grid item xs={4} md={3}>
@@ -73,7 +73,7 @@ const CardMenu = ({ product }) => {
             >
               <Typography variant="h6" component="h2" marginTop={0}>
                 $
-                {product.precio}
+                {product.price}
                 pesos
               </Typography>
             </Box>
@@ -84,4 +84,4 @@ const CardMenu = ({ product }) => {
   );
 };
 
-export default CardMenu;
+export default CardMenuLunch;

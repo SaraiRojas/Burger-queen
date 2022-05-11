@@ -36,7 +36,7 @@ const theme = createTheme({
   },
 });
 
-const CardMenuLunch = ({ product }) => {
+const CardMenu = ({ product }) => {
   console.log('hola');
   return (
     <Grid item xs={4} md={3}>
@@ -72,9 +72,9 @@ const CardMenuLunch = ({ product }) => {
               }}
             >
               <Typography variant="h6" component="h2" marginTop={0}>
-                $
-                {product.precio}
-                pesos
+                $&nbsp;
+                {product.price}
+                &nbsp;MXN
               </Typography>
             </Box>
           </Box>
@@ -84,4 +84,4 @@ const CardMenuLunch = ({ product }) => {
   );
 };
 
-export default CardMenuLunch;
+export default CardMenu;
