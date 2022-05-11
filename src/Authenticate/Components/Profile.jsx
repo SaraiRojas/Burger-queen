@@ -24,8 +24,10 @@ const Profile = ({ authenticate }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
-  const navigate = useNavigate();
   console.log(authenticate);
+
+  const navigate = useNavigate();
+
   const handleClose = () => {
     setAnchorEl(null);
   };
