@@ -57,30 +57,78 @@
       "id": 7
     }
   ],
-  "adminmenu": [
+  "menu": [
     {
       "id": 1,
-      "producto": "Cafe con leche",
+      "name": "Cafe con leche",
       "precio": 7.8,
-      "lastname": "Sarmiento"
+      "popularity": 3.5,
+      "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
     },
     {
       "id": 1,
-      "producto": "Cafe",
+      "name": "Cafe",
       "precio": 7,
-      "lastname": "Sarmiento"
+      "popularity": 5,
+      "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
     },
     {
       "id": 1,
-      "producto": "Jugo de Naranja",
+      "name": "Jugo de Naranja",
       "precio": 7.8,
-      "lastname": "Sarmiento"
+      "popularity": 4,
+      "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
     },
     {
       "id": 1,
-      "producto": "Sandwich",
+      "name": "Sandwich",
       "precio": 11,
-      "lastname": "Sarmiento"
+      "popularity": 4.8,
+      "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
+    }
+  ],
+  "menuLunch": [
+    {
+      "id": 1,
+      "name": "Hamburguesa Simple",
+      "precio": 10.00,
+      "popularity": 4,
+      "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Hamburguesa Doble",
+      "precio": 15.00,
+      "popularity": 5,
+      "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Papas Fritas",
+      "precio": 5.00,
+      "popularity": 4,
+      "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Aros de cebolla",
+      "precio": 11,
+      "popularity": 5.00,
+      "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Agua 500ml",
+      "precio": 5.00,
+      "popularity": 5,
+      "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Refresco 500ml",
+      "precio": 7.00,
+      "popularity": 4,
+      "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
     }
   ]
 }

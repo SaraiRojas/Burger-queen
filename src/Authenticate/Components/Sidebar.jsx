@@ -12,8 +12,11 @@ const Sidebar = ({ role }) => {
         <Link to="staff">
           <button type="button" className={`${styles.btn} ${styles.btnStaff}`}>Empleados</button>
         </Link>
-        <Link to="menu-desayuno">
-          <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Menus</button>
+        <Link to="menu">
+          <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Menu Desayuno</button>
+        </Link>
+        <Link to="menu-lunch">
+          <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Menu Vespertino</button>
         </Link>
       </section>
     );
@@ -23,9 +26,21 @@ const Sidebar = ({ role }) => {
     return (
       <section className={styles.sidebar}>
         <img className={styles.logoSidebar} src="https://svgshare.com/i/gmq.svg" alt="logo" />
-        <button type="button" className={`${styles.btn} ${styles.btnStaff}`}>Menus</button>
-        <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Pedidos</button>
-        <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Servir</button>
+        <Link to="menu">
+          <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Menu Desayuno</button>
+        </Link>
+        <Link to="menuLunch">
+          <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Menu Almuerzo</button>
+        </Link>
+        <Link to="order">
+          <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Pedidos</button>
+        </Link>
+        <Link to="toserve">
+          <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Servir</button>
+        </Link>
+        <Link to="list-order">
+          <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Lista Pedidos</button>
+        </Link>
       </section>
     );
   }
@@ -34,8 +49,12 @@ const Sidebar = ({ role }) => {
     return (
       <section className={styles.sidebar}>
         <img className={styles.logoSidebar} src="https://svgshare.com/i/gmq.svg" alt="logo" />
-        <button type="button" className={`${styles.btn} ${styles.btnStaff}`}>Pedidos</button>
-        <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Servir</button>
+        <Link to="order">
+          <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Pedidos</button>
+        </Link>
+        <Link to="toserve">
+          <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Servir</button>
+        </Link>
       </section>
     );
   }
