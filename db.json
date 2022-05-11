@@ -61,72 +61,79 @@
     {
       "id": 1,
       "name": "Cafe con leche",
-      "precio": 7.8,
+      "price": "7.80",
       "popularity": 3.5,
       "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
     },
     {
-      "id": 1,
+      "id": 2,
       "name": "Cafe",
-      "precio": 7,
+      "price": "7.00",
       "popularity": 5,
       "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
     },
     {
-      "id": 1,
+      "id": 2,
       "name": "Jugo de Naranja",
-      "precio": 7.8,
+      "price": "7.80",
       "popularity": 4,
       "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
     },
     {
-      "id": 1,
+      "id": 3,
       "name": "Sandwich",
-      "precio": 11,
+      "price": "11.00",
       "popularity": 4.8,
       "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
+    },
+    {
+      "name": "Jugo de uva",
+      "price": "10.00",
+      "popularity": "5",
+      "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg",
+      "id": 4
     }
   ],
   "menuLunch": [
     {
       "id": 1,
       "name": "Hamburguesa Simple",
-      "precio": 10.00,
+      "price": "10.00",
       "popularity": 4,
       "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
     },
     {
-      "id": 1,
+      "id": 2,
       "name": "Hamburguesa Doble",
-      "precio": 15.00,
+      "price": "15.00",
       "popularity": 5,
       "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
     },
     {
-      "id": 1,
+      "id": 3,
       "name": "Papas Fritas",
-      "precio": 5.00,
+      "price": "5.00",
       "popularity": 4,
       "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
     },
     {
-      "id": 1,
+      "id": 4,
       "name": "Aros de cebolla",
-      "precio": 11,
-      "popularity": 5.00,
-      "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
-    },
-    {
-      "id": 1,
-      "name": "Agua 500ml",
-      "precio": 5.00,
+      "price": "11.00",
       "popularity": 5,
       "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
     },
     {
-      "id": 1,
+      "id": 5,
+      "name": "Agua 500ml",
+      "price": "5.00",
+      "popularity": 5,
+      "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
+    },
+    {
+      "id": 6,
       "name": "Refresco 500ml",
-      "precio": 7.00,
+      "price": "7.00",
       "popularity": 4,
       "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
     }

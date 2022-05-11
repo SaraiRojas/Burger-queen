@@ -15,7 +15,7 @@ const btnStyle = {
 const MenuBtn = ({ handleClick }) => (
   <Button sx={btnStyle} onClick={handleClick}>
     <AddIcon />
-    Empleado
+    Producto
   </Button>
 );
 
