@@ -115,14 +115,15 @@ const ModalStaff = ({ open, setOpen }) => {
         const newUser = auth.currentUser;
         const { uid } = newUser; // gets new user uid
 
+        const userName = `${data.name} ${data.lastname}`;
+
+        await updateProfile(originalUser, {
+          displayName: userName,
+        });
         await updateCurrentUser(auth, originalUser); // returns user to original loged in user
 
         await saveDataFirebase(data, uid); // saves info of created user
         saveDataApi(data);
-
-        await updateProfile(auth.currentUser, {
-          displayName: data.name,
-        });
 
         handleClose();
       } else {

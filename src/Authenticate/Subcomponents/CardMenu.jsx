@@ -53,8 +53,8 @@ const CardMenu = ({ product }) => {
             <Box
               sx={{
                 display: 'flex',
+                justifyContent: 'space-between',
                 width: '100%',
-                position: 'relative',
               }}
             >
               <Typography variant="subtitle1" component="h2">

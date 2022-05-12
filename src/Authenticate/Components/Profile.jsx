@@ -24,7 +24,8 @@ const Profile = ({ authenticate }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
-  console.log(authenticate);
+  const user = authenticate;
+  const userName = authenticate.displayName;
 
   const navigate = useNavigate();
 
@@ -65,7 +66,9 @@ const Profile = ({ authenticate }) => {
         }}
       >
         <Typography id="modal-modal-title" variant="h6" component="h2">
-          {authenticate.email}
+          {userName}
+          <br />
+          {user.email}
         </Typography>
         <MenuItem onClick={handleLogOut}>Salir</MenuItem>
       </Menu>
