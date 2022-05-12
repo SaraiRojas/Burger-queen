@@ -9,8 +9,9 @@ import {
 } from '@mui/material';
 import React from 'react';
 import Box from '@mui/material/Box';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+// import MoreVertIcon from '@mui/icons-material/MoreVert';
 import styles from './CardMenu.module.css';
+import ThreeDotsMenu from './ThreeDotsMenu';
 
 const theme = createTheme({
   components: {
@@ -59,12 +60,7 @@ const CardMenu = ({ product }) => {
               <Typography variant="subtitle1" component="h2">
                 {product.name}
               </Typography>
-              <MoreVertIcon
-                sx={{
-                  position: 'absolute',
-                  right: 3,
-                }}
-              />
+              <ThreeDotsMenu />
             </Box>
             <Box
               sx={{
