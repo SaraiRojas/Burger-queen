@@ -3,13 +3,12 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyBAwPTVbfH3pf03KKcbzZz7QSB9hI6gn3k',
-  authDomain: 'test-7cacf.firebaseapp.com',
-  projectId: 'test-7cacf',
-  storageBucket: 'test-7cacf.appspot.com',
-  messagingSenderId: '377820144999',
-  appId: '1:377820144999:web:d4d39ca27cb111395cbbc2',
-  measurementId: 'G-3BFYNTPFCF',
+  apiKey: 'AIzaSyAuNsYEp5MGfJ7lAX2qAG-ZzkiDtOPilCk',
+  authDomain: 'bqra-166dc.firebaseapp.com',
+  projectId: 'bqra-166dc',
+  storageBucket: 'bqra-166dc.appspot.com',
+  messagingSenderId: '711622033791',
+  appId: '1:711622033791:web:5fa0f67748ffa3a0acda4a',
 };
 
 // Initialize Firebase
