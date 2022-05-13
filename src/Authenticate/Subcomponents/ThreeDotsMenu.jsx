@@ -1,25 +1,51 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useState } from 'react';
+import Button from '@mui/material/Button';
+import ModalEditMenu from './ModalEditMenu';
 
-const options = [
-  'Editar',
-  'Borrar',
-];
+// const options = [
+//   {
+//     id: 1,
+//     value: 'Editar',
+//   },
+//   {
+//     id: 1,
+//     value: 'Borrar',
+//   },
+// ];
 
 const ITEM_HEIGHT = 30;
 
-const ThreeDotsMenu = () => {
+const ThreeDotsMenu = ({ product }) => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [openModal, setOpenModal] = useState(false);
+  // const [openModalDelete, setOpenModalDelete] = useState(false);
   const open = Boolean(anchorEl);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleEdit = () => {
+    handleClose();
+    setOpenModal(!openModal);
+    // const option = e.target.innerText;
+    // if (option === 'Editar') {
+    //   handleClose();
+    //   setOpenModal(!openModal);
+    // } else {
+    //   setOpenModalDelete(!openModalDelete);
+    // }
   };
 
   return (
@@ -49,12 +75,17 @@ const ThreeDotsMenu = () => {
           },
         }}
       >
-        {options.map((option) => (
-          <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+        {/* {options.map((option) => (
+          <MenuItem key={option.id} selected={option === 'Pyxis'} onClick={handleEdit}>
             {option}
           </MenuItem>
-        ))}
+        ))} */}
+        <MenuItem>
+          <Button color="secondary" onClick={handleEdit}>Editar</Button>
+          <Button>Borrar</Button>
+        </MenuItem>
       </Menu>
+      <ModalEditMenu product={product} openModal={openModal} setOpenModal={setOpenModal} />
     </div>
   );
 };
