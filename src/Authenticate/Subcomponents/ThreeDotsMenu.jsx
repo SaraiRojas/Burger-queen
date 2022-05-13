@@ -15,17 +15,6 @@ const style = {
   flexDirection: 'column',
 };
 
-// const options = [
-//   {
-//     id: 1,
-//     value: 'Editar',
-//   },
-//   {
-//     id: 1,
-//     value: 'Borrar',
-//   },
-// ];
-
 const ITEM_HEIGHT = 30;
 
 const ThreeDotsMenu = ({ product }) => {
@@ -80,11 +69,6 @@ const ThreeDotsMenu = ({ product }) => {
           },
         }}
       >
-        {/* {options.map((option) => (
-          <MenuItem key={option.id} selected={option === 'Pyxis'} onClick={handleEdit}>
-            {option}
-          </MenuItem>
-        ))} */}
         <MenuItem sx={style}>
           <Button color="secondary" onClick={handleEdit}>Editar</Button>
           <Button onClick={handleEdit}>Borrar</Button>

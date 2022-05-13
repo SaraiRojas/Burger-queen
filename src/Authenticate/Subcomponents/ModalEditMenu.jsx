@@ -25,20 +25,9 @@ const style = {
 
 const ModalEditMenu = ({ product, openModal, setOpenModal }) => {
   // It does not matter that it has no info, as long as it is an object
-  // const [data, setData] = useState(product);
   const data = product;
   console.log(data);
   const handleClose = () => setOpenModal(false);
-
-  // const [dataEdit, setDataEdit] = useState();
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setDataEdit((preState) => ({
-  //     ...preState,
-  //     [name]: value,
-  //   }));
-  // };
 
   const editDataApi = (e, id) => {
     e.preventDefault();

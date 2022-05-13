@@ -1,3 +1,15 @@
 .imgCard {
-  width: 16.1em;
+  width: 1.5em;
+}
+
+@media (min-width: 768px ) {
+  .imgCard {
+    width: 9.1em;
+  }
+}
+
+@media (min-width: 1900px ) {
+  .imgCard {
+    width: 16.2em;
+  }
 }

@@ -1,0 +1,28 @@
+.sectionMenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.btnModal {
+  width: 10em;
+}
+
+@media (min-width: 768px) {
+  .sectionMenu {
+    align-items: center;
+  }
+
+  .btnModal {
+    margin-left: 2em;
+  }
+}
+
+@media (min-width: 1900px) {
+  .sectionMenu {
+    align-items: flex-end;
+  }
+
+  .btnModal {
+    width: 24em;
+  }
+}
