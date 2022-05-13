@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test App render App 1`] = `
+<section
+  className="login"
+>
+  <img
+    alt="imgLogin"
+    className="imgLogin"
+    src="https://svgshare.com/i/gjb.svg"
+  />
+  <section
+    className="sectionLogin"
+  >
+    <div
+      className="welcome"
+    >
+      <img
+        alt="logoBQ"
+        className="imgLog"
+        src="https://svgshare.com/i/gmq.svg"
+      />
+      <p
+        className="slogan"
+      >
+        Inicia sesión para administar el staff y menús o para tomar la orden de los clientes.
+      </p>
+    </div>
+    <form
+      className="formLogin"
+    >
+      <input
+        className="inputEmail"
+        onChange={[Function]}
+        placeholder="Ejemplo@gmail.com"
+        type="email"
+      />
+      <input
+        className="inputPass"
+        onChange={[Function]}
+        placeholder="Contraseña"
+        type="password"
+      />
+      <button
+        className="btnLogin"
+        onClick={[Function]}
+        type="button"
+      >
+        Iniciar sesión
+      </button>
+      <span
+        className="alertError"
+      />
+    </form>
+  </section>
+</section>
+`;
