@@ -2,9 +2,9 @@ import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
-import CardMenu from '../Subcomponents/CardMenu';
+import CardMenu from './CardMenu';
 // import MenuBtn from '../Subcomponents/MenuBtn';
-import ModalMenu from '../Subcomponents/ModalMenu';
+import ModalMenu from './ModalMenu';
 import style from './Menu.module.css';
 
 const btnStyle = {

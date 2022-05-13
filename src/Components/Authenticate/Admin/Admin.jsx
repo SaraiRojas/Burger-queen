@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Sidebar from '../Components/Sidebar';
+import Sidebar from '../Common/Sidebar';
 import styles from './Admin.module.css';
-import Header from '../Components/Header';
+import Header from '../Common/Header';
 
 const Admin = ({ role, authenticate }) => (
   <section className={styles.admin}>
