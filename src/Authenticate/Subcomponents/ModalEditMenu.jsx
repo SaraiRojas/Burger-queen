@@ -28,31 +28,39 @@ const ModalEditMenu = ({ product, openModal, setOpenModal }) => {
   // const [data, setData] = useState(product);
   const data = product;
   console.log(data);
-
   const handleClose = () => setOpenModal(false);
 
-  const editDataApi = (e, datalocal) => {
+  // const [dataEdit, setDataEdit] = useState();
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setDataEdit((preState) => ({
+  //     ...preState,
+  //     [name]: value,
+  //   }));
+  // };
+
+  const editDataApi = (e, id) => {
     e.preventDefault();
-    console.log(datalocal);
-    console.log(datalocal.id);
+    const dataForm = e.target.form;
 
-    // const employeeData = {
-    //   date: data[0].value,
-    //   role: data[2].value,
-    //   name: data[3].value,
-    //   lastname: data[4].value,
-    //   email: data[5].value,
-    // };
+    const menuEditData = {
+      name: dataForm[0].value,
+      price: dataForm[1].value,
+      popularity: dataForm[2].value,
+      image: dataForm[3].value,
+    };
 
-    // console.log(employeeData);
+    console.log(id);
+    console.log(menuEditData);
 
     const requestOption = {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(datalocal),
+      body: JSON.stringify(menuEditData),
     };
 
-    fetch(`http://localhost:3001/empleados/${datalocal.id}`, requestOption)
+    fetch(`http://localhost:3001/menu/${id}`, requestOption)
       .then((response) => response.json())
       .catch((err) => console.log(err));
     handleClose();
@@ -105,7 +113,7 @@ const ModalEditMenu = ({ product, openModal, setOpenModal }) => {
               variant="standard"
               defaultValue={data && data.image}
             />
-            <Button onClick={(e) => editDataApi(e, data)} type="submit">Guardar</Button>
+            <Button onClick={(e) => editDataApi(e, data.id)} type="submit">Guardar</Button>
           </Box>
         </form>
       </Modal>

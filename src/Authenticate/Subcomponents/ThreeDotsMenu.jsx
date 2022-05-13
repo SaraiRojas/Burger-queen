@@ -10,6 +10,11 @@ import Button from '@mui/material/Button';
 import ModalEditMenu from './ModalEditMenu';
 import ModalDeleteMenu from './ModalDeleteMenu';
 
+const style = {
+  display: 'flex',
+  flexDirection: 'column',
+};
+
 // const options = [
 //   {
 //     id: 1,
@@ -80,7 +85,7 @@ const ThreeDotsMenu = ({ product }) => {
             {option}
           </MenuItem>
         ))} */}
-        <MenuItem>
+        <MenuItem sx={style}>
           <Button color="secondary" onClick={handleEdit}>Editar</Button>
           <Button onClick={handleEdit}>Borrar</Button>
         </MenuItem>
