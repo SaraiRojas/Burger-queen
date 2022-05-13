@@ -10,16 +10,10 @@ import Button from '@mui/material/Button';
 import ModalEditMenu from './ModalEditMenu';
 import ModalDeleteMenu from './ModalDeleteMenu';
 
-// const options = [
-//   {
-//     id: 1,
-//     value: 'Editar',
-//   },
-//   {
-//     id: 1,
-//     value: 'Borrar',
-//   },
-// ];
+const style = {
+  display: 'flex',
+  flexDirection: 'column',
+};
 
 const ITEM_HEIGHT = 30;
 
@@ -75,12 +69,7 @@ const ThreeDotsMenu = ({ product }) => {
           },
         }}
       >
-        {/* {options.map((option) => (
-          <MenuItem key={option.id} selected={option === 'Pyxis'} onClick={handleEdit}>
-            {option}
-          </MenuItem>
-        ))} */}
-        <MenuItem>
+        <MenuItem sx={style}>
           <Button color="secondary" onClick={handleEdit}>Editar</Button>
           <Button onClick={handleEdit}>Borrar</Button>
         </MenuItem>

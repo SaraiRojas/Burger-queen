@@ -1,8 +1,20 @@
 import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import CardMenu from '../Subcomponents/CardMenu';
-import MenuBtn from '../Subcomponents/MenuBtn';
-import ModalMenu from '../Subcomponents/ModalMenu';
+import Button from '@mui/material/Button';
+import AddIcon from '@mui/icons-material/Add';
+import CardMenu from './CardMenu';
+// import MenuBtn from '../Subcomponents/MenuBtn';
+import ModalMenu from './ModalMenu';
+import style from './Menu.module.css';
+
+const btnStyle = {
+  bgcolor: 'black',
+  color: '#F3B240',
+  fontWeight: 600,
+  marginTop: '1em',
+  marginRight: '50em',
+  width: '10em',
+};
 
 const Menu = () => {
   const [dataMenu, setDataMenu] = useState([]);
@@ -15,9 +27,13 @@ const Menu = () => {
       .then((data) => setDataMenu(data));
   }, []);
   return (
-    <section>
-      <div>
-        <MenuBtn handleClick={handleOpen} />
+    <section className={style.sectionMenu}>
+      <div className={style.btnModal}>
+        {/* <MenuBtn handleClick={handleOpen} /> */}
+        <Button sx={btnStyle} onClick={handleOpen}>
+          <AddIcon />
+          Producto
+        </Button>
       </div>
       <ModalMenu open={open} setOpen={setOpen} />
       <Container>

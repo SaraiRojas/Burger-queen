@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import LogIn from './No-Authenticate/Login/LogIn';
-import Admin from './Authenticate/views/Admin';
-import Staff from './Authenticate/views/Staff';
-import Menu from './Authenticate/Subviews/Menu';
-import MenuLunch from './Authenticate/Subviews/MenuLunch';
-import Waiter from './Authenticate/views/Waiter';
-import Chef from './Authenticate/views/Chef';
+import LogIn from './Components/No-Authenticate/Login/LogIn';
+import Admin from './Components/Authenticate/Admin/Admin';
+import Staff from './Components/Authenticate/Admin/Staff/Staff';
+import Menu from './Components/Authenticate/Admin/Menu/Menu';
+import MenuLunch from './Components/Authenticate/Admin/LunchMenu/MenuLunch';
+import Waiter from './Components/Authenticate/Waiter/Waiter';
+import Chef from './Components/Authenticate/Chef/Chef';
 
 const PrivateRoute = ({ role, authenticate }) => {
   if (role === 'Admin') {

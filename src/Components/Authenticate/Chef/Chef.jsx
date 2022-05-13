@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import Sidebar from '../Components/Sidebar';
-import Header from '../Components/Header';
-import styles from './Waiter.module.css';
+import Sidebar from '../Common/Sidebar';
+import Header from '../Common/Header';
+import styles from '../Waiter/Waiter.module.css';
 
 const Chef = ({ authenticate, role }) => {
   console.log('hola');

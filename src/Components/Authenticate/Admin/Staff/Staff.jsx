@@ -14,8 +14,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import MenuItem from '@mui/material/MenuItem';
 import Box from '@mui/material/Box';
-import ModalStaff from '../Components/ModalStaff';
-import StaffBtn from '../Components/StaffBtn';
+import ModalStaff from './ModalStaff';
+import StaffBtn from './StaffBtn';
 import styles from './Staff.module.css';
 // import { flexbox } from '@mui/system';
 

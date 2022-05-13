@@ -1,6 +1,6 @@
 import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import CardMenuLunch from '../Subcomponents/CardMenuLunch';
+import CardMenuLunch from './CardMenuLunch';
 
 const MenuLunch = () => {
   const [dataMenu, setDataMenu] = useState([]);

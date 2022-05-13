@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
-import { auth } from '../../Firebase/firebase.config';
+import { auth } from '../../../Firebase/firebase.config';
 import style from './Profile.module.css';
 
 const styles = {
