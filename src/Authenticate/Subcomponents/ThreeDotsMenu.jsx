@@ -8,6 +8,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useState } from 'react';
 import Button from '@mui/material/Button';
 import ModalEditMenu from './ModalEditMenu';
+import ModalDeleteMenu from './ModalDeleteMenu';
 
 // const options = [
 //   {
@@ -25,7 +26,7 @@ const ITEM_HEIGHT = 30;
 const ThreeDotsMenu = ({ product }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [openModal, setOpenModal] = useState(false);
-  // const [openModalDelete, setOpenModalDelete] = useState(false);
+  const [openModalDelete, setOpenModalDelete] = useState(false);
   const open = Boolean(anchorEl);
 
   const handleClick = (event) => {
@@ -36,16 +37,15 @@ const ThreeDotsMenu = ({ product }) => {
     setAnchorEl(null);
   };
 
-  const handleEdit = () => {
+  const handleEdit = (e) => {
     handleClose();
-    setOpenModal(!openModal);
-    // const option = e.target.innerText;
-    // if (option === 'Editar') {
-    //   handleClose();
-    //   setOpenModal(!openModal);
-    // } else {
-    //   setOpenModalDelete(!openModalDelete);
-    // }
+    const option = e.target.innerText;
+    console.log(option);
+    if (option === 'EDITAR') {
+      setOpenModal(!openModal);
+    } else {
+      setOpenModalDelete(!openModalDelete);
+    }
   };
 
   return (
@@ -82,10 +82,15 @@ const ThreeDotsMenu = ({ product }) => {
         ))} */}
         <MenuItem>
           <Button color="secondary" onClick={handleEdit}>Editar</Button>
-          <Button>Borrar</Button>
+          <Button onClick={handleEdit}>Borrar</Button>
         </MenuItem>
       </Menu>
       <ModalEditMenu product={product} openModal={openModal} setOpenModal={setOpenModal} />
+      <ModalDeleteMenu
+        product={product}
+        openModalDelete={openModalDelete}
+        setOpenModalDelete={setOpenModalDelete}
+      />
     </div>
   );
 };
