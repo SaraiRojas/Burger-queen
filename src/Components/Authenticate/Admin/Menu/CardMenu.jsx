@@ -57,7 +57,15 @@ const CardMenu = ({ product }) => {
                 width: '100%',
               }}
             >
-              <Typography variant="subtitle1" component="h2">
+              <Typography
+                variant="subtitle1"
+                component="h2"
+                sx={{
+                  alignSelf: 'center',
+                  fontWeight: 'bold',
+                  fontSize: '1.3em',
+                }}
+              >
                 {product.name}
               </Typography>
               <ThreeDotsMenu product={product} />
@@ -67,7 +75,7 @@ const CardMenu = ({ product }) => {
                 display: 'flex',
                 alignItems: 'center',
               }}
-              marginTop={3}
+              marginTop={0.5}
             >
               <Rating
                 name="size-small"

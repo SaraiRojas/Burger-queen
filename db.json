@@ -51,8 +51,9 @@
   ],
   "menu": [
     {
-      "popularity": "4",
       "name": "Cafe con Leche",
+      "price": "7.00",
+      "popularity": "4",
       "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg",
       "id": 1
     },
