@@ -60,7 +60,7 @@ const CardMenu = ({ product }) => {
               <Typography variant="subtitle1" component="h2">
                 {product.name}
               </Typography>
-              <ThreeDotsMenu />
+              <ThreeDotsMenu product={product} />
             </Box>
             <Box
               sx={{
