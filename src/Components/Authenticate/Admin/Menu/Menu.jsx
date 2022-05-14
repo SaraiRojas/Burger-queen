@@ -26,6 +26,7 @@ const Menu = () => {
       .then((response) => response.json())
       .then((data) => setDataMenu(data));
   }, []);
+
   return (
     <section className={style.sectionMenu}>
       <div className={style.btnModal}>
@@ -35,7 +36,7 @@ const Menu = () => {
           Producto
         </Button>
       </div>
-      <ModalMenu open={open} setOpen={setOpen} />
+      <ModalMenu menu="menu" open={open} setOpen={setOpen} />
       <Container>
         <>
           <Typography

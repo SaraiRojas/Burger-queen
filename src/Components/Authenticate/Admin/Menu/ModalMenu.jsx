@@ -23,12 +23,11 @@ const style = {
   textAlign: 'center',
 };
 
-const ModalMenu = ({ open, setOpen }) => {
+const ModalMenu = ({ menu, open, setOpen }) => {
   // It does not matter that it has no info, as long as it is an object
   const [data, setData] = useState({});
 
   const handleClose = () => setOpen(false);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData((preState) => ({
@@ -38,15 +37,27 @@ const ModalMenu = ({ open, setOpen }) => {
   };
 
   const saveDataApi = (localData) => {
-    const requestOption = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(localData),
-    };
+    if (menu === 'menu') {
+      const requestOption = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(localData),
+      };
 
-    fetch('http://localhost:3001/menu', requestOption)
-      .then((response) => response.json())
-      .catch((err) => console.log(err));
+      fetch('http://localhost:3001/menu', requestOption)
+        .then((response) => response.json())
+        .catch((err) => console.log(err));
+    } else {
+      const requestOption = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(localData),
+      };
+
+      fetch('http://localhost:3001/menuLunch', requestOption)
+        .then((response) => response.json())
+        .catch((err) => console.log(err));
+    }
   };
 
   const handleClick = async (e) => {
