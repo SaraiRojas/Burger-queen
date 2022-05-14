@@ -2,6 +2,10 @@
   display: flex;
 }
 
+.sidebar{
+  width: 15%;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -9,6 +13,12 @@
 }
 .adminOutlet {
   margin-left: 1em;
+}
+
+@media (min-width: 540px) {
+  .sidebar{
+    width: 18%;
+  }
 }
 
 @media (min-width: 1280px) {
