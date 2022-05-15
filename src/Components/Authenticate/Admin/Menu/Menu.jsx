@@ -46,7 +46,7 @@ const Menu = () => {
           >
             Menu Desayuno
           </Typography>
-          <Grid container spacing={5}>
+          <Grid container spacing={3}>
             {dataMenu.map((product) => (
               <CardMenu product={product} />
             ))}

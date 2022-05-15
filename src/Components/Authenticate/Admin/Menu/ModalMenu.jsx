@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import Box from '@mui/material/Box';
@@ -5,7 +6,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
-import styles from './ModalMenu.module.css';
+import { makeStyles } from '@mui/material';
 
 const style = {
   display: 'flex',
@@ -14,7 +15,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: '400px',
   bgcolor: 'background.paper',
   border: '1px solid #000',
   borderRadius: 1,
@@ -56,7 +57,7 @@ const ModalMenu = ({ open, setOpen }) => {
   };
 
   return (
-    <section className={styles.modalStaff}>
+    <section>
       <Modal
         open={open}
         onClose={handleClose}

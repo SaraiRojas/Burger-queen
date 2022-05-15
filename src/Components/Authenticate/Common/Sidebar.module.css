@@ -48,8 +48,12 @@ hr {
     transform: rotate(0);
     margin-bottom: 1em;
     margin-top: 1em;
-    font-size: 0.8em;
+    font-size: 0.6em;
     height: 2em;
+  }
+
+  .logoSidebar {
+    margin-bottom: 2em;
   }
 
   hr {
@@ -62,12 +66,12 @@ hr {
 
 @media (min-width: 850px) {
   .btn {
-    font-size: 1em;
+    font-size: 0.6em;
   }
 }
 
 @media (min-width: 1000px) {
   .btn {
-    font-size: 1.2em;
+    font-size: 0.8em;
   }
 }

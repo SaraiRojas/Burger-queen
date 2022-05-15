@@ -3,28 +3,31 @@
 }
 
 .sidebar{
-  width: 15%;
+  width: 10%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
 }
 
 .main {
   display: flex;
   flex-direction: column;
   width: 75%;
+  margin-left: 15%;
+  overflow-x: hidden;
 }
-.adminOutlet {
+
+/* .adminOutlet {
   margin-left: 1em;
-}
+} */
 
 @media (min-width: 540px) {
   .sidebar{
-    width: 18%;
+    width: 10%;
   }
 }
 
 @media (min-width: 1280px) {
-  .main {
-    width: 80%;
-  } 
 }
 
 @media (min-width: 1900px) {
