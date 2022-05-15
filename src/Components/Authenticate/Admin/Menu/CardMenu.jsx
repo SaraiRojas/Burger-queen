@@ -86,6 +86,7 @@ const CardMenu = ({ product }) => {
               sx={{
                 alignSelf: 'center',
                 fontWeight: 'bold',
+                fontSize: '0.8em',
               }}
             >
               {product.name}
@@ -96,7 +97,14 @@ const CardMenu = ({ product }) => {
                 display: 'flex',
               }}
             >
-              <Typography variant="h6" component="h3" className={styles.productPrice}>
+              <Typography
+                variant="h6"
+                component="h3"
+                className={styles.productPrice}
+                sx={{
+                  fontSize: '0.8em',
+                }}
+              >
                 $&nbsp;
                 {product.price}
                 &nbsp;MXN

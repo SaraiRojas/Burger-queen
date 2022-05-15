@@ -11,7 +11,7 @@ const Admin = ({ role, authenticate }) => (
       <Sidebar role={role} />
     </section>
     <main className={styles.main}>
-      <Header authenticate={authenticate} />
+      <Header authenticate={authenticate} className={styles.profile} />
       <div className={styles.adminOutlet}>
         <Outlet />
       </div>
