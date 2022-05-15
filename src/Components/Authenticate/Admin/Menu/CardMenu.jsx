@@ -3,7 +3,7 @@ import {
   createTheme,
   Grid,
   Paper,
-  Rating,
+  // Rating,
   ThemeProvider,
   Typography,
 } from '@mui/material';
@@ -48,49 +48,55 @@ const CardMenu = ({ product }) => {
           <Box
             sx={{
               paddingX: 1,
+              position: 'relative',
             }}
           >
             <Box
               sx={{
                 display: 'flex',
-                justifyContent: 'space-between',
-                width: '100%',
+                justifyContent: 'end',
+                position: 'absolute',
+                top: '-10px',
+                right: '0',
+                padding: '0',
+                transform: 'rotate(-90deg)',
               }}
             >
-              <Typography
-                variant="subtitle1"
-                component="h2"
+              {/* <Box
                 sx={{
-                  alignSelf: 'center',
-                  fontWeight: 'bold',
-                  fontSize: '1.3em',
+                  display: 'flex',
+                  alignItems: 'center',
                 }}
+                marginTop={0.5}
               >
-                {product.name}
-              </Typography>
+                <Rating
+                  name="size-small"
+                  size="small"
+                  defaultValue={product.popularity}
+                  precision={0.25}
+                  readOnly
+                />
+              </Box> */}
               <ThreeDotsMenu product={product} />
             </Box>
-            <Box
+            <Typography
+              variant="subtitle1"
+              component="h2"
+              className={styles.productName}
               sx={{
-                display: 'flex',
-                alignItems: 'center',
+                alignSelf: 'center',
+                fontWeight: 'bold',
               }}
-              marginTop={0.5}
             >
-              <Rating
-                name="size-small"
-                size="small"
-                defaultValue={product.popularity}
-                precision={0.25}
-                readOnly
-              />
-            </Box>
+              {product.name}
+            </Typography>
+
             <Box
               sx={{
                 display: 'flex',
               }}
             >
-              <Typography variant="h6" component="h2" marginTop={0}>
+              <Typography variant="h6" component="h3" className={styles.productPrice}>
                 $&nbsp;
                 {product.price}
                 &nbsp;MXN

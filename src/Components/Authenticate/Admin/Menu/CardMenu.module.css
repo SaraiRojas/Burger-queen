@@ -1,3 +1,14 @@
 .imgCard {
   width: 100%;
 }
+
+.productName{
+  font-size: 0.8em;
+  padding-top: 1.5em;
+}
+
+.productPrice{
+  font-size: 0.8em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
