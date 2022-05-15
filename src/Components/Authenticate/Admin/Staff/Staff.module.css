@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   height: 80vh;
-  margin-top: 1em;
+  margin-top: 9em;
 }
 
 .main {
@@ -20,6 +20,12 @@
   .staffBtnContainer {
     margin-left: 2.2em;
     margin-top: 1em;
+  }
+}
+
+@media (min-width: 1000px) {
+  .staff {
+    margin-top: 6em;
   }
 }
 
