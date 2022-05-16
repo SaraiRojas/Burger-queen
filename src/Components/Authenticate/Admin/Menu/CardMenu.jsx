@@ -38,8 +38,8 @@ const theme = createTheme({
   },
 });
 
-const CardMenu = ({ product }) => {
-  console.log('hola');
+const CardMenu = ({ menu, product }) => {
+  console.log('No tengo funcionalidad');
   return (
     <Grid item xs={4} md={3}>
       <ThemeProvider theme={theme}>
@@ -60,7 +60,7 @@ const CardMenu = ({ product }) => {
               <Typography variant="subtitle1" component="h2">
                 {product.name}
               </Typography>
-              <ThreeDotsMenu product={product} />
+              <ThreeDotsMenu menu={menu} product={product} />
             </Box>
             <Box
               sx={{

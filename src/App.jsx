@@ -30,7 +30,6 @@ const App = () => {
   };
 
   onAuthStateChanged(auth, (user) => {
-    console.log('onc');
     if (user) {
       setAuthenticate(user);
       updateRol(user);

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
@@ -36,7 +37,11 @@ const Menu = () => {
           Producto
         </Button>
       </div>
-      <ModalMenu menu="menu" open={open} setOpen={setOpen} />
+      <ModalMenu
+        menu="menu"
+        open={open}
+        setOpen={setOpen}
+      />
       <Container>
         <>
           <Typography
@@ -49,7 +54,10 @@ const Menu = () => {
           </Typography>
           <Grid container spacing={5}>
             {dataMenu.map((product) => (
-              <CardMenu product={product} />
+              <CardMenu
+                menu="menu"
+                product={product}
+              />
             ))}
           </Grid>
         </>

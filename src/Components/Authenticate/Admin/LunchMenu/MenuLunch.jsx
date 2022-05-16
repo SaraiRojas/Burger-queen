@@ -2,7 +2,7 @@ import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
-import CardMenuLunch from './CardMenuLunch';
+import CardMenu from '../Menu/CardMenu';
 import ModalMenu from '../Menu/ModalMenu';
 import style from '../Menu/Menu.module.css';
 
@@ -48,7 +48,7 @@ const MenuLunch = () => {
           </Typography>
           <Grid container spacing={5}>
             {dataMenu.map((product) => (
-              <CardMenuLunch product={product} />
+              <CardMenu menu="menuLunch" product={product} />
             ))}
           </Grid>
         </>

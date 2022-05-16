@@ -20,10 +20,11 @@ const modal = {
   textAlign: 'center',
 };
 
-const ModalDeleteMenu = ({ product, openModalDelete, setOpenModalDelete }) => {
+const ModalDeleteMenu = ({
+  menu, product, openModalDelete, setOpenModalDelete,
+}) => {
   const [dataMenu, setDataMenu] = useState([]);
   const data = product;
-  console.log(data);
 
   const handleClose = () => setOpenModalDelete(false);
 
@@ -31,13 +32,22 @@ const ModalDeleteMenu = ({ product, openModalDelete, setOpenModalDelete }) => {
     const requestOption = {
       method: 'DELETE',
     };
+    if (menu === 'menu') {
+      fetch(`http://localhost:3001/menu/${id}`, requestOption)
+        .then((response) => response.json())
+        .then(() => {
+          setDataMenu(dataMenu.filter((itemMenu) => itemMenu.id !== data.id));
+        })
+        .catch((err) => console.log(err));
+    } else {
+      fetch(`http://localhost:3001/menuLunch/${id}`, requestOption)
+        .then((response) => response.json())
+        .then(() => {
+          setDataMenu(dataMenu.filter((itemMenu) => itemMenu.id !== data.id));
+        })
+        .catch((err) => console.log(err));
+    }
 
-    fetch(`http://localhost:3001/menu/${id}`, requestOption)
-      .then((response) => response.json())
-      .then(() => {
-        setDataMenu(dataMenu.filter((itemMenu) => itemMenu.id !== data.id));
-      })
-      .catch((err) => console.log(err));
     handleClose();
   };
 

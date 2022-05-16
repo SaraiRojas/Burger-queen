@@ -37,23 +37,17 @@ const ModalMenu = ({ menu, open, setOpen }) => {
   };
 
   const saveDataApi = (localData) => {
-    if (menu === 'menu') {
-      const requestOption = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(localData),
-      };
+    const requestOption = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(localData),
+    };
 
+    if (menu === 'menu') {
       fetch('http://localhost:3001/menu', requestOption)
         .then((response) => response.json())
         .catch((err) => console.log(err));
     } else {
-      const requestOption = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(localData),
-      };
-
       fetch('http://localhost:3001/menuLunch', requestOption)
         .then((response) => response.json())
         .catch((err) => console.log(err));
