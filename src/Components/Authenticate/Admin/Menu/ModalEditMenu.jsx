@@ -23,10 +23,11 @@ const style = {
   textAlign: 'center',
 };
 
-const ModalEditMenu = ({ product, openModal, setOpenModal }) => {
+const ModalEditMenu = ({
+  menu, product, openModal, setOpenModal,
+}) => {
   // It does not matter that it has no info, as long as it is an object
   const data = product;
-  console.log(data);
   const handleClose = () => setOpenModal(false);
 
   const editDataApi = (e, id) => {
@@ -40,18 +41,21 @@ const ModalEditMenu = ({ product, openModal, setOpenModal }) => {
       image: dataForm[3].value,
     };
 
-    console.log(id);
-    console.log(menuEditData);
-
     const requestOption = {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(menuEditData),
     };
 
-    fetch(`http://localhost:3001/menu/${id}`, requestOption)
-      .then((response) => response.json())
-      .catch((err) => console.log(err));
+    if (menu === 'menu') {
+      fetch(`http://localhost:3001/menu/${id}`, requestOption)
+        .then((response) => response.json())
+        .catch((err) => console.log(err));
+    } else {
+      fetch(`http://localhost:3001/menuLunch/${id}`, requestOption)
+        .then((response) => response.json())
+        .catch((err) => console.log(err));
+    }
     handleClose();
   };
 

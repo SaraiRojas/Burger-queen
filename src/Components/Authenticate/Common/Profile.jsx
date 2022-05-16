@@ -3,11 +3,12 @@ import * as React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
+import { getDoc, doc } from 'firebase/firestore';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
-import { auth } from '../../../Firebase/firebase.config';
+import { auth, db } from '../../../Firebase/firebase.config';
 import style from './Profile.module.css';
 
 const styles = {
@@ -20,12 +21,40 @@ const styles = {
   fontSize: 20,
 };
 
+const menu = {
+  padding: 2,
+};
+
 const Profile = ({ authenticate }) => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [userName, setUserName] = useState(null);
+  const [userRol, setUserRol] = useState(null);
+  const [userLastName, setUserLastName] = useState(null);
   const open = Boolean(anchorEl);
 
   const user = authenticate;
-  const userName = authenticate.displayName;
+  const getName = async (uid) => {
+    const ref = doc(db, `profile/${uid}`);
+    const docSnap = await getDoc(ref);
+    const { name } = docSnap.data();
+    const { lastname } = docSnap.data();
+    const { role } = docSnap.data();
+    setUserName(name);
+    setUserLastName(lastname);
+    setUserRol(role);
+    return docSnap.data();
+  };
+
+  let letterName;
+  let letterLastName;
+  if (userName !== null) {
+    letterName = userName.charAt(0).toUpperCase();
+    letterLastName = userLastName.charAt(0).toUpperCase();
+  }
+
+  // const letterLastName = userLastName[0].toUpperCase();
+  const userId = authenticate.uid;
+  getName(userId);
 
   const navigate = useNavigate();
 
@@ -54,7 +83,7 @@ const Profile = ({ authenticate }) => {
         onClick={handleClick}
         sx={styles}
       >
-        GH
+        {`${letterName}${letterLastName}`}
       </Button>
       <Menu
         id="basic-menu"
@@ -65,8 +94,10 @@ const Profile = ({ authenticate }) => {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <Typography id="modal-modal-title" variant="h6" component="h2">
-          {userName}
+        <Typography sx={menu} id="modal-modal-title" variant="h6" component="h2">
+          {userRol}
+          <br />
+          {`${userName} ${userLastName}`}
           <br />
           {user.email}
         </Typography>

@@ -17,7 +17,7 @@ const style = {
 
 const ITEM_HEIGHT = 30;
 
-const ThreeDotsMenu = ({ product }) => {
+const ThreeDotsMenu = ({ menu, product }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [openModal, setOpenModal] = useState(false);
   const [openModalDelete, setOpenModalDelete] = useState(false);
@@ -74,8 +74,14 @@ const ThreeDotsMenu = ({ product }) => {
           <Button onClick={handleEdit}>Borrar</Button>
         </MenuItem>
       </Menu>
-      <ModalEditMenu product={product} openModal={openModal} setOpenModal={setOpenModal} />
+      <ModalEditMenu
+        menu={menu}
+        product={product}
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+      />
       <ModalDeleteMenu
+        menu={menu}
         product={product}
         openModalDelete={openModalDelete}
         setOpenModalDelete={setOpenModalDelete}

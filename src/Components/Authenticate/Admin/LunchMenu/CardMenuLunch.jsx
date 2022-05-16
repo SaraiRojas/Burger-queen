@@ -10,6 +10,7 @@ import {
 import React from 'react';
 import Box from '@mui/material/Box';
 import styles from './CardMenuLunch.module.css';
+import ThreeDotsMenu from '../Menu/ThreeDotsMenu';
 
 const theme = createTheme({
   components: {
@@ -48,9 +49,18 @@ const CardMenuLunch = ({ product }) => {
               paddingX: 1,
             }}
           >
-            <Typography variant="subtitle1" component="h2">
-              {product.name}
-            </Typography>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                width: '100%',
+              }}
+            >
+              <Typography variant="subtitle1" component="h2">
+                {product.name}
+              </Typography>
+              <ThreeDotsMenu product={product} />
+            </Box>
             <Box
               sx={{
                 display: 'flex',
@@ -72,9 +82,9 @@ const CardMenuLunch = ({ product }) => {
               }}
             >
               <Typography variant="h6" component="h2" marginTop={0}>
-                $
+                $&nbsp;
                 {product.price}
-                pesos
+                &nbsp;MXN
               </Typography>
             </Box>
           </Box>

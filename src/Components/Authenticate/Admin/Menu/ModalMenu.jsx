@@ -24,12 +24,11 @@ const style = {
   textAlign: 'center',
 };
 
-const ModalMenu = ({ open, setOpen }) => {
+const ModalMenu = ({ menu, open, setOpen }) => {
   // It does not matter that it has no info, as long as it is an object
   const [data, setData] = useState({});
 
   const handleClose = () => setOpen(false);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData((preState) => ({
@@ -45,9 +44,15 @@ const ModalMenu = ({ open, setOpen }) => {
       body: JSON.stringify(localData),
     };
 
-    fetch('http://localhost:3001/menu', requestOption)
-      .then((response) => response.json())
-      .catch((err) => console.log(err));
+    if (menu === 'menu') {
+      fetch('http://localhost:3001/menu', requestOption)
+        .then((response) => response.json())
+        .catch((err) => console.log(err));
+    } else {
+      fetch('http://localhost:3001/menuLunch', requestOption)
+        .then((response) => response.json())
+        .catch((err) => console.log(err));
+    }
   };
 
   const handleClick = async (e) => {
