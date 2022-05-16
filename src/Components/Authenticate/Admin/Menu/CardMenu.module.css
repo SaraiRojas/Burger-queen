@@ -1,15 +1,12 @@
 .imgCard {
-  width: 1.5em;
+  width: 100%;
 }
 
-@media (min-width: 768px ) {
-  .imgCard {
-    width: 16.2em;
-  }
+.productName {
+  padding-top: 1.5em;
 }
 
-@media (min-width: 1900px ) {
-  .imgCard {
-    width: 16.2em;
-  }
+.productPrice {
+  padding-top: 1em;
+  padding-bottom: 1em;
 }

@@ -5,7 +5,9 @@ import style from './Header.module.css';
 
 const Header = ({ authenticate }) => (
   <header className={style.header}>
-    <Profile authenticate={authenticate} />
+    <div className={style.Profile}>
+      <Profile authenticate={authenticate} />
+    </div>
   </header>
 );
 

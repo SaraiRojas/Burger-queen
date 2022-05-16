@@ -3,7 +3,7 @@ import {
   createTheme,
   Grid,
   Paper,
-  Rating,
+  // Rating,
   ThemeProvider,
   Typography,
 } from '@mui/material';
@@ -41,48 +41,70 @@ const theme = createTheme({
 const CardMenu = ({ menu, product }) => {
   console.log('No tengo funcionalidad');
   return (
-    <Grid item xs={4} md={3}>
+    <Grid item xs={6} sm={3}>
       <ThemeProvider theme={theme}>
         <Paper elevation={3} className="paper">
           <img src={product.image} alt="" className={styles.imgCard} />
           <Box
             sx={{
               paddingX: 1,
+              position: 'relative',
             }}
           >
             <Box
               sx={{
                 display: 'flex',
-                justifyContent: 'space-between',
-                width: '100%',
+                justifyContent: 'end',
+                position: 'absolute',
+                top: '-10px',
+                right: '0',
+                padding: '0',
+                transform: 'rotate(-90deg)',
               }}
             >
-              <Typography variant="subtitle1" component="h2">
-                {product.name}
-              </Typography>
+              {/* <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+                marginTop={0.5}
+              >
+                <Rating
+                  name="size-small"
+                  size="small"
+                  defaultValue={product.popularity}
+                  precision={0.25}
+                  readOnly
+                />
+              </Box> */}
               <ThreeDotsMenu menu={menu} product={product} />
             </Box>
-            <Box
+            <Typography
+              variant="subtitle1"
+              component="h2"
+              className={styles.productName}
               sx={{
-                display: 'flex',
-                alignItems: 'center',
+                alignSelf: 'center',
+                fontWeight: 'bold',
+                fontSize: '0.8em',
               }}
-              marginTop={3}
             >
-              <Rating
-                name="size-small"
-                size="small"
-                defaultValue={product.popularity}
-                precision={0.25}
-                readOnly
-              />
-            </Box>
+              {product.name}
+            </Typography>
+
             <Box
               sx={{
                 display: 'flex',
               }}
             >
-              <Typography variant="h6" component="h2" marginTop={0}>
+              <Typography
+                variant="h6"
+                component="h3"
+                className={styles.productPrice}
+                sx={{
+                  fontSize: '0.8em',
+                }}
+              >
                 $&nbsp;
                 {product.price}
                 &nbsp;MXN

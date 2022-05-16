@@ -40,7 +40,7 @@ const theme = createTheme({
 const CardMenuLunch = ({ product }) => {
   console.log('hola');
   return (
-    <Grid item xs={4} md={3}>
+    <Grid item xs={6} sm={3}>
       <ThemeProvider theme={theme}>
         <Paper elevation={3} className="paper">
           <img src={product.image} alt="" className={styles.imgCard} />

@@ -7,11 +7,11 @@ import Header from '../Common/Header';
 
 const Admin = ({ role, authenticate }) => (
   <section className={styles.admin}>
-    <section>
+    <section className={styles.sidebar}>
       <Sidebar role={role} />
     </section>
     <main className={styles.main}>
-      <Header authenticate={authenticate} />
+      <Header authenticate={authenticate} className={styles.profile} />
       <div className={styles.adminOutlet}>
         <Outlet />
       </div>

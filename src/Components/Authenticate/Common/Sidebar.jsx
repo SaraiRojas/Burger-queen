@@ -10,13 +10,15 @@ const Sidebar = ({ role }) => {
       <section className={styles.sidebar}>
         <img className={styles.logoSidebar} src="https://svgshare.com/i/gmq.svg" alt="logo" />
         <Link to="staff">
-          <button type="button" className={`${styles.btn} ${styles.btnStaff}`}>Empleados</button>
+          <button type="button" className={`${styles.btn}`}>Empleados</button>
         </Link>
+        <hr />
         <Link to="menu">
-          <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Menu Desayuno</button>
+          <button type="button" className={`${styles.btn}`}>Menu Desayuno</button>
         </Link>
+        <hr />
         <Link to="menu-lunch">
-          <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Menu Vespertino</button>
+          <button type="button" className={`${styles.btn}`}>Menu Vespertino</button>
         </Link>
       </section>
     );
