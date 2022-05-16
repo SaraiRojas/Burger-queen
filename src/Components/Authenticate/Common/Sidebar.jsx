@@ -31,7 +31,7 @@ const Sidebar = ({ role }) => {
         <Link to="menu">
           <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Menu Desayuno</button>
         </Link>
-        <Link to="menuLunch">
+        <Link to="menu-lunch">
           <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Menu Almuerzo</button>
         </Link>
         <Link to="order">

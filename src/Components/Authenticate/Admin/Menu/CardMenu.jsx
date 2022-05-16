@@ -3,7 +3,7 @@ import {
   createTheme,
   Grid,
   Paper,
-  // Rating,
+  Rating,
   ThemeProvider,
   Typography,
 } from '@mui/material';
@@ -12,6 +12,26 @@ import Box from '@mui/material/Box';
 // import MoreVertIcon from '@mui/icons-material/MoreVert';
 import styles from './CardMenu.module.css';
 import ThreeDotsMenu from './ThreeDotsMenu';
+import BtnAdd from './BtnAdd';
+
+const threeMenuStyle = {
+  display: 'flex',
+  justifyContent: 'end',
+  position: 'absolute',
+  top: '-10px',
+  right: '0',
+  padding: '0',
+  transform: 'rotate(-90deg)',
+};
+
+const btnAdd = {
+  display: 'flex',
+  justifyContent: 'end',
+  position: 'absolute',
+  top: '-10px',
+  right: '0',
+  padding: '0',
+};
 
 const theme = createTheme({
   components: {
@@ -38,8 +58,8 @@ const theme = createTheme({
   },
 });
 
-const CardMenu = ({ menu, product }) => {
-  console.log('No tengo funcionalidad');
+const CardMenu = ({ role, menu, product }) => {
+  console.log(role);
   return (
     <Grid item xs={6} sm={3}>
       <ThemeProvider theme={theme}>
@@ -51,18 +71,8 @@ const CardMenu = ({ menu, product }) => {
               position: 'relative',
             }}
           >
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'end',
-                position: 'absolute',
-                top: '-10px',
-                right: '0',
-                padding: '0',
-                transform: 'rotate(-90deg)',
-              }}
-            >
-              {/* <Box
+            <Box>
+              <Box
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
@@ -76,8 +86,18 @@ const CardMenu = ({ menu, product }) => {
                   precision={0.25}
                   readOnly
                 />
-              </Box> */}
-              <ThreeDotsMenu menu={menu} product={product} />
+              </Box>
+              {(role === 'Admin')
+                ? (
+                  <Box sx={threeMenuStyle}>
+                    <ThreeDotsMenu menu={menu} product={product} />
+                  </Box>
+                )
+                : (
+                  <Box sx={btnAdd}>
+                    <BtnAdd product={product} />
+                  </Box>
+                )}
             </Box>
             <Typography
               variant="subtitle1"

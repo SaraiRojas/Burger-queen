@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
@@ -15,7 +16,7 @@ const btnStyle = {
   width: '10em',
 };
 
-const MenuLunch = () => {
+const MenuLunch = ({ role }) => {
   const [dataMenu, setDataMenu] = useState([]);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -28,13 +29,15 @@ const MenuLunch = () => {
 
   return (
     <section className={style.sectionMenu}>
-      <div className={style.btnModal}>
-        {/* <MenuBtn handleClick={handleOpen} /> */}
-        <Button sx={btnStyle} onClick={handleOpen}>
-          <AddIcon />
-          Producto
-        </Button>
-      </div>
+      {(role === 'Admin')
+        && (
+        <div className={style.btnModal}>
+          <Button sx={btnStyle} onClick={handleOpen}>
+            <AddIcon />
+            Producto
+          </Button>
+        </div>
+        )}
       <ModalMenu menu="menuLunch" open={open} setOpen={setOpen} />
       <Container>
         <>
@@ -48,7 +51,7 @@ const MenuLunch = () => {
           </Typography>
           <Grid container spacing={3}>
             {dataMenu.map((product) => (
-              <CardMenu menu="menuLunch" product={product} />
+              <CardMenu role={role} menu="menuLunch" product={product} />
             ))}
           </Grid>
         </>
