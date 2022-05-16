@@ -76,13 +76,6 @@
       "popularity": "4.8",
       "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg",
       "id": 4
-    },
-    {
-      "name": "Coca",
-      "price": "10.00",
-      "popularity": "5",
-      "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg",
-      "id": 5
     }
   ],
   "menuLunch": [
@@ -122,11 +115,11 @@
       "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
     },
     {
-      "id": 6,
       "name": "Refresco 500ml",
-      "price": "7.00",
-      "popularity": 4,
-      "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg"
+      "price": "10.00",
+      "popularity": "4",
+      "image": "https://www.infobae.com/new-resizer/MXJ7evJDfgKcSVyQGHOg2g2yNN8=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/OVLFOF7CGBAJFPLPNT5N3M77VY.jpg",
+      "id": 6
     }
   ]
 }
