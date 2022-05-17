@@ -16,8 +16,8 @@ const PrivateRoute = ({ role, authenticate }) => {
         <Route path="/" element={<LogIn />} />
         <Route path="/admin/*" element={<Admin role={role} authenticate={authenticate} />}>
           <Route path="staff" element={<Staff />} />
-          <Route path="menu" element={<Menu />} />
-          <Route path="menu-lunch" element={<MenuLunch />} />
+          <Route path="menu" element={<Menu role={role} />} />
+          <Route path="menu-lunch" element={<MenuLunch role={role} />} />
         </Route>
       </Routes>
     );
@@ -28,8 +28,8 @@ const PrivateRoute = ({ role, authenticate }) => {
       <Routes>
         <Route path="/" element={<LogIn />} />
         <Route path="/waiter/*" element={<Waiter role={role} authenticate={authenticate} />}>
-          <Route path="menu" element={<Menu role={role} authenticate={authenticate} />} />
-          <Route path="menuLunch" element={<MenuLunch role={role} authenticate={authenticate} />} />
+          <Route path="menu" element={<Menu role={role} />} />
+          <Route path="menu-lunch" element={<MenuLunch role={role} />} />
           <Route path="order" element={<Waiter role={role} authenticate={authenticate} />} />
           <Route path="toserve" element={<Waiter role={role} authenticate={authenticate} />} />
         </Route>

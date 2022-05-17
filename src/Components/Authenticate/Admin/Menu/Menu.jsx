@@ -17,10 +17,11 @@ const btnStyle = {
   width: '10em',
 };
 
-const Menu = () => {
+const Menu = ({ role }) => {
   const [dataMenu, setDataMenu] = useState([]);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
+  console.log('Estoy en menu');
 
   useEffect(() => {
     fetch('http://localhost:3001/menu')
@@ -30,13 +31,15 @@ const Menu = () => {
 
   return (
     <section className={style.sectionMenu}>
-      <div className={style.btnModal}>
-        {/* <MenuBtn handleClick={handleOpen} /> */}
-        <Button sx={btnStyle} onClick={handleOpen}>
-          <AddIcon />
-          Producto
-        </Button>
-      </div>
+      {(role === 'Admin')
+        && (
+        <div className={style.btnModal}>
+          <Button sx={btnStyle} onClick={handleOpen}>
+            <AddIcon />
+            Producto
+          </Button>
+        </div>
+        )}
       <ModalMenu
         menu="menu"
         open={open}
@@ -55,6 +58,7 @@ const Menu = () => {
           <Grid container spacing={3}>
             {dataMenu.map((product) => (
               <CardMenu
+                role={role}
                 menu="menu"
                 product={product}
               />
