@@ -22,7 +22,7 @@ const Alert = forwardRef((props, ref) => (
 ));
 
 const BtnAdd = ({ product }) => {
-  const [count, setCount] = useOutletContext();
+  const [count, setCount, dataProduct, setDataProduct] = useOutletContext();
   const [state, setState] = useState({
     open: false,
     vertical: 'top',
@@ -34,6 +34,7 @@ const BtnAdd = ({ product }) => {
   const handleClick = (newState) => () => {
     setState({ open: true, ...newState });
     setCount(count + 1);
+    setDataProduct([...dataProduct, product]);
   };
 
   const handleClose = () => {

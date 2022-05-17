@@ -7,6 +7,7 @@ import styles from './Waiter.module.css';
 
 const Waiter = ({ role, authenticate }) => {
   const [count, setCount] = useState(0);
+  const [dataProduct, setDataProduct] = useState([]);
 
   return (
     <section className={styles.waiter}>
@@ -15,11 +16,14 @@ const Waiter = ({ role, authenticate }) => {
       </section>
       <main>
         <Header
-          count={count}
           role={role}
           authenticate={authenticate}
+          count={count}
+          dataProduct={dataProduct}
+          setDataProduct={setDataProduct}
+          setCount={setCount}
         />
-        <Outlet context={[count, setCount]} />
+        <Outlet context={[count, setCount, dataProduct, setDataProduct]} />
       </main>
     </section>
   );
