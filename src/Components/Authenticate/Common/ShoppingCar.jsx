@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Badge from '@mui/material/Badge';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
@@ -9,8 +10,8 @@ const btnCar = {
   marginRight: '0.2em',
 };
 
-const ShoppingCar = () => (
-  <Badge badgeContent={0} color="primary">
+const ShoppingCar = ({ count }) => (
+  <Badge badgeContent={count} color="primary">
     <AddShoppingCartIcon sx={btnCar} color="action" />
   </Badge>
 );
