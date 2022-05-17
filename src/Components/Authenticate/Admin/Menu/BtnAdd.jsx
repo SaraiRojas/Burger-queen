@@ -15,7 +15,6 @@ const btnStyle = {
   width: '2em',
   minWidth: '0',
   marginTop: '-1em',
-  // marginRight: '.2em',
 };
 
 const Alert = forwardRef((props, ref) => (

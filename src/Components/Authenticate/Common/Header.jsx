@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Profile from './Profile';
-import ShoppingCar from './ShoppingCar';
+import ShoppingCar from '../Waiter/ShoppingCar';
 import style from './Header.module.css';
 
-const Header = ({ count, role, authenticate }) => {
+const Header = ({
+  count, role, authenticate,
+}) => {
   if (role === 'Mesero') {
     return (
       <header className={style.header}>

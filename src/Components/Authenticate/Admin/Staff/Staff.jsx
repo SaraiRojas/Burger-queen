@@ -207,7 +207,9 @@ const Staff = () => {
       <div className={styles.staffBtnContainer}>
         <StaffBtn handleClick={handleOpen} />
       </div>
-      <ModalStaff open={open} setOpen={setOpen} />
+      <div className={styles.modalCar}>
+        <ModalStaff open={open} setOpen={setOpen} />
+      </div>
       <main className={styles.main}>
         <TableContainer>
           <Table>

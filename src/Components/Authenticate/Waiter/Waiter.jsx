@@ -14,7 +14,11 @@ const Waiter = ({ role, authenticate }) => {
         <Sidebar role={role} />
       </section>
       <main>
-        <Header count={count} role={role} authenticate={authenticate} />
+        <Header
+          count={count}
+          role={role}
+          authenticate={authenticate}
+        />
         <Outlet context={[count, setCount]} />
       </main>
     </section>
