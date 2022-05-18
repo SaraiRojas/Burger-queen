@@ -149,7 +149,6 @@ const ShoppingCar = ({
                       <TableCell><b>Precio</b></TableCell>
                     </TableRow>
                   </TableHead>
-
                   <TableBody>
                     {dataProduct.map((order) => (
                       <TableRow key={order.id}>

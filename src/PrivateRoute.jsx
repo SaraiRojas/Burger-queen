@@ -6,6 +6,7 @@ import Staff from './Components/Authenticate/Admin/Staff/Staff';
 import Menu from './Components/Authenticate/Admin/Menu/Menu';
 import MenuLunch from './Components/Authenticate/Admin/LunchMenu/MenuLunch';
 import Home from './Components/Authenticate/Common/Home';
+import Orders from './Components/Authenticate/Chef/Orders';
 
 const PrivateRoute = ({ role, authenticate }) => {
   if (role === 'Admin') {
@@ -28,7 +29,7 @@ const PrivateRoute = ({ role, authenticate }) => {
         <Route path="/home/*" element={<Home role={role} authenticate={authenticate} />}>
           <Route path="menu" element={<Menu role={role} />} />
           <Route path="menu-lunch" element={<MenuLunch role={role} />} />
-          <Route path="order" element={<Menu role={role} authenticate={authenticate} />} />
+          <Route path="order" element={<Orders role={role} authenticate={authenticate} />} />
           <Route path="toserve" element={<Menu role={role} authenticate={authenticate} />} />
         </Route>
       </Routes>
@@ -40,7 +41,7 @@ const PrivateRoute = ({ role, authenticate }) => {
       <Routes>
         <Route path="/" element={<LogIn />} />
         <Route path="/home/*" element={<Home role={role} authenticate={authenticate} />}>
-          <Route path="order" element={<Menu role={role} authenticate={authenticate} />} />
+          <Route path="order" element={<Orders role={role} authenticate={authenticate} />} />
           <Route path="toserve" element={<Menu role={role} authenticate={authenticate} />} />
         </Route>
       </Routes>
