@@ -40,7 +40,7 @@ const LogIn = () => {
 
     if (expEmail.test(email) && expPassword.test(password)) {
       await signInWithEmailAndPassword(email, password);
-      navigate('/waiter');
+      navigate('/admin');
       // if (role === 'Admin') {
       //   navigate('/admin');
       // } else if (role === 'Mesero') {
