@@ -56,21 +56,10 @@ const Staff = () => {
   const [modalDelete, setModalDelete] = useState(false);
   const [open, setOpen] = useState(false);
   const [userEdit, setUserEdit] = useState(null);
-  // const [dataEdited, setDataEdited] = useState(null);
 
   const openCLoseModalEdit = () => {
-    // setUserEdit('En staff');
-    // console.log(userEdit);
     setModalEdit(!modalEdit);
   };
-
-  /*   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setDataEdited((preState) => ({
-      ...preState,
-      [name]: value,
-    }));
-  }; */
 
   const openCLoseModalDelete = () => {
     setModalDelete(!modalDelete);

@@ -65,16 +65,34 @@ const ShoppingCar = ({
     setCount(count - 1);
   };
 
-  const getOrder = (dataOrder) => {
+  const handleCancel = () => {
+    handleClose();
+    setDataProduct([]);
+    setCount(0);
+  };
+
+  const getOrder = (e, dataOrder) => {
+    e.preventDefault();
+    const data = e.target.form;
+    const newData = {
+      client: data[0].value,
+      table: data[1].value,
+      products: dataOrder,
+    };
+    console.log(e);
+    console.log('newData', newData);
     const requestOption = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(dataOrder),
+      body: JSON.stringify(newData),
     };
 
     fetch('http://localhost:3001/orders', requestOption)
       .then((response) => response.json())
       .catch((err) => console.log(err));
+    handleClose();
+    setDataProduct([]);
+    setCount(0);
   };
 
   console.log(dataProduct);
@@ -146,8 +164,8 @@ const ShoppingCar = ({
                   </TableBody>
                 </Table>
               </TableContainer>
-              <Button type="submit" onClick={() => getOrder(dataProduct)}>Confirmar</Button>
-              <Button>Cancelar</Button>
+              <Button type="submit" onClick={(e) => getOrder(e, dataProduct)}>Confirmar</Button>
+              <Button onClick={handleCancel}>Cancelar</Button>
             </form>
           </Box>
         </Menu>
