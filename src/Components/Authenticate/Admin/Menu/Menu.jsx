@@ -27,6 +27,7 @@ const Menu = ({ role }) => {
     fetch('http://localhost:3001/menu')
       .then((response) => response.json())
       .then((data) => setDataMenu(data));
+    console.log(dataMenu);
   }, []);
 
   return (

@@ -263,6 +263,48 @@
         }
       ],
       "id": 6
+    },
+    {
+      "client": "Pepe Aguilar",
+      "table": "10",
+      "products": [
+        {
+          "id": 2,
+          "name": "Cafe",
+          "price": "7.00",
+          "popularity": 5,
+          "image": "https://ae01.alicdn.com/kf/H1c2054b527494e9faee9a11dfd37572bi.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Jugo de Naranja",
+          "price": "7.80",
+          "popularity": 4,
+          "image": "https://verandavalencia.com/wp-content/uploads/2017/07/zumo-de-naranja-natural.jpg"
+        }
+      ],
+      "id": 7
+    },
+    {
+      "client": "Andrea",
+      "table": "6",
+      "products": [
+        {
+          "name": "Cafe con Leche",
+          "price": "7.00",
+          "popularity": "4",
+          "image": "https://cdn.shopify.com/s/files/1/0438/4479/6573/products/Latte-moka-caliente-12oz-_354ml_-01.jpg?v=1601056479",
+          "id": 1
+        },
+        {
+          "id": 3,
+          "name": "Jugo de Naranja",
+          "price": "7.80",
+          "popularity": 4,
+          "image": "https://verandavalencia.com/wp-content/uploads/2017/07/zumo-de-naranja-natural.jpg"
+        }
+      ],
+      "id": 8
     }
   ]
 }
