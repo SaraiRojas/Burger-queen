@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import { useOutletContext } from 'react-router-dom';
 
 const btnStyle = {
   bgcolor: 'black',
@@ -14,7 +15,6 @@ const btnStyle = {
   width: '2em',
   minWidth: '0',
   marginTop: '-1em',
-  // marginRight: '.2em',
 };
 
 const Alert = forwardRef((props, ref) => (
@@ -22,6 +22,7 @@ const Alert = forwardRef((props, ref) => (
 ));
 
 const BtnAdd = ({ product }) => {
+  const [count, setCount, dataProduct, setDataProduct] = useOutletContext();
   const [state, setState] = useState({
     open: false,
     vertical: 'top',
@@ -32,6 +33,8 @@ const BtnAdd = ({ product }) => {
 
   const handleClick = (newState) => () => {
     setState({ open: true, ...newState });
+    setCount(count + 1);
+    setDataProduct([...dataProduct, product]);
   };
 
   const handleClose = () => {
