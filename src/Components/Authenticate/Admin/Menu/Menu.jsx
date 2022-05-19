@@ -27,6 +27,7 @@ const Menu = ({ role }) => {
     fetch('http://localhost:3001/menu')
       .then((response) => response.json())
       .then((data) => setDataMenu(data));
+    console.log(dataMenu);
   }, []);
 
   return (
@@ -58,6 +59,7 @@ const Menu = ({ role }) => {
           <Grid container spacing={3}>
             {dataMenu.map((product) => (
               <CardMenu
+                key={product.id}
                 role={role}
                 menu="menu"
                 product={product}

@@ -2,19 +2,18 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import LogIn from './Components/No-Authenticate/Login/LogIn';
-import Admin from './Components/Authenticate/Admin/Admin';
 import Staff from './Components/Authenticate/Admin/Staff/Staff';
 import Menu from './Components/Authenticate/Admin/Menu/Menu';
 import MenuLunch from './Components/Authenticate/Admin/LunchMenu/MenuLunch';
-import Waiter from './Components/Authenticate/Waiter/Waiter';
-import Chef from './Components/Authenticate/Chef/Chef';
+import Home from './Components/Authenticate/Common/Home';
+import Orders from './Components/Authenticate/Chef/Orders';
 
 const PrivateRoute = ({ role, authenticate }) => {
   if (role === 'Admin') {
     return (
       <Routes>
         <Route path="/" element={<LogIn />} />
-        <Route path="/admin/*" element={<Admin role={role} authenticate={authenticate} />}>
+        <Route path="/home/*" element={<Home role={role} authenticate={authenticate} />}>
           <Route path="staff" element={<Staff />} />
           <Route path="menu" element={<Menu role={role} />} />
           <Route path="menu-lunch" element={<MenuLunch role={role} />} />
@@ -27,11 +26,11 @@ const PrivateRoute = ({ role, authenticate }) => {
     return (
       <Routes>
         <Route path="/" element={<LogIn />} />
-        <Route path="/waiter/*" element={<Waiter role={role} authenticate={authenticate} />}>
+        <Route path="/home/*" element={<Home role={role} authenticate={authenticate} />}>
           <Route path="menu" element={<Menu role={role} />} />
           <Route path="menu-lunch" element={<MenuLunch role={role} />} />
-          <Route path="order" element={<Waiter role={role} authenticate={authenticate} />} />
-          <Route path="toserve" element={<Waiter role={role} authenticate={authenticate} />} />
+          <Route path="order" element={<Orders role={role} authenticate={authenticate} />} />
+          <Route path="toserve" element={<Menu role={role} authenticate={authenticate} />} />
         </Route>
       </Routes>
     );
@@ -41,9 +40,9 @@ const PrivateRoute = ({ role, authenticate }) => {
     return (
       <Routes>
         <Route path="/" element={<LogIn />} />
-        <Route path="/chef" element={<Chef role={role} authenticate={authenticate} />}>
-          <Route path="order" element={<Chef role={role} authenticate={authenticate} />} />
-          <Route path="toserve" element={<Chef role={role} authenticate={authenticate} />} />
+        <Route path="/home/*" element={<Home role={role} authenticate={authenticate} />}>
+          <Route path="order" element={<Orders role={role} authenticate={authenticate} />} />
+          <Route path="toserve" element={<Menu role={role} authenticate={authenticate} />} />
         </Route>
       </Routes>
     );

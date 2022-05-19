@@ -52,29 +52,29 @@
   "menu": [
     {
       "name": "Cafe con Leche",
-      "price": "7.00",
-      "popularity": "4",
+      "price": 7,
+      "popularity": 4,
       "image": "https://cdn.shopify.com/s/files/1/0438/4479/6573/products/Latte-moka-caliente-12oz-_354ml_-01.jpg?v=1601056479",
       "id": 1
     },
     {
       "id": 2,
       "name": "Cafe",
-      "price": "7.00",
+      "price": 7,
       "popularity": 5,
       "image": "https://ae01.alicdn.com/kf/H1c2054b527494e9faee9a11dfd37572bi.jpg"
     },
     {
       "id": 3,
       "name": "Jugo de Naranja",
-      "price": "7.80",
+      "price": 7.8,
       "popularity": 4,
       "image": "https://verandavalencia.com/wp-content/uploads/2017/07/zumo-de-naranja-natural.jpg"
     },
     {
       "name": "Sandwich",
-      "price": "15.00",
-      "popularity": "4.8",
+      "price": 15,
+      "popularity": 4.8,
       "image": "https://eggs.org.nz/wp-content/uploads/2021/12/Club-Sandwiches-500x500.jpg",
       "id": 4
     }
@@ -83,55 +83,55 @@
     {
       "id": 1,
       "name": "Hamburguesa Simple",
-      "price": "10.00",
+      "price": 10,
       "popularity": 4,
       "image": "https://elporxosantmarti.com/wp-content/uploads/2021/12/hamburguesa-anos-20.jpg"
     },
     {
       "id": 2,
       "name": "Hamburguesa Doble",
-      "price": "15.00",
+      "price": 15,
       "popularity": 5,
       "image": "https://cdn.shopify.com/s/files/1/0248/7310/7536/products/haz-keto-bollos-para-hamburguesa-3_1200x1200.jpg?v=1623868484"
     },
     {
       "id": 3,
       "name": "Papas Fritas",
-      "price": "5.00",
+      "price": 5,
       "popularity": 4,
       "image": "https://godmyshop.com/wp-content/uploads/2020/11/papas-fritas-300x300.jpg"
     },
     {
       "id": 4,
       "name": "Aros de cebolla",
-      "price": "11.00",
+      "price": 11,
       "popularity": 5,
       "image": "https://sweetandsavorymeals.com/wp-content/uploads/2020/09/crispy-onion-rings-recipe-500x500.jpg"
     },
     {
       "id": 5,
       "name": "Agua 600ml",
-      "price": "5.00",
+      "price": 5,
       "popularity": 5,
       "image": "https://superlomas.odoo.com/web/image/product.template/4860/image_256/%5Be6%5D%20AGUA%20E%20PURA%20600%20PET%20ML?unique=a02c7ae"
     },
     {
       "name": "Refresco 600ml",
-      "price": "7.00",
-      "popularity": "4",
+      "price": 7,
+      "popularity": 4,
       "image": "https://yosoyvendedor.com/source/3eda16f86daab883ae8cc9142864b38e/fresca.jpg",
       "id": 6
     },
     {
       "id": 7,
       "name": "Agua 1L",
-      "price": "7.00",
+      "price": 7,
       "popularity": 3,
       "image": "https://images.rappi.com.mx/products/2109906896-1645305073620.png?d=200x200&e=webp"
     },
     {
       "name": "Refresco 1L",
-      "price": "10.00",
+      "price": 10,
       "popularity": 4,
       "image": "https://superlomas.odoo.com/web/image/product.template/3087/image_256/REFRESCO%20COCA%20COLA%20PET%20NR%201%20LT?unique=af1926f",
       "id": 8
@@ -139,62 +139,72 @@
   ],
   "orders": [
     {
+      "client": "Daniela Diaz",
+      "table": "4",
+      "total": "29.80",
+      "products": [
+        {
+          "name": "Sandwich",
+          "price": 15,
+          "popularity": 4.8,
+          "image": "https://eggs.org.nz/wp-content/uploads/2021/12/Club-Sandwiches-500x500.jpg",
+          "id": 4
+        },
+        {
+          "id": 3,
+          "name": "Jugo de Naranja",
+          "price": 7.8,
+          "popularity": 4,
+          "image": "https://verandavalencia.com/wp-content/uploads/2017/07/zumo-de-naranja-natural.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Cafe",
+          "price": 7,
+          "popularity": 5,
+          "image": "https://ae01.alicdn.com/kf/H1c2054b527494e9faee9a11dfd37572bi.jpg"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "client": "Raul Di",
+      "table": "2",
+      "total": "26.00",
       "products": [
         {
           "id": 4,
           "name": "Aros de cebolla",
-          "price": "11.00",
+          "price": 11,
           "popularity": 5,
           "image": "https://sweetandsavorymeals.com/wp-content/uploads/2020/09/crispy-onion-rings-recipe-500x500.jpg"
         },
         {
-          "name": "Refresco 600ml",
-          "price": "7.00",
-          "popularity": "4",
-          "image": "https://yosoyvendedor.com/source/3eda16f86daab883ae8cc9142864b38e/fresca.jpg",
-          "id": 6
-        }
-      ],
-      "client": "Daniela Diaz",
-      "table": "6",
-      "id": 1
-    },
-    {
-      "client": "Pepe Aguilar",
-      "table": "4",
-      "products": [
-        {
-          "id": 1,
-          "name": "Hamburguesa Simple",
-          "price": "10.00",
-          "popularity": 4,
-          "image": "https://elporxosantmarti.com/wp-content/uploads/2021/12/hamburguesa-anos-20.jpg"
-        },
-        {
-          "id": 7,
-          "name": "Agua 1L",
-          "price": "7.00",
-          "popularity": 3,
-          "image": "https://images.rappi.com.mx/products/2109906896-1645305073620.png?d=200x200&e=webp"
+          "id": 2,
+          "name": "Hamburguesa Doble",
+          "price": 15,
+          "popularity": 5,
+          "image": "https://cdn.shopify.com/s/files/1/0248/7310/7536/products/haz-keto-bollos-para-hamburguesa-3_1200x1200.jpg?v=1623868484"
         }
       ],
       "id": 2
     },
     {
-      "client": "Diego Luna",
+      "client": "Lupe",
       "table": "10",
+      "total": "20.00",
       "products": [
         {
-          "id": 5,
-          "name": "Agua 600ml",
-          "price": "5.00",
-          "popularity": 5,
-          "image": "https://superlomas.odoo.com/web/image/product.template/4860/image_256/%5Be6%5D%20AGUA%20E%20PURA%20600%20PET%20ML?unique=a02c7ae"
+          "name": "Refresco 1L",
+          "price": 10,
+          "popularity": 4,
+          "image": "https://superlomas.odoo.com/web/image/product.template/3087/image_256/REFRESCO%20COCA%20COLA%20PET%20NR%201%20LT?unique=af1926f",
+          "id": 8
         },
         {
           "id": 1,
           "name": "Hamburguesa Simple",
-          "price": "10.00",
+          "price": 10,
           "popularity": 4,
           "image": "https://elporxosantmarti.com/wp-content/uploads/2021/12/hamburguesa-anos-20.jpg"
         }
@@ -202,67 +212,26 @@
       "id": 3
     },
     {
-      "client": "Raul Di",
-      "table": "1",
+      "client": "Skar Araque",
+      "table": "6",
+      "total": "22.80",
       "products": [
         {
-          "id": 3,
-          "name": "Papas Fritas",
-          "price": "5.00",
-          "popularity": 4,
-          "image": "https://godmyshop.com/wp-content/uploads/2020/11/papas-fritas-300x300.jpg"
+          "name": "Sandwich",
+          "price": 15,
+          "popularity": 4.8,
+          "image": "https://eggs.org.nz/wp-content/uploads/2021/12/Club-Sandwiches-500x500.jpg",
+          "id": 4
         },
-        {
-          "id": 7,
-          "name": "Agua 1L",
-          "price": "7.00",
-          "popularity": 3,
-          "image": "https://images.rappi.com.mx/products/2109906896-1645305073620.png?d=200x200&e=webp"
-        }
-      ],
-      "id": 4
-    },
-    {
-      "client": "Lupe",
-      "table": "3",
-      "products": [
-        {
-          "id": 2,
-          "name": "Hamburguesa Doble",
-          "price": "15.00",
-          "popularity": 5,
-          "image": "https://cdn.shopify.com/s/files/1/0248/7310/7536/products/haz-keto-bollos-para-hamburguesa-3_1200x1200.jpg?v=1623868484"
-        },
-        {
-          "id": 4,
-          "name": "Aros de cebolla",
-          "price": "11.00",
-          "popularity": 5,
-          "image": "https://sweetandsavorymeals.com/wp-content/uploads/2020/09/crispy-onion-rings-recipe-500x500.jpg"
-        }
-      ],
-      "id": 5
-    },
-    {
-      "client": "dfg",
-      "table": "2",
-      "products": [
         {
           "id": 3,
           "name": "Jugo de Naranja",
-          "price": "7.80",
+          "price": 7.8,
           "popularity": 4,
           "image": "https://verandavalencia.com/wp-content/uploads/2017/07/zumo-de-naranja-natural.jpg"
-        },
-        {
-          "name": "Cafe con Leche",
-          "price": "7.00",
-          "popularity": "4",
-          "image": "https://cdn.shopify.com/s/files/1/0438/4479/6573/products/Latte-moka-caliente-12oz-_354ml_-01.jpg?v=1601056479",
-          "id": 1
         }
       ],
-      "id": 6
+      "id": 4
     }
   ]
 }
