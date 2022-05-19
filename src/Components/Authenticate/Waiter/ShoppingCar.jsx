@@ -49,20 +49,33 @@ const ShoppingCar = ({
   count, setCount, dataProduct, setDataProduct,
 }) => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [sum, setSum] = useState(0);
   const open = Boolean(anchorEl);
 
   const handleClose = () => {
     setAnchorEl(null);
   };
 
+  const suma = () => {
+    // eslint-disable-next-line max-len
+    const total = dataProduct.map((elems) => elems.price).reduce((acum, elem) => acum + elem, 0);
+    setSum(total.toFixed(2));
+    console.log(total);
+  };
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    suma();
   };
+
+  // setSum(sum + dataProduct.price);
 
   const deleteOrder = (id) => {
     const order = dataProduct.filter((elem) => elem.id !== id);
     setDataProduct(order);
     setCount(count - 1);
+    const total = order.map((elems) => elems.price).reduce((acum, elem) => acum + elem, 0);
+    setSum(total.toFixed(2));
   };
 
   const handleCancel = () => {
@@ -71,16 +84,16 @@ const ShoppingCar = ({
     setCount(0);
   };
 
-  const getOrder = (e, dataOrder) => {
+  const getOrder = (e, dataOrder, sumOrder) => {
     e.preventDefault();
     const data = e.target.form;
     const newData = {
       client: data[0].value,
       table: data[1].value,
+      total: sumOrder,
       products: dataOrder,
     };
-    console.log(e);
-    console.log('newData', newData);
+
     const requestOption = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -95,7 +108,6 @@ const ShoppingCar = ({
     setCount(0);
   };
 
-  console.log(dataProduct);
   return (
     <section>
       <Badge badgeContent={count} color="primary">
@@ -149,7 +161,6 @@ const ShoppingCar = ({
                       <TableCell><b>Precio</b></TableCell>
                     </TableRow>
                   </TableHead>
-
                   <TableBody>
                     {dataProduct.map((order) => (
                       <TableRow key={order.id}>
@@ -164,7 +175,11 @@ const ShoppingCar = ({
                   </TableBody>
                 </Table>
               </TableContainer>
-              <Button type="submit" onClick={(e) => getOrder(e, dataProduct)}>Confirmar</Button>
+              <Typography sx={menu} id="modal-modal-title" variant="h6" component="h2">
+                Total:&nbsp;
+                {sum}
+              </Typography>
+              <Button type="submit" onClick={(e) => getOrder(e, dataProduct, sum)}>Confirmar</Button>
               <Button onClick={handleCancel}>Cancelar</Button>
             </form>
           </Box>
