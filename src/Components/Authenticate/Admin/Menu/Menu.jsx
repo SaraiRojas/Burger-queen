@@ -59,6 +59,7 @@ const Menu = ({ role }) => {
           <Grid container spacing={3}>
             {dataMenu.map((product) => (
               <CardMenu
+                key={product.id}
                 role={role}
                 menu="menu"
                 product={product}
