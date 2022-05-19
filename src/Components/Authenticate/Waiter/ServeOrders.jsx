@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import CardOrder from './CardOrder';
+import CardServeOrder from './CardServeOrder';
 import style from '../Admin/Menu/Menu.module.css';
 
-const Orders = () => {
+const ServeOrders = () => {
   const [dataMenu, setDataMenu] = useState([]);
   console.log('orders data menu', dataMenu);
 
@@ -14,9 +14,7 @@ const Orders = () => {
       .then((data) => setDataMenu(data));
   }, []);
 
-  // eslint-disable-next-line prefer-destructuring
-  const products = dataMenu.products;
-  console.log('orders products', products);
+  console.log('orders serveOrder', dataMenu);
 
   return (
     <section className={style.sectionMenu}>
@@ -28,11 +26,11 @@ const Orders = () => {
             marginBottom={3}
             marginTop={5}
           >
-            Pedidos
+            Servir
           </Typography>
           <Grid container spacing={3}>
-            {dataMenu.filter((elem) => elem.status === 'process').map((order) => (
-              <CardOrder
+            {dataMenu.filter((elem) => elem.status === 'ready').map((order) => (
+              <CardServeOrder
                 key={order.id}
                 // table={table}
                 order={order}
@@ -46,4 +44,4 @@ const Orders = () => {
   );
 };
 
-export default Orders;
+export default ServeOrders;

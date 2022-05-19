@@ -21,7 +21,7 @@ const Alert = forwardRef((props, ref) => (
   <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
 ));
 
-const BtnAddServe = ({ order, id }) => {
+const BtnAddCheckService = ({ order, id }) => {
   const [dataService, setDataService] = useState();
   const [state, setState] = useState({
     open: false,
@@ -29,11 +29,11 @@ const BtnAddServe = ({ order, id }) => {
     horizontal: 'center',
   });
 
-  console.log('BtnAddServe', id);
-
   const updateDataService = (dataServiceServe, idUpdateData) => {
+    console.log('estoy en updateDataService de BtnAddCheckServe', dataServiceServe);
     // eslint-disable-next-line no-param-reassign
-    dataServiceServe.status = 'ready';
+    dataServiceServe.status = 'delivered';
+    console.log(dataServiceServe.status);
     const requestOption = {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -44,7 +44,6 @@ const BtnAddServe = ({ order, id }) => {
       .then((response) => response.json())
       .catch((err) => console.log(err));
   };
-
   const { vertical, horizontal, open } = state;
 
   const handleClick = (newState) => () => {
@@ -76,13 +75,9 @@ const BtnAddServe = ({ order, id }) => {
         key={vertical + horizontal}
       >
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-          La orden de
+          La orden
           &nbsp;
           {order.client}
-          <br />
-          de la Mesa
-          &nbsp;
-          {order.table}
           <br />
           se ha completado con exito!
         </Alert>
@@ -91,4 +86,4 @@ const BtnAddServe = ({ order, id }) => {
   );
 };
 
-export default BtnAddServe;
+export default BtnAddCheckService;
