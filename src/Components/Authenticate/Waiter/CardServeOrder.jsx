@@ -19,7 +19,7 @@ import TableRow from '@mui/material/TableRow';
 // import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Checkbox from '@mui/material/Checkbox';
 import styles from '../Admin/Menu/CardMenu.module.css';
-import BtnAddServe from './BtnAddServe';
+import BtnAddCheckService from './BtnAddCheckService';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -57,7 +57,7 @@ const theme = createTheme({
   },
 });
 
-const CardOrder = ({ order, id }) => {
+const CardServeOrder = ({ order, id }) => {
   console.log('soy order de cardOrder', order);
   return (
     <Grid item xs={12} sm={6}>
@@ -87,7 +87,7 @@ const CardOrder = ({ order, id }) => {
                 />
               </Box>
               <Box sx={btnAdd}>
-                <BtnAddServe order={order} id={id} />
+                <BtnAddCheckService order={order} id={id} />
               </Box>
             </Box>
             <Typography
@@ -108,10 +108,9 @@ const CardOrder = ({ order, id }) => {
                   <TableRow>
                     <TableCell><b>Cant.</b></TableCell>
                     <TableCell><b>Producto</b></TableCell>
-                    <TableCell><b>Listo</b></TableCell>
+                    <TableCell><b>Servido</b></TableCell>
                   </TableRow>
                 </TableHead>
-
                 <TableBody>
                   {order.products.map((product) => (
                     <TableRow key={product.id}>
@@ -145,4 +144,4 @@ const CardOrder = ({ order, id }) => {
   );
 };
 
-export default CardOrder;
+export default CardServeOrder;

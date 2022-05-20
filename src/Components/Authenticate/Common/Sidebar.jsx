@@ -40,7 +40,7 @@ const Sidebar = ({ role }) => {
         <Link to="toserve">
           <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Servir</button>
         </Link>
-        <Link to="list-order">
+        <Link to="list-orders">
           <button type="button" className={`${styles.btn} ${styles.btnMenus}`}>Lista Pedidos</button>
         </Link>
       </section>

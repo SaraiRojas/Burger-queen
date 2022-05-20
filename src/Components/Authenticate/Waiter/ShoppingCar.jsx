@@ -91,9 +91,11 @@ const ShoppingCar = ({
       client: data[0].value,
       table: data[1].value,
       total: sumOrder,
+      status: 'process',
       products: dataOrder,
     };
 
+    console.log(newData);
     const requestOption = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
