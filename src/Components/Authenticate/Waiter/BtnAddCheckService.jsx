@@ -21,13 +21,16 @@ const Alert = forwardRef((props, ref) => (
   <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
 ));
 
-const BtnAddCheckService = ({ order, id }) => {
-  const [dataService, setDataService] = useState();
+const BtnAddCheckService = ({
+  order, id, refreshData, setRefreshData,
+}) => {
   const [state, setState] = useState({
     open: false,
     vertical: 'top',
     horizontal: 'center',
   });
+
+  const refresh = () => setRefreshData(!refreshData);
 
   const updateDataService = (dataServiceServe, idUpdateData) => {
     console.log('estoy en updateDataService de BtnAddCheckServe', dataServiceServe);
@@ -41,15 +44,17 @@ const BtnAddCheckService = ({ order, id }) => {
     };
 
     fetch(`http://localhost:3001/orders/${idUpdateData}`, requestOption)
-      .then((response) => response.json())
+      .then((response) => {
+        response.json();
+        refresh();
+      })
       .catch((err) => console.log(err));
   };
   const { vertical, horizontal, open } = state;
 
   const handleClick = (newState) => () => {
     setState({ open: true, ...newState });
-    setDataService(order);
-    updateDataService(dataService, id);
+    updateDataService(order, id);
   };
 
   const handleClose = () => {

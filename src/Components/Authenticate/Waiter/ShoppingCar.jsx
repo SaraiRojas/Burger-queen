@@ -168,7 +168,11 @@ const ShoppingCar = ({
                       <TableRow key={order.id}>
                         <TableCell>{order.id}</TableCell>
                         <TableCell>{order.name}</TableCell>
-                        <TableCell>{order.price}</TableCell>
+                        <TableCell>
+                          $&nbsp;
+                          {order.price}
+                          &nbsp;MXN
+                        </TableCell>
                         <TableCell>
                           <DeleteIcon onClick={() => deleteOrder(order.id)} />
                         </TableCell>
@@ -178,8 +182,9 @@ const ShoppingCar = ({
                 </Table>
               </TableContainer>
               <Typography sx={menu} id="modal-modal-title" variant="h6" component="h2">
-                Total:&nbsp;
+                Total:&nbsp;$&nbsp;
                 {sum}
+                &nbsp;MXN
               </Typography>
               <Button type="submit" onClick={(e) => getOrder(e, dataProduct, sum)}>Confirmar</Button>
               <Button onClick={handleCancel}>Cancelar</Button>

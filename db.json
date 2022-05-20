@@ -95,8 +95,8 @@
     },
     {
       "name": "Aros de cebollas",
-      "price": "11",
-      "popularity": "5",
+      "price": 11,
+      "popularity": 5,
       "image": "https://sweetandsavorymeals.com/wp-content/uploads/2020/09/crispy-onion-rings-recipe-500x500.jpg",
       "id": 4
     },
@@ -134,7 +134,7 @@
       "client": "Sofia Vergara",
       "table": "1",
       "total": "25.00",
-      "status": "ready",
+      "status": "delivered",
       "products": [
         {
           "name": "Refresco 1L",
@@ -164,7 +164,7 @@
       "client": "Karla",
       "table": "5",
       "total": "36.00",
-      "status": "delivered",
+      "status": "ready",
       "products": [
         {
           "id": 4,
@@ -212,6 +212,29 @@
         }
       ],
       "id": 3
+    },
+    {
+      "client": "Riki",
+      "table": "6",
+      "total": "26.00",
+      "status": "process",
+      "products": [
+        {
+          "name": "Aros de cebollas",
+          "price": 11,
+          "popularity": 5,
+          "image": "https://sweetandsavorymeals.com/wp-content/uploads/2020/09/crispy-onion-rings-recipe-500x500.jpg",
+          "id": 4
+        },
+        {
+          "id": 2,
+          "name": "Hamburguesa Doble",
+          "price": 15,
+          "popularity": 5,
+          "image": "https://cdn.shopify.com/s/files/1/0248/7310/7536/products/haz-keto-bollos-para-hamburguesa-3_1200x1200.jpg?v=1623868484"
+        }
+      ],
+      "id": 4
     }
   ]
 }

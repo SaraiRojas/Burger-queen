@@ -6,13 +6,14 @@ import style from '../Admin/Menu/Menu.module.css';
 
 const ServeOrders = () => {
   const [dataMenu, setDataMenu] = useState([]);
+  const [refreshData, setRefreshData] = useState(false);
   console.log('orders data menu', dataMenu);
 
   useEffect(() => {
     fetch('http://localhost:3001/orders')
       .then((response) => response.json())
       .then((data) => setDataMenu(data));
-  }, []);
+  }, [refreshData]);
 
   console.log('orders serveOrder', dataMenu);
 
@@ -35,6 +36,8 @@ const ServeOrders = () => {
                 // table={table}
                 order={order}
                 id={order.id}
+                refreshData={refreshData}
+                setRefreshData={setRefreshData}
               />
             ))}
           </Grid>

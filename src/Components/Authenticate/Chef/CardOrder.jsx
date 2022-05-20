@@ -57,7 +57,9 @@ const theme = createTheme({
   },
 });
 
-const CardOrder = ({ order, id }) => {
+const CardOrder = ({
+  order, id, refreshData, setRefreshData,
+}) => {
   console.log('soy order de cardOrder', order);
   return (
     <Grid item xs={12} sm={6}>
@@ -87,7 +89,12 @@ const CardOrder = ({ order, id }) => {
                 />
               </Box>
               <Box sx={btnAdd}>
-                <BtnAddServe order={order} id={id} />
+                <BtnAddServe
+                  order={order}
+                  id={id}
+                  refreshData={refreshData}
+                  setRefreshData={setRefreshData}
+                />
               </Box>
             </Box>
             <Typography
