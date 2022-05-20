@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Montserrat:wght@200;300;500&display=swap');
+
+.welcome{
+  margin-top: 30%;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.txt{
+  width: 92%;
+  padding-left: 1em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hello{
+  margin-top: 2em;
+  line-height: 0;
+  font-size: 2.5em;
+  font-weight: bolder;
+  color: #F3B240;
+}
+
+.message{
+  width: 105%;
+  margin-bottom: 2.5em;
+}
+
+.images{
+  position: relative;
+}
+
+.spot {
+  position: absolute;
+  width: 110%;
+}
+
+.waiter {
+  top: 5em;
+  right: 20%;
+  position: absolute;
+  border-radius: 50%;
+  width: 70%;
+}
+
+@media (min-width: 550px) {
+  .welcome{
+    margin-top: 30%;
+    height: 85vh;
+  }
+
+  .hello{
+    margin-top: 1em;
+  }
+
+  .spot {
+    position: absolute;
+    width: 90%;
+  }
+
+  .waiter {
+    top: 5em;
+    right: 20%;
+    width: 60%;
+  }
+}
