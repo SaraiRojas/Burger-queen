@@ -94,11 +94,11 @@
       "image": "https://godmyshop.com/wp-content/uploads/2020/11/papas-fritas-300x300.jpg"
     },
     {
-      "id": 4,
-      "name": "Aros de cebolla",
-      "price": 11,
-      "popularity": 5,
-      "image": "https://sweetandsavorymeals.com/wp-content/uploads/2020/09/crispy-onion-rings-recipe-500x500.jpg"
+      "name": "Aros de cebollas",
+      "price": "11",
+      "popularity": "5",
+      "image": "https://sweetandsavorymeals.com/wp-content/uploads/2020/09/crispy-onion-rings-recipe-500x500.jpg",
+      "id": 4
     },
     {
       "id": 5,

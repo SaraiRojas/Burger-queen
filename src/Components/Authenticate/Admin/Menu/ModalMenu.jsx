@@ -24,7 +24,9 @@ const style = {
   textAlign: 'center',
 };
 
-const ModalMenu = ({ menu, open, setOpen }) => {
+const ModalMenu = ({
+  menu, open, setOpen, refreshData, setRefreshData,
+}) => {
   // It does not matter that it has no info, as long as it is an object
   const [data, setData] = useState({});
 
@@ -37,6 +39,8 @@ const ModalMenu = ({ menu, open, setOpen }) => {
     }));
   };
 
+  const refresh = () => setRefreshData(!refreshData);
+
   const saveDataApi = (localData) => {
     const requestOption = {
       method: 'POST',
@@ -46,11 +50,17 @@ const ModalMenu = ({ menu, open, setOpen }) => {
 
     if (menu === 'menu') {
       fetch('http://localhost:3001/menu', requestOption)
-        .then((response) => response.json())
+        .then((response) => {
+          response.json();
+          refresh();
+        })
         .catch((err) => console.log(err));
     } else {
       fetch('http://localhost:3001/menuLunch', requestOption)
-        .then((response) => response.json())
+        .then((response) => {
+          response.json();
+          refresh();
+        })
         .catch((err) => console.log(err));
     }
   };

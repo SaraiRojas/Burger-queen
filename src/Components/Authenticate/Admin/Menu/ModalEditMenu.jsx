@@ -24,7 +24,7 @@ const style = {
 };
 
 const ModalEditMenu = ({
-  menu, product, openModal, setOpenModal,
+  menu, product, openModal, setOpenModal, refreshData, setRefreshData,
 }) => {
   // It does not matter that it has no info, as long as it is an object
   const data = product;
@@ -47,13 +47,21 @@ const ModalEditMenu = ({
       body: JSON.stringify(menuEditData),
     };
 
+    const refresh = () => setRefreshData(!refreshData);
+
     if (menu === 'menu') {
       fetch(`http://localhost:3001/menu/${id}`, requestOption)
-        .then((response) => response.json())
+        .then((response) => {
+          response.json();
+          refresh();
+        })
         .catch((err) => console.log(err));
     } else {
       fetch(`http://localhost:3001/menuLunch/${id}`, requestOption)
-        .then((response) => response.json())
+        .then((response) => {
+          response.json();
+          refresh();
+        })
         .catch((err) => console.log(err));
     }
     handleClose();
