@@ -4,7 +4,6 @@ import {
   createTheme,
   Grid,
   Paper,
-  Rating,
   ThemeProvider,
   Typography,
 } from '@mui/material';
@@ -63,10 +62,10 @@ const CardOrder = ({ order, id }) => {
     <Grid item xs={12} sm={6}>
       <ThemeProvider theme={theme}>
         <Paper elevation={3} className="paper">
-          <img src={order.image} alt="" className={styles.imgCard} />
           <Box
             sx={{
-              paddingX: 1,
+              paddingX: 5,
+              paddingBottom: 2,
               position: 'relative',
             }}
           >
@@ -77,15 +76,7 @@ const CardOrder = ({ order, id }) => {
                   alignItems: 'center',
                 }}
                 marginTop={0.5}
-              >
-                <Rating
-                  name="size-small"
-                  size="small"
-                  defaultValue={order.popularity}
-                  precision={0.25}
-                  readOnly
-                />
-              </Box>
+              />
               <Box sx={btnAdd}>
                 <BtnAddServe order={order} id={id} />
               </Box>
@@ -98,8 +89,10 @@ const CardOrder = ({ order, id }) => {
                 alignSelf: 'center',
                 fontWeight: 'bold',
                 fontSize: '0.8em',
+                paddingLeft: '1.2em',
               }}
             >
+              Cliente:&nbsp;
               {order.client}
             </Typography>
             <TableContainer>
@@ -115,7 +108,7 @@ const CardOrder = ({ order, id }) => {
                 <TableBody>
                   {order.products.map((product) => (
                     <TableRow key={product.id}>
-                      <TableCell>{product.id}</TableCell>
+                      <TableCell>{1}</TableCell>
                       <TableCell>{product.name}</TableCell>
                       <TableCell>
                         <Checkbox {...label} color="success" />
@@ -133,6 +126,7 @@ const CardOrder = ({ order, id }) => {
                 alignSelf: 'center',
                 fontWeight: 'bold',
                 fontSize: '0.8em',
+                paddingLeft: '1.2em',
               }}
             >
               Mesa:&nbsp;

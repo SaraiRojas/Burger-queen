@@ -28,7 +28,7 @@ const Home = ({ role, authenticate }) => {
             setCount={setCount}
             className={styles.profile}
           />
-          <Outlet context={[count, setCount, dataProduct, setDataProduct]} />
+          {location.pathname === '/home' ? <Welcome /> : <Outlet context={[count, setCount, dataProduct, setDataProduct]} />}
         </main>
       </section>
     );
