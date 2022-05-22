@@ -60,7 +60,9 @@ const theme = createTheme({
 const CardOrder = ({
   order, id, refreshData, setRefreshData,
 }) => {
-  console.log('soy order de cardOrder', order);
+  const hour = order.startTime;
+  console.log('hora', typeof hour);
+  // const time = `${hour.getHours()}:${hour.getMinutes()}:${hour.getSeconds()}`;
   return (
     <Grid item xs={12} sm={6}>
       <ThemeProvider theme={theme}>
@@ -108,6 +110,20 @@ const CardOrder = ({
               }}
             >
               {order.client}
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              component="h2"
+              className={styles.productName}
+              sx={{
+                alignSelf: 'center',
+                fontWeight: 'bold',
+                fontSize: '0.8em',
+              }}
+            >
+              Hora Inicio:&nbsp;
+              {order.startTime}
+              &nbsp;horas
             </Typography>
             <TableContainer>
               <Table>

@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, forwardRef } from 'react';
@@ -34,9 +35,10 @@ const BtnAddServe = ({
   const refresh = () => setRefreshData(!refreshData);
 
   const updateDataService = (dataServiceServe, idUpdateData) => {
+    const time = new Date();
     console.log('entre a upDateDataService', dataServiceServe);
-    // eslint-disable-next-line no-param-reassign
     dataServiceServe.status = 'ready';
+    dataServiceServe.endTime = time;
     console.log('status', dataServiceServe);
     const requestOption = {
       method: 'PUT',
