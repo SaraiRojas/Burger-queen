@@ -17,7 +17,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 const btnCar = {
   minWidth: '0',
-  fontSize: '3.5em',
+  fontSize: '2.40em',
   color: 'black',
   marginRight: '0.2em',
 };

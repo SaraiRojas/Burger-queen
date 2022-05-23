@@ -7,22 +7,30 @@ import { getDoc, doc } from 'firebase/firestore';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import Typography from '@mui/material/Typography';
 import { auth, db } from '../../../Firebase/firebase.config';
 import style from './Profile.module.css';
 
 const styles = {
   bgcolor: 'black',
-  width: 60,
-  height: 62,
-  borderRadius: 60,
+  minWidth: 0,
+  width: 50,
+  height: 52,
+  borderRadius: 100,
   color: '#F3B240',
   fontWeight: 'bold',
-  fontSize: 20,
+  fontSize: 15,
 };
 
 const menu = {
   padding: 2,
+  fontSize: '0.9em',
+};
+const btn = {
+  display: 'flex',
+  justifyContent: 'center',
+  fontWeight: 'bold',
 };
 
 const Profile = ({ authenticate }) => {
@@ -101,7 +109,10 @@ const Profile = ({ authenticate }) => {
           <br />
           {user.email}
         </Typography>
-        <MenuItem onClick={handleLogOut}>Salir</MenuItem>
+        <MenuItem sx={btn} onClick={handleLogOut}>
+          Salir&nbsp;
+          <ExitToAppIcon />
+        </MenuItem>
       </Menu>
     </div>
   );

@@ -26,7 +26,7 @@ hr {
   border: none;
   cursor: pointer;
   font-size: 0.6em;
-  height: auto;
+  height: 2.7em;
   margin-bottom: 3em;
   width: auto;
   transform: rotate(-90deg);
@@ -34,7 +34,13 @@ hr {
 
 .btn:hover {
   background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 1em;
+  border-radius: 0.8em;
+  height: 2.7em;
+}
+.btn:focus {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 0.8em;
+  height: 2.7em;
 }
 
 @media (min-width: 450px) {
@@ -49,7 +55,7 @@ hr {
     margin-bottom: 1em;
     margin-top: 1em;
     font-size: 0.6em;
-    height: 2em;
+    height: 2.7em;
   }
 
   .logoSidebar {
@@ -67,11 +73,13 @@ hr {
 @media (min-width: 850px) {
   .btn {
     font-size: 0.6em;
+    height: 2.7em;
   }
 }
 
 @media (min-width: 1000px) {
   .btn {
     font-size: 0.8em;
+    height: 2.7em;
   }
 }

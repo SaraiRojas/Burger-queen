@@ -33,7 +33,7 @@ const ListOrders = () => {
             alignSelf: 'center',
             fontWeight: 'bold',
             fontSize: '2em',
-            marginBottom: '2em',
+            marginBottom: '.1em',
           }}
         >
           Lista de Ordenes
