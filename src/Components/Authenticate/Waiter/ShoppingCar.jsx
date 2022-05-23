@@ -87,6 +87,8 @@ const ShoppingCar = ({
   const getOrder = (e, dataOrder, sumOrder) => {
     const time = new Date();
     const hour = `${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`;
+    const miliSeconds = time.getTime();
+
     e.preventDefault();
     const data = e.target.form;
     const newData = {
@@ -94,13 +96,13 @@ const ShoppingCar = ({
       table: data[1].value,
       total: sumOrder,
       status: 'process',
-      startTime: time,
       hours: hour,
+      startTime: miliSeconds,
       endTime: null,
+      totalTime: 0,
       products: dataOrder,
     };
 
-    console.log('newData', newData, time);
     const requestOption = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

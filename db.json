@@ -131,76 +131,14 @@
   ],
   "orders": [
     {
-      "client": "Sofia Vergara",
-      "table": "1",
-      "total": "25.00",
-      "status": "delivered",
-      "startTime": "Fri May 20 2022 13:32:02 GMT-0500 (hora de verano central)",
-      "endTime": null,
-      "products": [
-        {
-          "name": "Refresco 1L",
-          "price": 10,
-          "popularity": 4,
-          "image": "https://superlomas.odoo.com/web/image/product.template/3087/image_256/REFRESCO%20COCA%20COLA%20PET%20NR%201%20LT?unique=af1926f",
-          "id": 8
-        },
-        {
-          "id": 1,
-          "name": "Hamburguesa Simple",
-          "price": 10,
-          "popularity": 4,
-          "image": "https://elporxosantmarti.com/wp-content/uploads/2021/12/hamburguesa-anos-20.jpg"
-        },
-        {
-          "id": 3,
-          "name": "Papas Fritas",
-          "price": 5,
-          "popularity": 4,
-          "image": "https://godmyshop.com/wp-content/uploads/2020/11/papas-fritas-300x300.jpg"
-        }
-      ],
-      "id": 1
-    },
-    {
-      "client": "Karla",
-      "table": "5",
-      "total": "36.00",
-      "status": "ready",
-      "startTime": "Fri May 20 2022 13:32:02 GMT-0500 (hora de verano central)",
-      "endTime": null,
-      "products": [
-        {
-          "id": 4,
-          "name": "Aros de cebolla",
-          "price": 11,
-          "popularity": 5,
-          "image": "https://sweetandsavorymeals.com/wp-content/uploads/2020/09/crispy-onion-rings-recipe-500x500.jpg"
-        },
-        {
-          "name": "Refresco 1L",
-          "price": 10,
-          "popularity": 4,
-          "image": "https://superlomas.odoo.com/web/image/product.template/3087/image_256/REFRESCO%20COCA%20COLA%20PET%20NR%201%20LT?unique=af1926f",
-          "id": 8
-        },
-        {
-          "id": 2,
-          "name": "Hamburguesa Doble",
-          "price": 15,
-          "popularity": 5,
-          "image": "https://cdn.shopify.com/s/files/1/0248/7310/7536/products/haz-keto-bollos-para-hamburguesa-3_1200x1200.jpg?v=1623868484"
-        }
-      ],
-      "id": 2
-    },
-    {
       "client": "Maggie",
       "table": "9",
       "total": "22.00",
-      "status": "process",
-      "startTime": "Fri May 20 2022 13:32:02 GMT-0500 (hora de verano central)",
-      "endTime": null,
+      "status": "delivered",
+      "hours": "11:27:53",
+      "startTime": 1653323273796,
+      "endTime": 1653324513486,
+      "totalTime": 21,
       "products": [
         {
           "name": "Sandwich",
@@ -220,19 +158,21 @@
       "id": 3
     },
     {
-      "client": "Riki",
-      "table": "6",
-      "total": "26.00",
-      "status": "process",
-      "startTime": "Fri May 20 2022 13:32:02 GMT-0500 (hora de verano central)",
-      "endTime": null,
+      "client": "Ramon",
+      "table": "3",
+      "total": "25.00",
+      "status": "delivered",
+      "hours": "11:27:53",
+      "startTime": 1653323273796,
+      "endTime": 1653324181447,
+      "totalTime": 15,
       "products": [
         {
-          "name": "Aros de cebollas",
-          "price": 11,
-          "popularity": 5,
-          "image": "https://sweetandsavorymeals.com/wp-content/uploads/2020/09/crispy-onion-rings-recipe-500x500.jpg",
-          "id": 4
+          "name": "Refresco 1L",
+          "price": 10,
+          "popularity": 4,
+          "image": "https://superlomas.odoo.com/web/image/product.template/3087/image_256/REFRESCO%20COCA%20COLA%20PET%20NR%201%20LT?unique=af1926f",
+          "id": 8
         },
         {
           "id": 2,
@@ -242,57 +182,115 @@
           "image": "https://cdn.shopify.com/s/files/1/0248/7310/7536/products/haz-keto-bollos-para-hamburguesa-3_1200x1200.jpg?v=1623868484"
         }
       ],
-      "id": 4
+      "id": 7
     },
     {
-      "client": "sandra",
-      "table": "8",
-      "total": "16.00",
-      "status": "process",
-      "startTime": "Fri May 20 2022 13:32:02 GMT-0500 (hora de verano central)",
-      "endTime": null,
+      "client": "Laila",
+      "table": "2",
+      "total": "20.00",
+      "status": "delivered",
+      "hours": "11:46:59",
+      "startTime": 1653324419936,
+      "endTime": 1653325338812,
+      "totalTime": 15,
       "products": [
         {
-          "name": "Aros de cebollas",
-          "price": 11,
-          "popularity": 5,
-          "image": "https://sweetandsavorymeals.com/wp-content/uploads/2020/09/crispy-onion-rings-recipe-500x500.jpg",
-          "id": 4
+          "id": 1,
+          "name": "Hamburguesa Simple",
+          "price": 10,
+          "popularity": 4,
+          "image": "https://elporxosantmarti.com/wp-content/uploads/2021/12/hamburguesa-anos-20.jpg"
         },
+        {
+          "name": "Refresco 1L",
+          "price": 10,
+          "popularity": 4,
+          "image": "https://superlomas.odoo.com/web/image/product.template/3087/image_256/REFRESCO%20COCA%20COLA%20PET%20NR%201%20LT?unique=af1926f",
+          "id": 8
+        }
+      ],
+      "id": 8
+    },
+    {
+      "client": "Skar",
+      "table": "10",
+      "total": "22.80",
+      "status": "delivered",
+      "hours": "11:47:16",
+      "startTime": 1653324436014,
+      "endTime": 1653325288678,
+      "totalTime": 14,
+      "products": [
+        {
+          "id": 3,
+          "name": "Jugo de Naranja",
+          "price": 7.8,
+          "popularity": 4,
+          "image": "https://verandavalencia.com/wp-content/uploads/2017/07/zumo-de-naranja-natural.jpg"
+        },
+        {
+          "name": "Sandwich",
+          "price": 15,
+          "popularity": 4.8,
+          "image": "https://eggs.org.nz/wp-content/uploads/2021/12/Club-Sandwiches-500x500.jpg",
+          "id": 4
+        }
+      ],
+      "id": 9
+    },
+    {
+      "client": "Sarai",
+      "table": "7",
+      "total": "12.00",
+      "status": "delivered",
+      "hours": "11:47:44",
+      "startTime": 1653324464202,
+      "endTime": 1653325340231,
+      "totalTime": 15,
+      "products": [
         {
           "id": 3,
           "name": "Papas Fritas",
           "price": 5,
           "popularity": 4,
           "image": "https://godmyshop.com/wp-content/uploads/2020/11/papas-fritas-300x300.jpg"
-        }
-      ],
-      "id": 5
-    },
-    {
-      "client": "ana",
-      "table": "3",
-      "total": "16.00",
-      "status": "ready",
-      "startTime": "Fri May 20 2022 12:32:02 GMT-0500 (hora de verano central)",
-      "endTime": "Fri May 20 2022 13:34:02 GMT-0500 (hora de verano central)",
-      "products": [
-        {
-          "name": "Aros de cebollas",
-          "price": 11,
-          "popularity": 5,
-          "image": "https://sweetandsavorymeals.com/wp-content/uploads/2020/09/crispy-onion-rings-recipe-500x500.jpg",
-          "id": 4
         },
         {
-          "id": 3,
-          "name": "Papas Fritas",
-          "price": 5,
-          "popularity": 4,
-          "image": "https://godmyshop.com/wp-content/uploads/2020/11/papas-fritas-300x300.jpg"
+          "id": 7,
+          "name": "Agua 1L",
+          "price": 7,
+          "popularity": 3,
+          "image": "https://images.rappi.com.mx/products/2109906896-1645305073620.png?d=200x200&e=webp"
         }
       ],
-      "id": 6
+      "id": 10
+    },
+    {
+      "client": "Carlos",
+      "table": "9",
+      "total": "22.00",
+      "status": "delivered",
+      "hours": "11:48:18",
+      "startTime": 1653324498251,
+      "endTime": 1653325310289,
+      "totalTime": 14,
+      "products": [
+        {
+          "id": 2,
+          "name": "Cafe",
+          "price": 7,
+          "popularity": 5,
+          "image": "https://ae01.alicdn.com/kf/H1c2054b527494e9faee9a11dfd37572bi.jpg"
+        },
+        {
+          "name": "Sandwich",
+          "price": 15,
+          "popularity": 4.8,
+          "image": "https://eggs.org.nz/wp-content/uploads/2021/12/Club-Sandwiches-500x500.jpg",
+          "id": 4
+        }
+      ],
+      "id": 11
     }
   ]
 }

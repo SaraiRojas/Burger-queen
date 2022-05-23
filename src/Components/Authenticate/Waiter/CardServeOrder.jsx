@@ -60,10 +60,7 @@ const theme = createTheme({
 const CardServeOrder = ({
   order, id, refreshData, setRefreshData,
 }) => {
-  // const time = new Date();
-  // const hour = `${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`;
-  const totalHour = order.endTime - order.startTime;
-  console.log(totalHour);
+  const calcTotalTime = (startTime, endTime) => Math.round((endTime - startTime) / 60000);
   return (
     <Grid item xs={12} sm={6}>
       <ThemeProvider theme={theme}>
@@ -97,6 +94,7 @@ const CardServeOrder = ({
                   id={id}
                   refreshData={refreshData}
                   setRefreshData={setRefreshData}
+                  totalTime={calcTotalTime(order.startTime, order.endTime)}
                 />
               </Box>
             </Box>
@@ -123,8 +121,8 @@ const CardServeOrder = ({
               }}
             >
               Tiempo en completar pedido:&nbsp;
-              {order.startTime}
-              &nbsp;horas
+              {calcTotalTime(order.startTime, order.endTime)}
+              &nbsp;minutos
             </Typography>
             <TableContainer>
               <Table>
