@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Montserrat:wght@200;300;500&display=swap');
+
+.welcome{
+  margin-top: 30%;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.txt{
+  width: 92%;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hello{
+  margin-top: 2em;
+  line-height: 0;
+  font-size: 2.5em;
+  font-weight: bolder;
+  color: #F3B240;
+}
+
+.message{
+  width: 105%;
+  margin-bottom: 2.5em;
+}
+
+.images{
+  position: relative;
+}
+
+.spot {
+  position: absolute;
+  width: 110%;
+}
+
+.waiter {
+  top: 5em;
+  right: 20%;
+  position: absolute;
+  border-radius: 50%;
+  width: 70%;
+}
+
+@media (min-width: 550px) {
+  .welcome{
+    margin-top: 30%;
+    height: 85vh;
+  }
+
+  .hello{
+    margin-top: 1em;
+  }
+
+  .spot {
+    position: absolute;
+    width: 90%;
+  }
+
+  .waiter {
+    top: 5em;
+    right: 20%;
+    width: 60%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .welcome{
+    margin-top: 20%;
+    flex-direction: row;
+    height: 70vh;
+  }
+
+  .txt{
+    width: 40%;
+  }
+
+  .spot {
+    position: fixed;
+  }
+
+  .waiter {
+    top: 7em;
+    right: 5%;
+    width: 80%;
+  }
+
+  .images{
+    width: 60%;
+  }
+
+  .hello{
+    font-size: 3em;
+  }
+
+  .txt{
+    padding-left: 1.5em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .welcome{
+    margin-top: 15%;
+    height: 75vh;
+  }
+
+  .waiter {
+    top: 0;
+    right: 5%;
+    width: 75%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .welcome{
+    margin-top: 15%;
+  }
+
+  .waiter {
+    top: 3em;
+    right: 5%;
+    width: 80%;
+  }
+}

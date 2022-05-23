@@ -18,8 +18,12 @@
 }
 
 /* .adminOutlet {
-  margin-left: 1em;
+  height: 80vh;
 } */
+
+.welcome {
+  margin-top: 8em;
+}
 
 @media (min-width: 540px) {
   .sidebar{

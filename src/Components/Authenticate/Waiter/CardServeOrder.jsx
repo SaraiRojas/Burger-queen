@@ -4,7 +4,6 @@ import {
   createTheme,
   Grid,
   Paper,
-  Rating,
   ThemeProvider,
   Typography,
 } from '@mui/material';
@@ -68,7 +67,8 @@ const CardServeOrder = ({
           <img src={order.image} alt="" className={styles.imgCard} />
           <Box
             sx={{
-              paddingX: 1,
+              paddingX: 5,
+              paddingBottom: 2,
               position: 'relative',
             }}
           >
@@ -79,15 +79,7 @@ const CardServeOrder = ({
                   alignItems: 'center',
                 }}
                 marginTop={0.5}
-              >
-                <Rating
-                  name="size-small"
-                  size="small"
-                  defaultValue={order.popularity}
-                  precision={0.25}
-                  readOnly
-                />
-              </Box>
+              />
               <Box sx={btnAdd}>
                 <BtnAddCheckService
                   order={order}
@@ -154,6 +146,7 @@ const CardServeOrder = ({
                 alignSelf: 'center',
                 fontWeight: 'bold',
                 fontSize: '0.8em',
+                paddingLeft: '1.2em',
               }}
             >
               Mesa:&nbsp;
