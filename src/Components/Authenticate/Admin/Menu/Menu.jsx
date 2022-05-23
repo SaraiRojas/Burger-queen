@@ -19,6 +19,7 @@ const btnStyle = {
 
 const Menu = ({ role }) => {
   const [dataMenu, setDataMenu] = useState([]);
+  const [refreshData, setRefreshData] = useState(false);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   console.log('Estoy en menu');
@@ -28,7 +29,7 @@ const Menu = ({ role }) => {
       .then((response) => response.json())
       .then((data) => setDataMenu(data));
     console.log(dataMenu);
-  }, []);
+  }, [refreshData]);
 
   return (
     <section className={style.sectionMenu}>
@@ -45,6 +46,8 @@ const Menu = ({ role }) => {
         menu="menu"
         open={open}
         setOpen={setOpen}
+        refreshData={refreshData}
+        setRefreshData={setRefreshData}
       />
       <Container>
         <>
@@ -63,6 +66,8 @@ const Menu = ({ role }) => {
                 role={role}
                 menu="menu"
                 product={product}
+                refreshData={refreshData}
+                setRefreshData={setRefreshData}
               />
             ))}
           </Grid>

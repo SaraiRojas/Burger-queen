@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, forwardRef } from 'react';
@@ -21,19 +22,20 @@ const Alert = forwardRef((props, ref) => (
   <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
 ));
 
-const BtnAddCheckService = ({ order, id }) => {
-  const [dataService, setDataService] = useState();
+const BtnAddCheckService = ({
+  order, id, refreshData, setRefreshData, totalTime,
+}) => {
   const [state, setState] = useState({
     open: false,
     vertical: 'top',
     horizontal: 'center',
   });
 
+  const refresh = () => setRefreshData(!refreshData);
+
   const updateDataService = (dataServiceServe, idUpdateData) => {
-    console.log('estoy en updateDataService de BtnAddCheckServe', dataServiceServe);
-    // eslint-disable-next-line no-param-reassign
     dataServiceServe.status = 'delivered';
-    console.log(dataServiceServe.status);
+    dataServiceServe.totalTime = totalTime;
     const requestOption = {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -41,15 +43,17 @@ const BtnAddCheckService = ({ order, id }) => {
     };
 
     fetch(`http://localhost:3001/orders/${idUpdateData}`, requestOption)
-      .then((response) => response.json())
+      .then((response) => {
+        response.json();
+        refresh();
+      })
       .catch((err) => console.log(err));
   };
   const { vertical, horizontal, open } = state;
 
   const handleClick = (newState) => () => {
     setState({ open: true, ...newState });
-    setDataService(order);
-    updateDataService(dataService, id);
+    updateDataService(order, id);
   };
 
   const handleClose = () => {

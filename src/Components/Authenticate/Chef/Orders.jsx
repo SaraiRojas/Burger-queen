@@ -6,13 +6,14 @@ import style from '../Admin/Menu/Menu.module.css';
 
 const Orders = () => {
   const [dataMenu, setDataMenu] = useState([]);
+  const [refreshData, setRefreshData] = useState(false);
   console.log('orders data menu', dataMenu);
 
   useEffect(() => {
     fetch('http://localhost:3001/orders')
       .then((response) => response.json())
       .then((data) => setDataMenu(data));
-  }, []);
+  }, [refreshData]);
 
   // eslint-disable-next-line prefer-destructuring
   const products = dataMenu.products;
@@ -37,6 +38,8 @@ const Orders = () => {
                 // table={table}
                 order={order}
                 id={order.id}
+                refreshData={refreshData}
+                setRefreshData={setRefreshData}
               />
             ))}
           </Grid>

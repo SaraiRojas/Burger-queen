@@ -21,12 +21,14 @@ const modal = {
 };
 
 const ModalDeleteMenu = ({
-  menu, product, openModalDelete, setOpenModalDelete,
+  menu, product, openModalDelete, setOpenModalDelete, refreshData, setRefreshData,
 }) => {
   const [dataMenu, setDataMenu] = useState([]);
   const data = product;
 
   const handleClose = () => setOpenModalDelete(false);
+
+  const refresh = () => setRefreshData(!refreshData);
 
   const deleteDataApi = (id) => {
     const requestOption = {
@@ -34,14 +36,20 @@ const ModalDeleteMenu = ({
     };
     if (menu === 'menu') {
       fetch(`http://localhost:3001/menu/${id}`, requestOption)
-        .then((response) => response.json())
+        .then((response) => {
+          response.json();
+          refresh();
+        })
         .then(() => {
           setDataMenu(dataMenu.filter((itemMenu) => itemMenu.id !== data.id));
         })
         .catch((err) => console.log(err));
     } else {
       fetch(`http://localhost:3001/menuLunch/${id}`, requestOption)
-        .then((response) => response.json())
+        .then((response) => {
+          response.json();
+          refresh();
+        })
         .then(() => {
           setDataMenu(dataMenu.filter((itemMenu) => itemMenu.id !== data.id));
         })
