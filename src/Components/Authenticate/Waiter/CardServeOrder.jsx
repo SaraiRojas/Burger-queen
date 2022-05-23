@@ -57,8 +57,10 @@ const theme = createTheme({
   },
 });
 
-const CardServeOrder = ({ order, id }) => {
-  console.log('soy order de cardOrder', order);
+const CardServeOrder = ({
+  order, id, refreshData, setRefreshData,
+}) => {
+  const calcTotalTime = (startTime, endTime) => Math.round((endTime - startTime) / 60000);
   return (
     <Grid item xs={12} sm={6}>
       <ThemeProvider theme={theme}>
@@ -87,7 +89,13 @@ const CardServeOrder = ({ order, id }) => {
                 />
               </Box>
               <Box sx={btnAdd}>
-                <BtnAddCheckService order={order} id={id} />
+                <BtnAddCheckService
+                  order={order}
+                  id={id}
+                  refreshData={refreshData}
+                  setRefreshData={setRefreshData}
+                  totalTime={calcTotalTime(order.startTime, order.endTime)}
+                />
               </Box>
             </Box>
             <Typography
@@ -101,6 +109,20 @@ const CardServeOrder = ({ order, id }) => {
               }}
             >
               {order.client}
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              component="h2"
+              className={styles.productName}
+              sx={{
+                alignSelf: 'center',
+                fontWeight: 'bold',
+                fontSize: '0.8em',
+              }}
+            >
+              Tiempo en completar pedido:&nbsp;
+              {calcTotalTime(order.startTime, order.endTime)}
+              &nbsp;minutos
             </Typography>
             <TableContainer>
               <Table>

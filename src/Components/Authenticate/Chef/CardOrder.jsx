@@ -56,8 +56,10 @@ const theme = createTheme({
   },
 });
 
-const CardOrder = ({ order, id }) => {
-  console.log('soy order de cardOrder', order);
+const CardOrder = ({
+  order, id, refreshData, setRefreshData,
+}) => {
+  console.log('estoy en cardOrder por eslint arrow function');
   return (
     <Grid item xs={12} sm={6}>
       <ThemeProvider theme={theme}>
@@ -78,7 +80,12 @@ const CardOrder = ({ order, id }) => {
                 marginTop={0.5}
               />
               <Box sx={btnAdd}>
-                <BtnAddServe order={order} id={id} />
+                <BtnAddServe
+                  order={order}
+                  id={id}
+                  refreshData={refreshData}
+                  setRefreshData={setRefreshData}
+                />
               </Box>
             </Box>
             <Typography
@@ -94,6 +101,20 @@ const CardOrder = ({ order, id }) => {
             >
               Cliente:&nbsp;
               {order.client}
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              component="h2"
+              className={styles.productName}
+              sx={{
+                alignSelf: 'center',
+                fontWeight: 'bold',
+                fontSize: '0.8em',
+              }}
+            >
+              Hora Inicio:&nbsp;
+              {order.hours}
+              &nbsp;horas
             </Typography>
             <TableContainer>
               <Table>

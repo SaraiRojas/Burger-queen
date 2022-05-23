@@ -47,6 +47,7 @@ const ListOrders = () => {
                 <TableCell><b>Status</b></TableCell>
                 <TableCell><b>Productos</b></TableCell>
                 <TableCell><b>Total</b></TableCell>
+                <TableCell><b>Tiempo</b></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -60,7 +61,15 @@ const ListOrders = () => {
                       (product) => <TableRow key={product.id}>{product.name}</TableRow>,
                     )}
                   </TableCell>
-                  <TableCell>{order.total}</TableCell>
+                  <TableCell>
+                    $&nbsp;
+                    {order.total}
+                    &nbsp;MXN
+                  </TableCell>
+                  <TableCell>
+                    {order.totalTime}
+                    &nbsp;Minutos
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

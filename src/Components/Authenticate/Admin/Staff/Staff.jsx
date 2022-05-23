@@ -96,7 +96,11 @@ const Staff = () => {
     };
 
     fetch(`http://localhost:3001/empleados/${id}`, requestOption)
-      .then((response) => response.json())
+      .then((response) => {
+        response.json();
+        employeeData.id = id;
+        setDataStaff([...dataStaff.filter((staff) => staff.id !== id), employeeData]);
+      })
       .catch((err) => console.log(err));
     openCLoseModalEdit();
   };

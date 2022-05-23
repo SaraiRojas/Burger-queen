@@ -58,7 +58,9 @@ const theme = createTheme({
   },
 });
 
-const CardMenu = ({ role, menu, product }) => {
+const CardMenu = ({
+  role, menu, product, refreshData, setRefreshData,
+}) => {
   console.log(role);
   return (
     <Grid item xs={6} sm={3}>
@@ -90,7 +92,12 @@ const CardMenu = ({ role, menu, product }) => {
               {(role === 'Admin')
                 ? (
                   <Box sx={threeMenuStyle}>
-                    <ThreeDotsMenu menu={menu} product={product} />
+                    <ThreeDotsMenu
+                      menu={menu}
+                      product={product}
+                      refreshData={refreshData}
+                      setRefreshData={setRefreshData}
+                    />
                   </Box>
                 )
                 : (

@@ -85,6 +85,10 @@ const ShoppingCar = ({
   };
 
   const getOrder = (e, dataOrder, sumOrder) => {
+    const time = new Date();
+    const hour = `${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`;
+    const miliSeconds = time.getTime();
+
     e.preventDefault();
     const data = e.target.form;
     const newData = {
@@ -92,10 +96,13 @@ const ShoppingCar = ({
       table: data[1].value,
       total: sumOrder,
       status: 'process',
+      hours: hour,
+      startTime: miliSeconds,
+      endTime: null,
+      totalTime: 0,
       products: dataOrder,
     };
 
-    console.log(newData);
     const requestOption = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -168,7 +175,11 @@ const ShoppingCar = ({
                       <TableRow key={order.id}>
                         <TableCell>{order.id}</TableCell>
                         <TableCell>{order.name}</TableCell>
-                        <TableCell>{order.price}</TableCell>
+                        <TableCell>
+                          $&nbsp;
+                          {order.price}
+                          &nbsp;MXN
+                        </TableCell>
                         <TableCell>
                           <DeleteIcon onClick={() => deleteOrder(order.id)} />
                         </TableCell>
@@ -178,8 +189,9 @@ const ShoppingCar = ({
                 </Table>
               </TableContainer>
               <Typography sx={menu} id="modal-modal-title" variant="h6" component="h2">
-                Total:&nbsp;
+                Total:&nbsp;$&nbsp;
                 {sum}
+                &nbsp;MXN
               </Typography>
               <Button type="submit" onClick={(e) => getOrder(e, dataProduct, sum)}>Confirmar</Button>
               <Button onClick={handleCancel}>Cancelar</Button>
