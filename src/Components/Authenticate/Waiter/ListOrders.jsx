@@ -60,7 +60,11 @@ const ListOrders = () => {
                       (product) => <TableRow key={product.id}>{product.name}</TableRow>,
                     )}
                   </TableCell>
-                  <TableCell>{order.total}</TableCell>
+                  <TableCell>
+                    $&nbsp;
+                    {order.total}
+                    &nbsp;MXN
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

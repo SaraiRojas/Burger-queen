@@ -18,6 +18,7 @@ const btnStyle = {
 
 const MenuLunch = ({ role }) => {
   const [dataMenu, setDataMenu] = useState([]);
+  const [refreshData, setRefreshData] = useState(false);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
 
@@ -25,7 +26,7 @@ const MenuLunch = ({ role }) => {
     fetch('http://localhost:3001/menuLunch')
       .then((response) => response.json())
       .then((data) => setDataMenu(data));
-  }, []);
+  }, [refreshData]);
 
   return (
     <section className={style.sectionMenu}>
@@ -38,7 +39,13 @@ const MenuLunch = ({ role }) => {
           </Button>
         </div>
         )}
-      <ModalMenu menu="menuLunch" open={open} setOpen={setOpen} />
+      <ModalMenu
+        menu="menuLunch"
+        open={open}
+        setOpen={setOpen}
+        refreshData={refreshData}
+        setRefreshData={setRefreshData}
+      />
       <Container>
         <>
           <Typography
@@ -51,7 +58,14 @@ const MenuLunch = ({ role }) => {
           </Typography>
           <Grid container spacing={3}>
             {dataMenu.map((product) => (
-              <CardMenu key={product.id} role={role} menu="menuLunch" product={product} />
+              <CardMenu
+                key={product.id}
+                role={role}
+                menu="menuLunch"
+                product={product}
+                refreshData={refreshData}
+                setRefreshData={setRefreshData}
+              />
             ))}
           </Grid>
         </>

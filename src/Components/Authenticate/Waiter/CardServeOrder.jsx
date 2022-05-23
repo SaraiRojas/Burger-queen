@@ -57,8 +57,13 @@ const theme = createTheme({
   },
 });
 
-const CardServeOrder = ({ order, id }) => {
-  console.log('soy order de cardOrder', order);
+const CardServeOrder = ({
+  order, id, refreshData, setRefreshData,
+}) => {
+  // const time = new Date();
+  // const hour = `${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`;
+  const totalHour = order.endTime - order.startTime;
+  console.log(totalHour);
   return (
     <Grid item xs={12} sm={6}>
       <ThemeProvider theme={theme}>
@@ -87,7 +92,12 @@ const CardServeOrder = ({ order, id }) => {
                 />
               </Box>
               <Box sx={btnAdd}>
-                <BtnAddCheckService order={order} id={id} />
+                <BtnAddCheckService
+                  order={order}
+                  id={id}
+                  refreshData={refreshData}
+                  setRefreshData={setRefreshData}
+                />
               </Box>
             </Box>
             <Typography
@@ -101,6 +111,20 @@ const CardServeOrder = ({ order, id }) => {
               }}
             >
               {order.client}
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              component="h2"
+              className={styles.productName}
+              sx={{
+                alignSelf: 'center',
+                fontWeight: 'bold',
+                fontSize: '0.8em',
+              }}
+            >
+              Tiempo en completar pedido:&nbsp;
+              {order.startTime}
+              &nbsp;horas
             </Typography>
             <TableContainer>
               <Table>

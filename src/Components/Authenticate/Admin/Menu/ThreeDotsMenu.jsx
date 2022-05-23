@@ -17,7 +17,9 @@ const style = {
 
 const ITEM_HEIGHT = 30;
 
-const ThreeDotsMenu = ({ menu, product }) => {
+const ThreeDotsMenu = ({
+  menu, product, refreshData, setRefreshData,
+}) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [openModal, setOpenModal] = useState(false);
   const [openModalDelete, setOpenModalDelete] = useState(false);
@@ -79,12 +81,16 @@ const ThreeDotsMenu = ({ menu, product }) => {
         product={product}
         openModal={openModal}
         setOpenModal={setOpenModal}
+        refreshData={refreshData}
+        setRefreshData={setRefreshData}
       />
       <ModalDeleteMenu
         menu={menu}
         product={product}
         openModalDelete={openModalDelete}
         setOpenModalDelete={setOpenModalDelete}
+        refreshData={refreshData}
+        setRefreshData={setRefreshData}
       />
     </div>
   );
