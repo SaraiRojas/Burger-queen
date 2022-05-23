@@ -10,12 +10,12 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
 const btnStyle = {
-  bgcolor: 'black',
+  bgcolor: 'white',
   color: '#00BB2D',
-  heigth: '1em',
-  width: '2em',
+  heigth: '6em',
+  width: '4em',
   minWidth: '0',
-  marginTop: '-1em',
+  marginTop: '1.2em',
 };
 
 const Alert = forwardRef((props, ref) => (
