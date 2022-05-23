@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, forwardRef } from 'react';
@@ -22,7 +23,7 @@ const Alert = forwardRef((props, ref) => (
 ));
 
 const BtnAddCheckService = ({
-  order, id, refreshData, setRefreshData,
+  order, id, refreshData, setRefreshData, totalTime,
 }) => {
   const [state, setState] = useState({
     open: false,
@@ -33,10 +34,8 @@ const BtnAddCheckService = ({
   const refresh = () => setRefreshData(!refreshData);
 
   const updateDataService = (dataServiceServe, idUpdateData) => {
-    console.log('estoy en updateDataService de BtnAddCheckServe', dataServiceServe);
-    // eslint-disable-next-line no-param-reassign
     dataServiceServe.status = 'delivered';
-    console.log(dataServiceServe.status);
+    dataServiceServe.totalTime = totalTime;
     const requestOption = {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },

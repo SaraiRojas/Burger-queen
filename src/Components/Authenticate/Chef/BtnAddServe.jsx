@@ -36,10 +36,10 @@ const BtnAddServe = ({
 
   const updateDataService = (dataServiceServe, idUpdateData) => {
     const time = new Date();
-    console.log('entre a upDateDataService', dataServiceServe);
+    const newMiliSeconds = time.getTime();
+
     dataServiceServe.status = 'ready';
-    dataServiceServe.endTime = time;
-    console.log('status', dataServiceServe);
+    dataServiceServe.endTime = newMiliSeconds;
     const requestOption = {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },

@@ -60,9 +60,7 @@ const theme = createTheme({
 const CardOrder = ({
   order, id, refreshData, setRefreshData,
 }) => {
-  const hour = order.startTime;
-  console.log('hora', typeof hour);
-  // const time = `${hour.getHours()}:${hour.getMinutes()}:${hour.getSeconds()}`;
+  console.log('estoy en cardOrder por eslint arrow function');
   return (
     <Grid item xs={12} sm={6}>
       <ThemeProvider theme={theme}>
@@ -122,7 +120,7 @@ const CardOrder = ({
               }}
             >
               Hora Inicio:&nbsp;
-              {order.startTime}
+              {order.hours}
               &nbsp;horas
             </Typography>
             <TableContainer>
