@@ -4,8 +4,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { create, act } from 'react-test-renderer';
 import Profile from './Profile';
 
-describe('test header', () => {
-  test('render header', async () => {
+describe('test Profile', () => {
+  test('render component Profile', async () => {
     let root;
     const mockAuthenticate = jest.fn();
     act(() => {

@@ -4,8 +4,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { create, act } from 'react-test-renderer';
 import Home from './Home';
 
-describe('test App', () => {
-  test('render App', async () => {
+describe('test Home', () => {
+  test('render component Home', async () => {
     let root;
     const mockAuthenticate = jest.fn();
     act(() => {

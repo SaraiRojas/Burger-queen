@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test header render header 1`] = `
+exports[`test Profile render component Profile 1`] = `
 <div>
   <button
     aria-haspopup="true"

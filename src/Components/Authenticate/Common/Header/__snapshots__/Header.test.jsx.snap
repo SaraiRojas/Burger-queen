@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test header render header 1`] = `
+exports[`test header render component header 1`] = `
 <header
   className="header"
 >

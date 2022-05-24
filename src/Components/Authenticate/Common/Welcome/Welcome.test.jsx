@@ -3,8 +3,8 @@ import React from 'react';
 import { create, act } from 'react-test-renderer';
 import Welcome from './Welcome';
 
-describe('test App', () => {
-  test('render App', async () => {
+describe('test Welcome', () => {
+  test('render component welcome', async () => {
     let root;
     act(() => {
       root = create(

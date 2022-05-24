@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test App render App 1`] = `
+exports[`test Welcome render component welcome 1`] = `
 <section
   className="welcome"
 >
