@@ -73,11 +73,7 @@ const Staff = () => {
   const handleOpen = () => setOpen(true);
 
   const editDataApi = (e, id) => {
-    console.log('entre a editDataApi');
-    console.log(e.target);
-    console.log(id);
     const data = e.target.form;
-    console.log(data);
 
     const employeeData = {
       date: data[0].value,
