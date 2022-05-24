@@ -6,7 +6,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import styles from './Login.module.css';
 import { auth } from '../../../Firebase/firebase.config';
 
-const LogIn = () => {
+const LogIn = ({ onClick }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -35,6 +35,7 @@ const LogIn = () => {
 
     if (expEmail.test(email) && expPassword.test(password)) {
       try {
+        onClick();
         await signInWithEmailAndPassword(email, password);
         navigate('/home');
       } catch (err) {
