@@ -16,11 +16,11 @@ src="public/BQlogo.png"/>
 <a title="MUI" href="https://mui.com/"><img src="https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white"></a>
 <a title="Jest" href="https://jestjs.io/"><img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white"></a>
 <a title="Eslint" href="https://eslint.org/"><img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white"></a>
+<a title="Figma" href="https://www.figma.com/file/9Lkk5oAp6M3n7qUvPnAPDb/Burger-Queen?node-id=0%3A1/"><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"></a>
 
-[Resumen del proyecto](#-getting-started) •
-[UX Research](#installation) •
-[Prototipado](#flowchart) •
-[Interfaz gráfica final](#contributing) •
+[Resumen del proyecto](#resumen-del-proyecto) •
+[Prototipado](#prototipado) •
+[Interfaz gráfica final](#interfaz-gráfica-final) •
 [Contact](#contact) •
 [Acknowledgments](#acknowledgments)
 
@@ -30,14 +30,11 @@ src="public/BQlogo.png"/>
 
 Este proyecto consiste en una interfaz a través de la cual un pequeño restaurante de hamburguesas puede tomar pedidos usando una tablet, y enviarlos a la cocina para que se preparen ordenada y eficientemente.
 
-# UX Research
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 # Prototipado
 
 Los protipos de alta fidelidad se realizarón en Figma, se pueden vizualizar en el siguiente [link](https://www.figma.com/file/9Lkk5oAp6M3n7qUvPnAPDb/Burger-Queen?node-id=0%3A1).
 
+<br>
 <p align="center">
 <img 
 width = "600"
@@ -45,6 +42,8 @@ src="public/prototipos.png"/>
 </p>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+# Interfaz gráfica final
 
 # Contact
 
