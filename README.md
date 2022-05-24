@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+<div id="top"></div>
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+<img 
+width = "400"
+src="public/BQlogo.png"/>
+</p>
 
-## Available Scripts
+#
 
-In the project directory, you can run:
+<a title="ReactJs" href="https://es.reactjs.org/"><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"></a>
+<a title="ReactRouter" href="https://es.reactjs.org/"><img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"></a>
+<a title="JavaScript" href="https://developer.mozilla.org/es/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"></a>
+<a title="CSS" href="https://developer.mozilla.org/es/docs/Web/CSS"><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"></a>
+<a title="MUI" href="https://mui.com/"><img src="https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white"></a>
+<a title="Jest" href="https://jestjs.io/"><img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white"></a>
+<a title="Eslint" href="https://eslint.org/"><img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white"></a>
 
-### `npm start`
+[Resumen del proyecto](#-getting-started) •
+[UX Research](#installation) •
+[Prototipado](#flowchart) •
+[Interfaz gráfica final](#contributing) •
+[Contact](#contact) •
+[Acknowledgments](#acknowledgments)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+</div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Resumen del proyecto
 
-### `npm test`
+Este proyecto consiste en una interfaz a través de la cual un pequeño restaurante de hamburguesas puede tomar pedidos usando una tablet, y enviarlos a la cocina para que se preparen ordenada y eficientemente.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# UX Research
 
-### `npm run build`
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Prototipado
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Los protipos de alta fidelidad se realizarón en Figma, se pueden vizualizar en el siguiente [link](https://www.figma.com/file/9Lkk5oAp6M3n7qUvPnAPDb/Burger-Queen?node-id=0%3A1).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="center">
+<img 
+width = "600"
+src="public/prototipos.png"/>
+</p>
 
-### `npm run eject`
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Contact
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> | Desarrolladoras  | LinkedIn                                                                                                                                                                              |
+> | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+> | Margarita García | <a title="lk" href="https://github.com/Maggie-Sarmiento"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>               |
+> | Skarlet Araque   | <a title="lk" href="https://github.com/SkarletA"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>                       |
+> | Sarai Rojas      | <a title="lk" href="https://www.linkedin.com/in/sarai-rojas-sandoval/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a> |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Acknowledgments
 
-## Learn More
+- [Material Icons](https://github.com/alexandresanlim/Badges4-README.md-Profile)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="right">(<a href="#top">back to top</a>)</p>

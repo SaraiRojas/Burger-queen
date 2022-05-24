@@ -296,7 +296,7 @@
       "client": "Hanna",
       "table": "3",
       "total": "25.00",
-      "status": "ready",
+      "status": "delivered",
       "hours": "12:56:0",
       "startTime": 1653328560532,
       "endTime": 1653328577135,
@@ -318,6 +318,33 @@
         }
       ],
       "id": 12
+    },
+    {
+      "client": "Ana",
+      "table": "5",
+      "total": "18.00",
+      "status": "delivered",
+      "hours": "17:53:44",
+      "startTime": 1653346424325,
+      "endTime": 1653346473750,
+      "totalTime": 1,
+      "products": [
+        {
+          "id": 2,
+          "name": "Cafe",
+          "price": 7,
+          "popularity": 5,
+          "image": "https://ae01.alicdn.com/kf/H1c2054b527494e9faee9a11dfd37572bi.jpg"
+        },
+        {
+          "name": "Aros de cebollas",
+          "price": 11,
+          "popularity": 5,
+          "image": "https://sweetandsavorymeals.com/wp-content/uploads/2020/09/crispy-onion-rings-recipe-500x500.jpg",
+          "id": 4
+        }
+      ],
+      "id": 13
     }
   ]
 }
