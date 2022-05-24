@@ -34,11 +34,15 @@ const LogIn = () => {
     const expPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
 
     if (expEmail.test(email) && expPassword.test(password)) {
-      await signInWithEmailAndPassword(email, password);
-      navigate('/home');
+      try {
+        await signInWithEmailAndPassword(email, password);
+        navigate('/home');
+      } catch (err) {
+        console.error(err);
+      }
     } else {
-      const alertError = document.createElement('p');
-      alertError.innerText = 'Error correo o contraseña invalida';
+      const alertError = document.querySelector('.alertError');
+      alertError.innerHTML = 'Error correo o contraseña invalida';
     }
   };
 
