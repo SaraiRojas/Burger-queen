@@ -6,7 +6,7 @@ import { create, act } from 'react-test-renderer';
 import Header from './Header';
 
 describe('test header', () => {
-  test('render header', async () => {
+  test('render component header', async () => {
     let root;
     const mockAuthenticate = jest.fn();
     act(() => {

@@ -23,7 +23,7 @@ const Alert = forwardRef((props, ref) => (
 ));
 
 const BtnAddServe = ({
-  order, id, refreshData, setRefreshData,
+  order, id, refreshData, setRefreshData, onClick,
 }) => {
   const [state, setState] = useState({
     open: false,
@@ -59,6 +59,7 @@ const BtnAddServe = ({
   const handleClick = (newState) => () => {
     setState({ open: true, ...newState });
     updateDataService(order, id);
+    onClick();
   };
 
   const handleClose = () => {

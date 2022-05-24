@@ -6,7 +6,7 @@ import { create, act } from 'react-test-renderer';
 import NotFound from './NotFound';
 
 describe('test notfound', () => {
-  test('render Notfound', async () => {
+  test('render component Notfound', async () => {
     let root;
     act(() => {
       root = create(
