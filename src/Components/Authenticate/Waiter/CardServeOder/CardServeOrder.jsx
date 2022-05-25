@@ -17,8 +17,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 // import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Checkbox from '@mui/material/Checkbox';
-import styles from '../Admin/Menu/CardMenu.module.css';
-import BtnAddServe from './BtnAddServe';
+import styles from '../../Admin/Menu/CardMenu.module.css';
+import BtnAddCheckService from '../BtnAddCheckService/BtnAddCheckService';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -56,14 +56,15 @@ const theme = createTheme({
   },
 });
 
-const CardOrder = ({
+const CardServeOrder = ({
   order, id, refreshData, setRefreshData,
 }) => {
-  console.log('estoy en cardOrder por eslint arrow function');
+  const calcTotalTime = (startTime, endTime) => Math.round((endTime - startTime) / 60000);
   return (
     <Grid item xs={12} sm={6}>
       <ThemeProvider theme={theme}>
         <Paper elevation={3} className="paper">
+          <img src={order.image} alt="" className={styles.imgCard} />
           <Box
             sx={{
               paddingX: 5,
@@ -80,11 +81,12 @@ const CardOrder = ({
                 marginTop={0.5}
               />
               <Box sx={btnAdd}>
-                <BtnAddServe
+                <BtnAddCheckService
                   order={order}
                   id={id}
                   refreshData={refreshData}
                   setRefreshData={setRefreshData}
+                  totalTime={calcTotalTime(order.startTime, order.endTime)}
                 />
               </Box>
             </Box>
@@ -96,10 +98,8 @@ const CardOrder = ({
                 alignSelf: 'center',
                 fontWeight: 'bold',
                 fontSize: '0.8em',
-                paddingLeft: '1.2em',
               }}
             >
-              Cliente:&nbsp;
               {order.client}
             </Typography>
             <Typography
@@ -112,9 +112,9 @@ const CardOrder = ({
                 fontSize: '0.8em',
               }}
             >
-              Hora Inicio:&nbsp;
-              {order.hours}
-              &nbsp;horas
+              Tiempo en completar pedido:&nbsp;
+              {calcTotalTime(order.startTime, order.endTime)}
+              &nbsp;minutos
             </Typography>
             <TableContainer>
               <Table>
@@ -122,14 +122,13 @@ const CardOrder = ({
                   <TableRow>
                     <TableCell><b>Cant.</b></TableCell>
                     <TableCell><b>Producto</b></TableCell>
-                    <TableCell><b>Listo</b></TableCell>
+                    <TableCell><b>Servido</b></TableCell>
                   </TableRow>
                 </TableHead>
-
                 <TableBody>
-                  {order.products.map((product) => (
+                  {order.products?.map((product) => (
                     <TableRow key={product.id}>
-                      <TableCell>{1}</TableCell>
+                      <TableCell>{product.id}</TableCell>
                       <TableCell>{product.name}</TableCell>
                       <TableCell>
                         <Checkbox {...label} color="success" />
@@ -160,4 +159,4 @@ const CardOrder = ({
   );
 };
 
-export default CardOrder;
+export default CardServeOrder;
