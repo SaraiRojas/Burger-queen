@@ -2,7 +2,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Profile from '../Profile/Profile';
-import ShoppingCar from '../../Waiter/ShoppingCar';
+import ShoppingCar from '../../Waiter/ShoppingCar/ShoppingCar';
 import style from './Header.module.css';
 
 const Header = ({

@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test CardServeOrder render CardServeOrder 1`] = `
+<div
+  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-13i4rnv-MuiGrid-root"
+>
+  <div
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation3 paper css-3su884-MuiPaper-root"
+  >
+    <img
+      alt=""
+      className="imgCard"
+    />
+    <div
+      className="MuiBox-root css-1px8riv"
+    >
+      <div
+        className="MuiBox-root css-0"
+      >
+        <div
+          className="MuiBox-root css-1yhm737"
+        />
+        <div
+          className="MuiBox-root css-1f5i9a2"
+        >
+          <div
+            className="css-f779bt-MuiStack-root"
+          >
+            <button
+              className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-12ituje-MuiButtonBase-root-MuiButton-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="AddTaskIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22 5.18 10.59 16.6l-4.24-4.24 1.41-1.41 2.83 2.83 10-10L22 5.18zM12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8c1.57 0 3.04.46 4.28 1.25l1.45-1.45C16.1 2.67 14.13 2 12 2 6.48 2 2 6.48 2 12s4.48 10 10 10c1.73 0 3.36-.44 4.78-1.22l-1.5-1.5c-1 .46-2.11.72-3.28.72zm7-5h-3v2h3v3h2v-3h3v-2h-3v-3h-2v3z"
+                />
+              </svg>
+              <span
+                className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <h2
+        className="MuiTypography-root MuiTypography-subtitle1 productName css-1tk5ht8-MuiTypography-root"
+      />
+      <h2
+        className="MuiTypography-root MuiTypography-subtitle1 productName css-1tk5ht8-MuiTypography-root"
+      >
+        Tiempo en completar pedido: 
+        NaN
+         minutos
+      </h2>
+      <div
+        className="MuiTableContainer-root css-rorn0c-MuiTableContainer-root"
+      >
+        <table
+          className="MuiTable-root css-rqglhn-MuiTable-root"
+          role={null}
+        >
+          <thead
+            className="MuiTableHead-root css-15wwp11-MuiTableHead-root"
+            role={null}
+          >
+            <tr
+              className="MuiTableRow-root MuiTableRow-head css-1q1u3t4-MuiTableRow-root"
+              role={null}
+            >
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1ygcj2i-MuiTableCell-root"
+                scope="col"
+              >
+                <b>
+                  Cant.
+                </b>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1ygcj2i-MuiTableCell-root"
+                scope="col"
+              >
+                <b>
+                  Producto
+                </b>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1ygcj2i-MuiTableCell-root"
+                scope="col"
+              >
+                <b>
+                  Servido
+                </b>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            className="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+            role={null}
+          />
+        </table>
+      </div>
+      <h2
+        className="MuiTypography-root MuiTypography-subtitle1 productName css-5gagl7-MuiTypography-root"
+      >
+        Mesa: 
+      </h2>
+    </div>
+  </div>
+</div>
+`;

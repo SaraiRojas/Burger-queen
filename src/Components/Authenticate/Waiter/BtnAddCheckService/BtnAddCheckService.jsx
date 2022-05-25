@@ -23,7 +23,7 @@ const Alert = forwardRef((props, ref) => (
 ));
 
 const BtnAddCheckService = ({
-  order, id, refreshData, setRefreshData, totalTime,
+  order, id, refreshData, setRefreshData, totalTime, onClick, onClose,
 }) => {
   const [state, setState] = useState({
     open: false,
@@ -54,10 +54,12 @@ const BtnAddCheckService = ({
   const handleClick = (newState) => () => {
     setState({ open: true, ...newState });
     updateDataService(order, id);
+    onClick();
   };
 
   const handleClose = () => {
     setState({ ...state, open: false });
+    onClose();
   };
 
   return (
@@ -77,6 +79,7 @@ const BtnAddCheckService = ({
         onClose={handleClose}
         anchorOrigin={{ vertical, horizontal }}
         key={vertical + horizontal}
+        data-testid="snackbar"
       >
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
           La orden

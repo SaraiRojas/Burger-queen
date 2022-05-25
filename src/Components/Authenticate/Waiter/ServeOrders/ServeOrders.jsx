@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import CardServeOrder from './CardServeOrder';
-import style from '../Admin/Menu/Menu.module.css';
+import CardServeOrder from '../CardServeOder/CardServeOrder';
+import style from '../../Admin/Menu/Menu.module.css';
 
 const ServeOrders = () => {
   const [dataMenu, setDataMenu] = useState([]);
