@@ -7,8 +7,8 @@ import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useState } from 'react';
 import Button from '@mui/material/Button';
-import ModalEditMenu from './ModalEditMenu';
-import ModalDeleteMenu from './ModalDeleteMenu';
+import ModalEditMenu from '../ModalEditMenu/ModalEditMenu';
+import ModalDeleteMenu from '../ModalDeleteMenu/ModalDeleteMenu';
 
 const style = {
   display: 'flex',

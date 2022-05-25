@@ -9,7 +9,7 @@ import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import { setDoc, doc } from 'firebase/firestore';
 import { updateCurrentUser, updateProfile } from 'firebase/auth';
-import { auth, db } from '../../../../Firebase/firebase.config';
+import { auth, db } from '../../../../../Firebase/firebase.config';
 import styles from './ModalStaff.module.css';
 
 const roles = [

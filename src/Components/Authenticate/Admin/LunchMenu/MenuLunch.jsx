@@ -3,8 +3,8 @@ import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
-import CardMenu from '../Menu/CardMenu';
-import ModalMenu from '../Menu/ModalMenu';
+import CardMenu from '../Menu/CardMenu/CardMenu';
+import ModalMenu from '../Menu/ModalMenu/ModalMenu';
 import style from '../Menu/Menu.module.css';
 
 const btnStyle = {

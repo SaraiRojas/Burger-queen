@@ -17,7 +17,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 // import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Checkbox from '@mui/material/Checkbox';
-import styles from '../../Admin/Menu/CardMenu.module.css';
+import styles from '../../Admin/Menu/CardMenu/CardMenu.module.css';
 import BtnAddServe from '../BtnAddServe/BtnAddServe';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
