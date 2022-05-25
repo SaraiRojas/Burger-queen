@@ -171,7 +171,7 @@ const ShoppingCar = ({
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {dataProduct.map((order) => (
+                    {dataProduct?.map((order) => (
                       <TableRow key={order.id}>
                         <TableCell>{order.id}</TableCell>
                         <TableCell>{order.name}</TableCell>

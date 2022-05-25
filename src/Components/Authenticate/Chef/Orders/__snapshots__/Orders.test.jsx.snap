@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Orders render Orders 1`] = `
+<section
+  className="sectionMenu"
+>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-h4 css-10mgom-MuiTypography-root"
+    >
+      Pedidos
+    </h2>
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 css-zow5z4-MuiGrid-root"
+    />
+  </div>
+</section>
+`;

@@ -1,58 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test Staff render Staff 1`] = `
+exports[`test ListOrders render ListOrder 1`] = `
 <section
-  className="staff"
+  className="listOrders"
 >
   <div
-    className="staffBtnContainer"
+    className="MuiBox-root css-0"
   >
-    <button
-      className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-zc09lo-MuiButtonBase-root-MuiButton-root"
-      disabled={false}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onContextMenu={[Function]}
-      onDragLeave={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}
-      tabIndex={0}
-      type="button"
+    <h2
+      className="MuiTypography-root MuiTypography-subtitle1 css-18gen10-MuiTypography-root"
     >
-      <svg
-        aria-hidden={true}
-        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-        data-testid="AddIcon"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-        />
-      </svg>
-      Empleado
-      <span
-        className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-      />
-    </button>
-  </div>
-  <div
-    className="modalCar"
-  >
-    <section
-      className="modalStaff"
-    />
-  </div>
-  <main
-    className="main"
-  >
+      Lista de Ordenes
+    </h2>
     <div
       className="MuiTableContainer-root css-rorn0c-MuiTableContainer-root"
     >
@@ -74,7 +33,7 @@ exports[`test Staff render Staff 1`] = `
               scope="col"
             >
               <b>
-                ID
+                Mesa
               </b>
             </th>
             <th
@@ -83,7 +42,7 @@ exports[`test Staff render Staff 1`] = `
               scope="col"
             >
               <b>
-                Nombre
+                Cliente
               </b>
             </th>
             <th
@@ -92,7 +51,7 @@ exports[`test Staff render Staff 1`] = `
               scope="col"
             >
               <b>
-                Apellido
+                Status
               </b>
             </th>
             <th
@@ -101,7 +60,7 @@ exports[`test Staff render Staff 1`] = `
               scope="col"
             >
               <b>
-                Rol
+                Productos
               </b>
             </th>
             <th
@@ -110,7 +69,7 @@ exports[`test Staff render Staff 1`] = `
               scope="col"
             >
               <b>
-                Correo
+                Total
               </b>
             </th>
             <th
@@ -119,16 +78,7 @@ exports[`test Staff render Staff 1`] = `
               scope="col"
             >
               <b>
-                Fecha de Inicio
-              </b>
-            </th>
-            <th
-              aria-sort={null}
-              className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1ygcj2i-MuiTableCell-root"
-              scope="col"
-            >
-              <b>
-                Acciones
+                Tiempo
               </b>
             </th>
           </tr>
@@ -139,6 +89,6 @@ exports[`test Staff render Staff 1`] = `
         />
       </table>
     </div>
-  </main>
+  </div>
 </section>
 `;
