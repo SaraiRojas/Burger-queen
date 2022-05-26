@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
-// import { render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { create, act } from 'react-test-renderer';
@@ -17,14 +18,17 @@ describe('test ModalStaff', () => {
     });
     expect(root.toJSON()).toMatchSnapshot();
   });
-  // test('Click button', async () => {
-  //   render(
-  //     <Router>
-  //       <ModalStaff />
-  //     </Router>,
-  //   );
-  //   screen.debug();
-  //   // const email = screen.getByRole('button', { name: 'email' });
-  //   // console.log(email);
-  // });
+  test('Click button', async () => {
+    render(
+      <Router>
+        <ModalStaff open />
+      </Router>,
+    );
+    // screen.debug();
+    userEvent.type(screen.getByText('Roles'), 'Mesero');
+    userEvent.type(screen.getByText('Nombre'), 'laura');
+    userEvent.type(screen.getByText('Email'), 'skar@gmail.com');
+    userEvent.type(screen.getByText('Contraseña'), 'D123@devs');
+    userEvent.type(screen.getByText('Confirmar contraseña'), 'D123@devs');
+  });
 });

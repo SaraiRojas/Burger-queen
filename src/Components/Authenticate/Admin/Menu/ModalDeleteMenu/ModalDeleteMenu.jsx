@@ -26,7 +26,9 @@ const ModalDeleteMenu = ({
   const [dataMenu, setDataMenu] = useState([]);
   const data = product;
 
-  const handleClose = () => setOpenModalDelete(false);
+  const handleClose = () => {
+    setOpenModalDelete(false);
+  };
 
   const refresh = () => setRefreshData(!refreshData);
 
@@ -74,7 +76,7 @@ const ModalDeleteMenu = ({
           </p>
           <div align="right">
             <Button color="secondary" onClick={() => deleteDataApi(data.id)}>Sí</Button>
-            <Button onClick={() => handleClose()}>No</Button>
+            <Button onClick={handleClose}>No</Button>
           </div>
         </div>
       </Box>

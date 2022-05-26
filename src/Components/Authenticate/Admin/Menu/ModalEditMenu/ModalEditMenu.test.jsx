@@ -11,7 +11,7 @@ describe('test ModalEditMenu', () => {
     act(() => {
       root = create(
         <Router>
-          <ModalEditMenu />
+          <ModalEditMenu open />
         </Router>,
       );
     });

@@ -18,7 +18,7 @@ const style = {
 const ITEM_HEIGHT = 30;
 
 const ThreeDotsMenu = ({
-  menu, product, refreshData, setRefreshData,
+  menu, product, refreshData, setRefreshData, onClick,
 }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [openModal, setOpenModal] = useState(false);
@@ -27,6 +27,7 @@ const ThreeDotsMenu = ({
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    onClick();
   };
 
   const handleClose = () => {
@@ -72,8 +73,8 @@ const ThreeDotsMenu = ({
         }}
       >
         <MenuItem sx={style}>
-          <Button color="secondary" onClick={handleEdit}>Editar</Button>
-          <Button onClick={handleEdit}>Borrar</Button>
+          <Button data-testid="btn-edit" color="secondary" onClick={handleEdit}>Editar</Button>
+          <Button data-testid="btn-delete" onClick={handleEdit}>Borrar</Button>
         </MenuItem>
       </Menu>
       <ModalEditMenu
