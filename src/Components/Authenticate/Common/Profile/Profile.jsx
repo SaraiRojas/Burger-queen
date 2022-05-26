@@ -33,7 +33,7 @@ const btn = {
   fontWeight: 'bold',
 };
 
-const Profile = ({ authenticate }) => {
+const Profile = ({ authenticate, onClick }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [userName, setUserName] = useState(null);
   const [userRol, setUserRol] = useState(null);
@@ -78,6 +78,7 @@ const Profile = ({ authenticate }) => {
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    onClick();
   };
 
   return (

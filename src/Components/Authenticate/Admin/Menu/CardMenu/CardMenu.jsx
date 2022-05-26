@@ -11,8 +11,8 @@ import React from 'react';
 import Box from '@mui/material/Box';
 // import MoreVertIcon from '@mui/icons-material/MoreVert';
 import styles from './CardMenu.module.css';
-import ThreeDotsMenu from './ThreeDotsMenu';
-import BtnAdd from './BtnAdd';
+import ThreeDotsMenu from '../ThreeDotsMenu/ThreeDotsMenu';
+import BtnAdd from '../BtnAdd';
 
 const threeMenuStyle = {
   display: 'flex',
