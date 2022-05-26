@@ -46,7 +46,7 @@ const styleBox = {
 };
 
 const ShoppingCar = ({
-  count, setCount, dataProduct, setDataProduct,
+  count, setCount, dataProduct, setDataProduct, onClick,
 }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [sum, setSum] = useState(0);
@@ -58,14 +58,15 @@ const ShoppingCar = ({
 
   const suma = () => {
     // eslint-disable-next-line max-len
-    const total = dataProduct.map((elems) => elems.price).reduce((acum, elem) => acum + elem, 0);
-    setSum(total.toFixed(2));
+    const total = dataProduct?.map((elems) => elems.price).reduce((acum, elem) => acum + elem, 0);
+    setSum(total?.toFixed(2));
     console.log(total);
   };
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
     suma();
+    onClick();
   };
 
   // setSum(sum + dataProduct.price);
@@ -82,6 +83,7 @@ const ShoppingCar = ({
     handleClose();
     setDataProduct([]);
     setCount(0);
+    onClick();
   };
 
   const getOrder = (e, dataOrder, sumOrder) => {
