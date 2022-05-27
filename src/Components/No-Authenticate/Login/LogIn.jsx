@@ -2,43 +2,44 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+// import { signInWithEmailAndPassword } from 'firebase/auth';
+// import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import styles from './Login.module.css';
-import { auth } from '../../../Firebase/firebase.config';
+import { signInAccount } from '../../../Firebase/firebase.config';
 
-const LogIn = () => {
+const LogIn = (props) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [
-    signInWithEmailAndPassword,
-    loading,
-    error,
-  ] = useSignInWithEmailAndPassword(auth);
 
-  if (error) {
-    return (
-      <div>
-        <p>
-          {error.message}
-        </p>
-      </div>
-    );
-  }
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+  // if (error) {
+  //   return (
+  //     <div>
+  //       <p>
+  //         {error.message}
+  //       </p>
+  //     </div>
+  //   );
+  // }
+  // if (loading) {
+  //   return <p>Loading...</p>;
+  // }
 
   const handleLogIn = async () => {
     const expEmail = /^\w+([.+-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$/;
     const expPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
-
     if (expEmail.test(email) && expPassword.test(password)) {
-      await signInWithEmailAndPassword(email, password);
-      navigate('/home');
+      try {
+        const { signIn } = props;
+        await signIn(email, password);
+        navigate('/home');
+      } catch (err) {
+        const alertError = document.querySelector('.alertError');
+        alertError.innerHTML = 'Error del servidor';
+      }
     } else {
-      const alertError = document.createElement('p');
-      alertError.innerText = 'Error correo o contraseña invalida';
+      const alertError = document.querySelector('.alertError');
+      alertError.innerHTML = 'Error correo o contraseña invalida';
     }
   };
 
@@ -77,6 +78,10 @@ const LogIn = () => {
       </section>
     </section>
   );
+};
+
+LogIn.defaultProps = {
+  signIn: signInAccount,
 };
 
 export default LogIn;
