@@ -35,7 +35,7 @@ const btn = {
   fontWeight: 'bold',
 };
 
-const Profile = ({ authenticate, onClick, onClose }) => {
+const Profile = ({ authenticate, onClick }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [userName, setUserName] = useState(null);
   const [userRol, setUserRol] = useState(null);
@@ -70,7 +70,6 @@ const Profile = ({ authenticate, onClick, onClose }) => {
 
   const handleClose = () => {
     setAnchorEl(null);
-    onClose();
   };
 
   const handleLogOut = async () => {

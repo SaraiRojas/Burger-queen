@@ -29,14 +29,4 @@ describe('test Profile', () => {
     fireEvent.click(button);
     expect(mockOnClick).toHaveBeenCalledTimes(1);
   });
-  test('handle Close', async () => {
-    const open = Boolean(jest.fn());
-    const mockOnClose = jest.fn();
-    render(
-      <Router>
-        <Profile open={open} authenticate={mockAuthenticate} setAnchorEl={mockOnClose} />
-      </Router>,
-    );
-    screen.debug();
-  });
 });
