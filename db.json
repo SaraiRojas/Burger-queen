@@ -296,11 +296,11 @@
       "client": "Hanna",
       "table": "3",
       "total": "25.00",
-      "status": "ready",
+      "status": "delivered",
       "hours": "12:56:0",
       "startTime": 1653328560532,
       "endTime": 1653328577135,
-      "totalTime": 0,
+      "totalTime": 50,
       "products": [
         {
           "id": 1,
@@ -318,6 +318,209 @@
         }
       ],
       "id": 12
+    },
+    {
+      "client": "Maria",
+      "table": "7",
+      "total": "22.00",
+      "status": "delivered",
+      "hours": "21:39:41",
+      "startTime": 1653446381704,
+      "endTime": 1653446429908,
+      "totalTime": 15,
+      "products": [
+        {
+          "id": 2,
+          "name": "Hamburguesa Doble",
+          "price": 15,
+          "popularity": 5,
+          "image": "https://cdn.shopify.com/s/files/1/0248/7310/7536/products/haz-keto-bollos-para-hamburguesa-3_1200x1200.jpg?v=1623868484"
+        },
+        {
+          "name": "Refresco 600ml",
+          "price": 7,
+          "popularity": 4,
+          "image": "https://yosoyvendedor.com/source/3eda16f86daab883ae8cc9142864b38e/fresca.jpg",
+          "id": 6
+        }
+      ],
+      "id": 13
+    },
+    {
+      "client": "Lupe",
+      "table": "6",
+      "total": "20.00",
+      "status": "delivered",
+      "hours": "9:13:7",
+      "startTime": 1653487987590,
+      "endTime": 1653488006838,
+      "totalTime": 35,
+      "products": [
+        {
+          "id": 2,
+          "name": "Hamburguesa Doble",
+          "price": 15,
+          "popularity": 5,
+          "image": "https://cdn.shopify.com/s/files/1/0248/7310/7536/products/haz-keto-bollos-para-hamburguesa-3_1200x1200.jpg?v=1623868484"
+        },
+        {
+          "id": 3,
+          "name": "Papas Fritas",
+          "price": 5,
+          "popularity": 4,
+          "image": "https://godmyshop.com/wp-content/uploads/2020/11/papas-fritas-300x300.jpg"
+        }
+      ],
+      "id": 14
+    },
+    {
+      "client": "Felipe",
+      "table": "6",
+      "total": "27.00",
+      "status": "delivered",
+      "hours": "9:14:16",
+      "startTime": 1653488056676,
+      "endTime": 1653489125563,
+      "totalTime": 18,
+      "products": [
+        {
+          "id": 2,
+          "name": "Hamburguesa Doble",
+          "price": 15,
+          "popularity": 5,
+          "image": "https://cdn.shopify.com/s/files/1/0248/7310/7536/products/haz-keto-bollos-para-hamburguesa-3_1200x1200.jpg?v=1623868484"
+        },
+        {
+          "id": 3,
+          "name": "Papas Fritas",
+          "price": 5,
+          "popularity": 4,
+          "image": "https://godmyshop.com/wp-content/uploads/2020/11/papas-fritas-300x300.jpg"
+        },
+        {
+          "name": "Refresco 600ml",
+          "price": 7,
+          "popularity": 4,
+          "image": "https://yosoyvendedor.com/source/3eda16f86daab883ae8cc9142864b38e/fresca.jpg",
+          "id": 6
+        }
+      ],
+      "id": 15
+    },
+    {
+      "client": "Juan",
+      "table": "3",
+      "total": "22.00",
+      "status": "process",
+      "hours": "9:22:12",
+      "startTime": 1653488532929,
+      "endTime": null,
+      "totalTime": 0,
+      "products": [
+        {
+          "name": "Cafe con Leche",
+          "price": 7,
+          "popularity": 4,
+          "image": "https://cdn.shopify.com/s/files/1/0438/4479/6573/products/Latte-moka-caliente-12oz-_354ml_-01.jpg?v=1601056479",
+          "id": 1
+        },
+        {
+          "name": "Sandwich",
+          "price": 15,
+          "popularity": 4.8,
+          "image": "https://eggs.org.nz/wp-content/uploads/2021/12/Club-Sandwiches-500x500.jpg",
+          "id": 4
+        }
+      ],
+      "id": 16
+    },
+    {
+      "client": "Luis",
+      "table": "5",
+      "total": "26.00",
+      "status": "process",
+      "hours": "10:7:35",
+      "startTime": 1653491255352,
+      "endTime": null,
+      "totalTime": 0,
+      "products": [
+        {
+          "id": 2,
+          "name": "Hamburguesa Doble",
+          "price": 15,
+          "popularity": 5,
+          "image": "https://cdn.shopify.com/s/files/1/0248/7310/7536/products/haz-keto-bollos-para-hamburguesa-3_1200x1200.jpg?v=1623868484"
+        },
+        {
+          "name": "Aros de cebollas",
+          "price": 11,
+          "popularity": 5,
+          "image": "https://sweetandsavorymeals.com/wp-content/uploads/2020/09/crispy-onion-rings-recipe-500x500.jpg",
+          "id": 4
+        }
+      ],
+      "id": 17
+    },
+    {
+      "client": "Martin",
+      "table": "1",
+      "total": "35.00",
+      "status": "delivered",
+      "hours": "10:8:47",
+      "startTime": 1653488056676,
+      "endTime": 1653491334136,
+      "totalTime": 55,
+      "products": [
+        {
+          "id": 1,
+          "name": "Hamburguesa Simple",
+          "price": 10,
+          "popularity": 4,
+          "image": "https://elporxosantmarti.com/wp-content/uploads/2021/12/hamburguesa-anos-20.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Hamburguesa Doble",
+          "price": 15,
+          "popularity": 5,
+          "image": "https://cdn.shopify.com/s/files/1/0248/7310/7536/products/haz-keto-bollos-para-hamburguesa-3_1200x1200.jpg?v=1623868484"
+        },
+        {
+          "name": "Refresco 1L",
+          "price": 10,
+          "popularity": 4,
+          "image": "https://superlomas.odoo.com/web/image/product.template/3087/image_256/REFRESCO%20COCA%20COLA%20PET%20NR%201%20LT?unique=af1926f",
+          "id": 8
+        }
+      ],
+      "id": 18
+    },
+    {
+      "client": "",
+      "table": "",
+      "total": "17.00",
+      "status": "delivered",
+      "hours": "10:42:30",
+      "startTime": 1653493350477,
+      "endTime": 1653493383273,
+      "totalTime": 1,
+      "products": [
+        {
+          "id": 1,
+          "name": "Hamburguesa Simple",
+          "price": 10,
+          "popularity": 4,
+          "image": "https://elporxosantmarti.com/wp-content/uploads/2021/12/hamburguesa-anos-20.jpg"
+        },
+        {
+          "name": "Refresco 600ml",
+          "price": 7,
+          "popularity": 4,
+          "image": "https://yosoyvendedor.com/source/3eda16f86daab883ae8cc9142864b38e/fresca.jpg",
+          "id": 6
+        }
+      ],
+      "id": 19
     }
   ]
 }

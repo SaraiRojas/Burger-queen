@@ -10,7 +10,6 @@ const Home = ({ role, authenticate }) => {
   const [count, setCount] = useState(0);
   const [dataProduct, setDataProduct] = useState([]);
   const location = useLocation();
-  console.log(location);
 
   if (role === 'Mesero') {
     return (

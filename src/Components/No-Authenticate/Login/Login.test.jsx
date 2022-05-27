@@ -1,8 +1,11 @@
+/* eslint-disable no-promise-executor-return */
 /* eslint-disable no-undef */
-import { fireEvent, render, screen } from '@testing-library/react';
+import {
+  render, screen, waitFor,
+} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, MemoryRouter } from 'react-router-dom';
 import LogIn from './LogIn';
 
 describe('Login', () => {
@@ -16,22 +19,38 @@ describe('Login', () => {
     userEvent.type(screen.getByPlaceholderText(/Contraseña/i), '1234');
     userEvent.type(screen.getByPlaceholderText(/Ejemplo@gmail.com/i), 'sara@correo.com');
     userEvent.click(screen.getByText(/Iniciar sesión/i));
-    screen.debug();
     screen.getByText(/Error correo o contraseña invalida/i);
   });
 
-  test('handleLogIn should be called once', async () => {
-    const mockOnclick = jest.fn();
+  test('When signIn promise is resolved signIn mock should be called', async () => {
+    const signIn = jest.fn();
     render(
-      <Router>
-        <LogIn onClick={mockOnclick} />
-      </Router>,
+      <MemoryRouter initialEntries={[{ pathname: '/LogIn' }]}>
+        <LogIn signIn={signIn} />
+      </MemoryRouter>,
     );
 
     userEvent.type(screen.getByPlaceholderText(/Contraseña/i), 'D123@devs');
-    userEvent.type(screen.getByPlaceholderText(/Ejemplo@gmail.com/i), 'sara@correo.com');
-    const button = screen.getByText(/Iniciar sesión/i);
-    fireEvent.click(button);
-    expect(mockOnclick).toHaveBeenCalledTimes(1);
+    userEvent.type(screen.getByPlaceholderText(/Ejemplo@gmail.com/i), 'sara@gmail.com');
+    userEvent.click(screen.getByText(/Iniciar sesión/i));
+    await waitFor(() => {
+      expect(signIn).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  test('When signIn promise is rejected a error message should be displayed', async () => {
+    const signIn = jest.fn(() => Promise.reject());
+    render(
+      <MemoryRouter initialEntries={[{ pathname: '/LogIn' }]}>
+        <LogIn signIn={signIn} />
+      </MemoryRouter>,
+    );
+
+    userEvent.type(screen.getByPlaceholderText(/Contraseña/i), 'D123@devs');
+    userEvent.type(screen.getByPlaceholderText(/Ejemplo@gmail.com/i), 'sara@gmail.com');
+    userEvent.click(screen.getByText(/Iniciar sesión/i));
+    await waitFor(() => {
+      screen.getByText(/Error del servidor/i);
+    });
   });
 });

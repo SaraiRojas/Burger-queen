@@ -3,13 +3,15 @@ import * as React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
-import { getDoc, doc } from 'firebase/firestore';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import Typography from '@mui/material/Typography';
-import { auth, db } from '../../../Firebase/firebase.config';
+import {
+  getDoc, doc, auth, db,
+} from '../../../Firebase/firebase.config';
+
 import style from './Profile.module.css';
 
 const styles = {
