@@ -180,11 +180,10 @@ const ModalStaff = ({ open, setOpen }) => {
               label="Nombre"
               variant="standard"
               onChange={handleChange}
-              // helperText={textError}
             />
             <TextField
               required
-              id="standard-required"
+              id="lastname"
               name="lastname"
               label="Apellido"
               variant="standard"

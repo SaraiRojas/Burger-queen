@@ -22,11 +22,21 @@ describe('test Profile', () => {
     const mockOnClick = jest.fn();
     render(
       <Router>
-        <Profile authenticate={mockAuthenticate} onClick={mockOnClick} />
+        <Profile open authenticate={mockAuthenticate} onClick={mockOnClick} />
       </Router>,
     );
     const button = screen.getByRole(/button/i);
     fireEvent.click(button);
     expect(mockOnClick).toHaveBeenCalledTimes(1);
+  });
+  test('handle Close', async () => {
+    const open = Boolean(jest.fn());
+    const mockOnClose = jest.fn();
+    render(
+      <Router>
+        <Profile open={open} authenticate={mockAuthenticate} setAnchorEl={mockOnClose} />
+      </Router>,
+    );
+    screen.debug();
   });
 });

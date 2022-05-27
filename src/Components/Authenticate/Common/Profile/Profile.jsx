@@ -33,7 +33,7 @@ const btn = {
   fontWeight: 'bold',
 };
 
-const Profile = ({ authenticate, onClick }) => {
+const Profile = ({ authenticate, onClick, onClose }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [userName, setUserName] = useState(null);
   const [userRol, setUserRol] = useState(null);
@@ -68,6 +68,7 @@ const Profile = ({ authenticate, onClick }) => {
 
   const handleClose = () => {
     setAnchorEl(null);
+    onClose();
   };
 
   const handleLogOut = async () => {
@@ -103,14 +104,14 @@ const Profile = ({ authenticate, onClick }) => {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <Typography sx={menu} id="modal-modal-title" variant="h6" component="h2">
+        <Typography data-testid="text" sx={menu} id="modal-modal-title" variant="h6" component="h2">
           {userRol}
           <br />
           {`${userName} ${userLastName}`}
           <br />
           {user.email}
         </Typography>
-        <MenuItem sx={btn} onClick={handleLogOut}>
+        <MenuItem sx={btn} data-testid="logOut" onClick={handleLogOut}>
           Salir&nbsp;
           <ExitToAppIcon />
         </MenuItem>
