@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test ListOrders render ListOrder 1`] = `
+<section
+  className="listOrders"
+>
+  <div
+    className="MuiBox-root css-0"
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-subtitle1 css-18gen10-MuiTypography-root"
+    >
+      Lista de Ordenes
+    </h2>
+    <div
+      className="MuiTableContainer-root css-rorn0c-MuiTableContainer-root"
+    >
+      <table
+        className="MuiTable-root css-rqglhn-MuiTable-root"
+        role={null}
+      >
+        <thead
+          className="MuiTableHead-root css-15wwp11-MuiTableHead-root"
+          role={null}
+        >
+          <tr
+            className="MuiTableRow-root MuiTableRow-head css-1q1u3t4-MuiTableRow-root"
+            role={null}
+          >
+            <th
+              aria-sort={null}
+              className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1ygcj2i-MuiTableCell-root"
+              scope="col"
+            >
+              <b>
+                Mesa
+              </b>
+            </th>
+            <th
+              aria-sort={null}
+              className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1ygcj2i-MuiTableCell-root"
+              scope="col"
+            >
+              <b>
+                Cliente
+              </b>
+            </th>
+            <th
+              aria-sort={null}
+              className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1ygcj2i-MuiTableCell-root"
+              scope="col"
+            >
+              <b>
+                Status
+              </b>
+            </th>
+            <th
+              aria-sort={null}
+              className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1ygcj2i-MuiTableCell-root"
+              scope="col"
+            >
+              <b>
+                Productos
+              </b>
+            </th>
+            <th
+              aria-sort={null}
+              className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1ygcj2i-MuiTableCell-root"
+              scope="col"
+            >
+              <b>
+                Total
+              </b>
+            </th>
+            <th
+              aria-sort={null}
+              className="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-1ygcj2i-MuiTableCell-root"
+              scope="col"
+            >
+              <b>
+                Tiempo
+              </b>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          className="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+          role={null}
+        />
+      </table>
+    </div>
+  </div>
+</section>
+`;

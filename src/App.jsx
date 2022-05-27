@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-nested-ternary */
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';

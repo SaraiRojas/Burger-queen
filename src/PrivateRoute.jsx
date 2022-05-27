@@ -5,10 +5,10 @@ import LogIn from './Components/No-Authenticate/Login/LogIn';
 import Staff from './Components/Authenticate/Admin/Staff/Staff';
 import Menu from './Components/Authenticate/Admin/Menu/Menu';
 import MenuLunch from './Components/Authenticate/Admin/LunchMenu/MenuLunch';
-import Home from './Components/Authenticate/Common/Home';
-import Orders from './Components/Authenticate/Chef/Orders';
-import ServeOrders from './Components/Authenticate/Waiter/ServeOrders';
-import ListOrders from './Components/Authenticate/Waiter/ListOrders';
+import Home from './Components/Authenticate/Common/Home/Home';
+import Orders from './Components/Authenticate/Chef/Orders/Orders';
+import ServeOrders from './Components/Authenticate/Waiter/ServeOrders/ServeOrders';
+import ListOrders from './Components/Authenticate/Waiter/ListOrders/ListOrders';
 
 const PrivateRoute = ({ role, authenticate }) => {
   if (role === 'Admin') {
