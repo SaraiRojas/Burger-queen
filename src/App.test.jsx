@@ -4,7 +4,7 @@ import React from 'react';
 import { create, act } from 'react-test-renderer';
 import App from './App';
 
-describe.skip('test App', () => {
+describe('test App', () => {
   test('render App', async () => {
     let root;
     act(() => {

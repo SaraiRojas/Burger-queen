@@ -10,7 +10,7 @@ import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import Typography from '@mui/material/Typography';
 import {
   getDoc, doc, auth, db,
-} from '../../../Firebase/firebase.config';
+} from '../../../../Firebase/firebase.config';
 
 import style from './Profile.module.css';
 
